@@ -13,17 +13,20 @@ Referências cruzadas são obtidas através dos comandos \verb|\label{}| e \verb
 \chapter{FIGURAS}
 \label{chap:figuras}
 
-Exemplo de como inserir uma figura. A \autoref{fig:figura-exemplo1} aparece automaticamente na lista de figuras. Para saber mais sobre o uso de imagens no \LaTeX{} consulte literatura especializada \cite{Goossens2007}.
+Exemplo de como inserir uma figura. A aparece automaticamente na lista de figuras. Para saber mais sobre o uso de imagens no \LaTeX{} consulte literatura especializada \cite{Goossens2007}.
 
 Os arquivos das figuras devem ser armazenados no diretório de "/dados".
 
-\begin{figure}[!htb]
-    \centering
-    \caption{Exemplo de Figura}
-    \includegraphics[width=0.5\textwidth]{./dados/figuras/figura1}
-    \fonte{\citeonline{IRL2014}}
-    \label{fig:figura-exemplo1}
-\end{figure}
+\begin{comment}
+    \autoref{fig:figura-exemplo1}
+    \begin{figure}[!htb]
+        \centering
+        \caption{Exemplo de Figura}
+        %\includegraphics[width=0.5\textwidth]{./dados/figuras/figura1}
+        \fonte{\citeonline{IRL2014}}
+        \label{fig:figura-exemplo1}
+    \end{figure}
+\end{comment}
 
 % QUADROS E TABELAS---------------------------------------------------------------
 \chapter{QUADROS E TABELAS}
