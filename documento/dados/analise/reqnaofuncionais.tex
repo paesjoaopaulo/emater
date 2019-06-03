@@ -1,20 +1,31 @@
-\section{Requisitos Não Funcionais}
+\subsection{Requisitos Não Funcionais}
 \label{sec:titSecReqNaoFunc}
 
-Texto...
+Os requisitos não funcionais representam restrições que vão além das funcionalidades de um sistema. Eles podem estar relacionados à alguma necessidade emergente do sistema como o tempo de resposta ou o espaço de armazenamento. Esses requisitos, normalmente, são aplicado ao sistema todo, ao invés de uma funcionalidade ou serviço específico \cite{pressman2016engenharia}.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}{|p{1.5cm}|p{3cm}|p{7cm}|p{2.5cm}|}
+Na \autoref{rnf:tabela} encontram-se os requisitos funcionais levantados para essa aplicação.
+
+\begin{landscape}
+\begin{longtable}{|p{1.5cm}|p{4.5cm}|p{10cm}|p{3cm}|}
     \hline
-    ID     & REQUISITO                               & DESCRIÇÃO                                                                          & PRIORIDADE    \\\hline
+    ID     & REQUISITO                                                    & DESCRIÇÃO                                                                                                                         & CATEGORIA        \\\hline
     \endfirsthead
     %
     \multicolumn{4}{c}%
-    {{\bfseries Continuação da tabela \thetable\ da página anterior}}                                                                                     \\\hline
-    ID     & REQUISITO                               & DESCRIÇÃO                                                                          & PRIORIDADE    \\\hline
+    {{\bfseries Continuação da tabela \thetable\ da página anterior}}                                                                                                                                                            \\\hline
+    ID     & REQUISITO                                                    & DESCRIÇÃO                                                                                                                         & CATEGORIA        \\\hline
     \endhead
     %
-    RNF001 & Adaptar em diferentes formatos de tela. & O sistema deve ser adaptado em diferentes tamanhos de tela. (Requisito de exemplo) & Adptabilidade \\\hline
+    RNF001 & O sistema deve ser responsivo.                               & O sistema deve se adaptar em diferentes tamanhos de tela com proporção 16:9.                                                      & Usabilidade      \\\hline
+    RNF002 & Validação no frontend.                                       & Todos os formulários, exeto os de autenticação, devem ser validados no navegador sem que haja o recarregamento da página.         & Usabilidade      \\\hline
+    RNF003 & Não permitir o acesso de visitantes às páginas internas.     & O sistema deve validar a permissão do usuário ao tentar acessar uma página restrita.                                              & Segurança        \\\hline
+    RNF004 & Backup automático.                                           & O sistema deverá realizar um backup automaticamente todos os dias às 4:00, de acordo com o horário de Brasília.                   & Segurança        \\\hline
+    RNF005 & O código escrito deverá ser entendível.                      & Um profissional com 1 ano de experiência com PHP deverá conseguir criar um CRUD na API em até 8 horas de leitura.                 & Manutenabilidade \\\hline
+    RNF006 & Criptografia de dados sensíveis.                             & O sistema deve criptografar as senhas dos usuários.                                                                               & Segurança        \\\hline
+    RNF007 & Bloqueio de acesso externo.                                  & O servidor de banco de dados só poderá ser acessado pela rede local do servidor.                                                  & Segurança        \\\hline
+    RNF008 & Inicar nova correção em até 3 cliques.                       & O sistema deve permitir o usuário autenticado, a partir de qualquer tela, acessar o formulário de nova correção em até 3 cliques. & Usabilidade      \\\hline
+    RNF009 & O sistema deve ser acessível por meio de um nome de domínio. & O usuário poderá acessar o sistema por meio de um nome de domínio.                                                                & Usabilidade      \\\hline
+    \caption{Tabela de Requisitos Não Funcionais}
+    \label{rnf:tabela}
 \end{longtable}
+\end{landscape}

@@ -3,26 +3,59 @@
 \chapter{INTRODUÇÃO}
 \label{chap:introducao}
 
-Edite e coloque aqui o seu texto de introdução.
+A agricultura é um dos grandes pilares que sustentam a economia brasileira. Na safra 2018/2019, o Valor Bruto da Produção (VBP) referente ao setor foi de R\$ 372 bilhões \cite{minagri2019}. O Estado do Paraná, mesmo representando apenas 2\% do território \cite{ibge2018}, foi responsável por cerca de 19\% desse valor, além de empregar direta ou indiretamente 1 milhão de pessoas no estado \cite{emater2016}. A crescente produtividade é determinante para a redução do preço da alimentação, contribuindo para a melhora na qualidade de vida e saúde da população, fornecendo subsídios para o consumo de bens produzidos pela indústria e o setor de serviços \cite{cna2018}.
 
-A Introdução é a parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho, tais como: justificativa, procedimentos metodológicos (classificação inicial), embasamento teórico (principais bases sintetizadas) e estrutura do trabalho, tratados de forma sucinta. Recursos utilizados e cronograma são incluídos quando necessário. Salienta-se que os procedimentos metodológicos e o embasamento teórico são tratados, posteriormente, em capítulos próprios e com a profundidade necessária ao trabalho de pesquisa.
+A produtividade das lavouras está intimamente ligada à qualidade do solo, que é responsável por levar a água e nutrientes aos cultivos e reciclar a matéria orgânica. Em áreas com um equilíbrio de nutrientes necessários para o desenvolvimento vegetal, a produtividade tende a ser maior. Devido a esse fato, faz-se necessário que os agricultores tomem decisões com maior agilidade para evitar a perda de rendimento.
 
-\section{LEIA ESTA SEÇÃO ANTES DE COMEÇAR}
-\label{sec:antesleiame}
+Para agilizar o processo de análise e correção do solo, a Empresa de Assistência Técnica e Extensão Rural (Emater), por meio de seus colaboradores Pedro Cecere Filho e Fabianderson José Baio, desenvolveu uma planilha de cálculo para o equilíbrio e correção do solo, que será apresentada na \autoref{subsec:planilha} deste documento.
 
-Este documento é um \emph{template} \LaTeX{} que foi concebido, primariamente, para ser utilizado na elaboração de Trabalho de Conclusão de Curs em conformidade com as normas da Universidade Tecnológica Federal do Paraná.
+\section{JUSTIFICATIVA}
+\label{sec:justificativa}
 
-Para a produção deste \emph{template} foi necessário adaptar o arquivo {\ttfamily abntex2.cls}. Assim, foi produzido o arquivo {\ttfamily utfpr-abntex2.cls} que define o \verb|documentclass| específico para a UTFPR.
+A cada nova versão da planilha eletrônica, esta deve ser compartilhada entre os técnicos agrícolas, para que estes façam o uso das últimas funcionalidades implementadas. Devido a esse fato, apesar do uso de planilhas eletrônicas satisfazerem em partes as necessidades dos técnicos, não é a melhor forma para trabalhar com essas informações.
 
-Antes de começar a escrever o seu trabalho acadêmico utilizando este \emph{template}, é importante saber que há dois arquivos que você precisará editar para que a capa e a folha de rosto de seu trabalho sejam geradas automaticamente.
-São eles os arquivos {\ttfamily capa.tex} e {\ttfamily folha-rosto.tex}, ambos no diretório  {\ttfamily /elementos-pre-textuais}.
-No arquivo {\ttfamily capa.tex} deverá ser informado nome do autor, título do trabalho, natureza do trabalho, nome do orientador e outras informações necessárias.
-No arquivo {\ttfamily folha-rosto.tex}, que contém o texto padrão estabelecendo que este documento é um requisito parcial para a obtenção do título pretendido, será necessário apenas comentar as linhas que não se aplicam ao tipo de trabalho acadêmico.
+\begin{itemize}
+    
+    \item \textit{\textbf{Segurança}}: As planilhas não possuem controle de versão, por isso não é possível identificar quem inseriu um trecho malicioso ou uma informação errada no documento.
 
-A compilação para gerar um arquivo no formato pdf, incluindo corretamente as referências bibliográficas, deve ser realizada utilizando o comando \verb|makefile|, disponível na mesma pasta onde está o arquivo principal \verb|utfpr-tcc.tex|. Caso seja alterado o nome do arquivo \verb|utfpr-tcc.tex|, deverá ser alterado no arquivo \verb|makefile| também.
+    \item \textit{\textbf{Integridade}}: Comumente os dados preenchidos na planilha são persistidos no próprio arquivo, devido a isso, existe a chance da corrupção da planilha e o usuário perder as informações inseridas.
+    
+    \item \textit{\textbf{Histórico}}: É muito difícil, ou mesmo impossível, gerenciar o histórico de mudanças em uma planilha. 
+    
+    \item \textit{\textbf{Armazenamento}}: Em alguns casos, o usuário duplica a planilha para executar uma nova operação. Essa duplicação gera o desperdício de disco, visto que, comumente, as diferenças entre planilhas são apenas nas células de entrada de dados. 
+    
+    \item \textit{\textbf{Versionamento}}: Quando uma nova versão de uma planilha surge, é muito trabalhoso a transposição de dados, favorecendo o surgimento de falhas.
+    
+    \item \textit{\textbf{Dependência de Software}}: A planilha depende do Microsoft Excel para funcionar adequadamente, o que acaba tornando os técnicos dependentes dos sistemas operacionais para os quais esse \textit{software} é desenvolvido.
+    
+    \item \textit{\textbf{Integração}}: É muito difícil integrar uma planilha com serviços disponíveis em rede. Por exemplo, é muito custoso integrar uma planilha com um \textit{webservice} que informa a cotação de moedas.
+    
+    \item \textit{\textbf{Padronização}}: Planilhas permitem alteração de cores, de fontes, movimentação de linhas e colunas, favorecendo o surgimento de falhas.
+    
+\end{itemize}
+
+Devido a essas necessidades não supridas pela planilha, surgiu a necessidade do desenvolvimento de uma implementação da planilha como uma aplicação personalizada.
+
+\section{OBJETIVOS}
+\label{sec:objetivos}
+
+O objetivo deste documento é propor uma aplicação web responsiva para implementar as funcionalidades da planilha, organizando o processo de correção do solo a fim de solucionar os problemas de versionamento, independência de sistema operacional e do Microsoft Excel, armazenamento de dados e segurança.
+
+Os objetivos específicos deste trabalho são:
+
+\begin{itemize}
+    \item Desenvolver uma interface reativa para a correção de nutrientes do solo
+    
+    \item Implementar todas as funcionalidades da pasta de trabalho descritas na  \autoref{subsec:pastaequilibriocorrecaoctc}.
+    
+    \item Utilizar os conceitos de layouts responsivos, adequando a disposição dos elementos de acordo com a tela do dispositivo.
+    
+    \item Proporcionar consultas à correções do solo feitas a partir da implantação da aplicação.
+    
+    \item Disponibilizar a aplicação na web como um serviço
+\end{itemize}
 
 \section{ORGANIZAÇÃO DO TRABALHO}
 \label{sec:organizacaoTrabalho}
 
-Normalmente ao final da introdução é apresentada, em um ou dois parágrafos curtos, a organização do restante do trabalho acadêmico.
-Deve-se dizer o quê será apresentado em cada um dos demais capítulos.
+O restante desta proposta está organizada desta forma. O \autoref{chap:fundamentacao} faz uma abordagem ao referencial teórico que fundamentou o trabalho, bem como a apresentação da planilha que deu origem ao trabalho. Logo após, no \autoref{chap:proposta}, serão apresentadas as tecnologias e ferramentas que serão utilizadas no desenvolvimento da aplicação, além da metodologia e arquitetura que serão aplicadas no projeto. Ainda nesse capítulo serão apresentados os requisitos do sistema e os diagramas que modelam o aplicativo. Por fim, será apresentada a conclusão da da presente proposta no \autoref{chap:conclusao}.

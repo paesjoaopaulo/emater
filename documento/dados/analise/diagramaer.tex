@@ -1,32 +1,35 @@
-\section{Projeto de Banco de Dados}
+\subsection{Projeto de Banco de Dados}
 \label{sec:titSecBancoDados}
 
-Segundo \cite{silberschatz2006sistema}, o objetivo do projeto de Banco de Dados é a construção de um conjunto de estruturas que permitam a representação de um dado de forma não redundante e que esse dado possa ser recuperado de forma simples. Este processo geralmente passa em diferentes níveis de abstração. Primeiramente, inicia-se com o entendimento do problema, para depois seguir por diferentes fases de modelagem, até chegar à implementação. Nesse processo, um modelo considerado padrão para a etapa inicial de modelagem é o entidade-relacionamento (ER) \cite{heuser2009projeto}.
+Segundo \citeonline{silberschatz2006sistema}, o objetivo do projeto de Banco de Dados é a construção de um conjunto de estruturas que permitam a representação de um dado de forma não redundante e que esse dado possa ser recuperado de forma simples. Este processo geralmente passa em diferentes níveis de abstração. Primeiramente, inicia-se com o entendimento do problema, para depois seguir por diferentes fases de modelagem, até chegar à implementação. Nesse processo, um modelo considerado padrão para a etapa inicial de modelagem é o entidade-relacionamento (ER) \cite{heuser2009projeto}.
 
-\subsection{Diagrama de Entidade-Relacionamento}
+\subsubsection{Diagrama de Entidade-Relacionamento}
 \label{sec:titSecDiagER}
 
 A modelagem entidade-relacionamento é a mais utilizada e difundida técnica de modelagem de dados. Nesta técnica, o modelo de dados é representado por meio de um modelo entidade-relacionamento (modelo ER). Comumente, o modelo ER é representado graficamente por meio de um diagrama entidade-relacionamento (DER) \cite{heuser2009projeto}.
 
-A \autoref{fig:diagramaer} representa o DER do projetado neste documento.
+Essa modelagem fornece uma visão acerca dos atributos, tabelas e relacionamentos que o banco de dados terá. A \autoref{fig:diagramaer} representa o DER do projetado neste documento, utilizando a notação pé de galinha.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=13cm]{./dados/analise/diagramaer.png}
     \caption{Diagrama Entidade-Relacionamento}
+    \includegraphics[width=13cm]{./dados/analise/diagramaer.png}
     \label{fig:diagramaer}
+    \fonte{Autoria própria}
 \end{figure}
 
-\subsection{Dicionário de Dados}
+\subsubsection{Dicionário de Dados}
 \label{sec:titSecDiagERDicionario}
 
+Nas tabelas contidas nessa subseção, é possível entender a organização dos dados e as informações que serão armazenadas.
+
 \begin{landscape}
-    \subsubsection{Tabela de Propriedades}
+    \subsubsubsection{Tabela de Propriedades}
     \label{sec:titSubSecPropriedades}
 
     \begin{table}[H]
         \centering
-        \caption[Tabela \textbf{propriedades}]{Na tabela propriedades ficarão armazenados os dados referentes à propriedade.
+        \caption[Tabela propriedades]{Na tabela propriedades ficarão armazenados os dados referentes à propriedade.
             \label{tab:tabela-er-propriedades}}
         \begin{tabular}{|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{8cm}|}
             \hline
@@ -40,12 +43,12 @@ A \autoref{fig:diagramaer} representa o DER do projetado neste documento.
         \end{tabular}
     \end{table}
 
-    \subsubsection{Tabela de Talhões}
+    \subsubsubsection{Tabela de Talhões}
     \label{sec:titSubSecTalhoes}
 
     \begin{table}[H]
         \centering
-        \caption[Tabela \textbf{talhões}]{Na tabela talhões serão armazenados os dados referentes aos talhões da propriedade.
+        \caption[Tabela talhões]{Na tabela talhões serão armazenados os dados referentes aos talhões da propriedade.
             \label{tab:tabela-er-talhoes}}
         \begin{tabular}{|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{8cm}|}
             \hline
@@ -60,12 +63,12 @@ A \autoref{fig:diagramaer} representa o DER do projetado neste documento.
         \end{tabular}
     \end{table}
 
-    \subsubsection{Tabela de Análises}
+    \subsubsubsection{Tabela de Análises}
     \label{sec:titSubSecAnalises}
 
     \begin{table}[H]
         \centering
-        \caption[Tabela \textbf{análises}]{Na tabela análises serão armazenados os dados do laudo técnico referente ao talhão.
+        \caption[Tabela análises]{Na tabela análises serão armazenados os dados do laudo técnico referente ao talhão.
             \label{tab:tabela-er-analises}}
         \begin{tabular}{|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{8cm}|}
             \hline
@@ -83,12 +86,12 @@ A \autoref{fig:diagramaer} representa o DER do projetado neste documento.
         \end{tabular}
     \end{table}
 
-    \subsubsection{Tabela de Correções}
-    \label{sec:titSubSecAnalises}
+    \subsubsubsection{Tabela de Correções}
+    \label{sec:titSubSecCorrecoes}
 
     \begin{table}[H]
         \centering
-        \caption[Tabela \textbf{Correções}]{Na tabela Correções serão armazenados os dados úteis para o cálculo do equilíbrio e correção do solo.
+        \caption[Tabela correções]{Na tabela Correções serão armazenados os dados úteis para o cálculo do equilíbrio e correção do solo.
             \label{tab:tabela-er-correcoes}}
         \begin{tabular}{|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{8cm}|}
             \hline
@@ -111,13 +114,13 @@ A \autoref{fig:diagramaer} representa o DER do projetado neste documento.
         \end{tabular}
     \end{table}
 
-    \subsubsection{Tabela de Correções}
-    \label{sec:titSubSecAnalises}
+    \subsubsubsection{Tabela de Corretivos}
+    \label{sec:titSubSecCorretivos}
 
     \begin{table}[H]
         \centering
-        \caption[Tabela \textbf{Corretivos}]{Na tabela Corretivos serão armazenados os dados padrões acerca dos corretivos.
-            \label{tab:tabela-er-correcoes}}
+        \caption[Tabela corretivos]{Na tabela Corretivos serão armazenados os dados padrões acerca dos corretivos.
+            \label{tab:tabela-er-corretivos}}
         \begin{tabular}{|p{4cm}|p{3cm}|p{2cm}|p{1cm}|p{2cm}|p{8cm}|}
             \hline
             Atributo            & Classe       & Domínio  & Bytes & Restrição & Descrição       \\\hline
