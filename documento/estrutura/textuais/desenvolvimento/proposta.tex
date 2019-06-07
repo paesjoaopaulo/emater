@@ -75,12 +75,25 @@ A camada de \textit{model} do MVC é implementada no Laravel por meio do Eloquen
     \fonte{Autoria própria}
 \end{figure}
 
-No Laravel, por padrão, as classes \textit{controllers} se encontram no diretório App/Http/Controllers. Uma classe \textit{controller} no no Laravel não pode ser acessada diretamente, devendo o desenvolvedor criar rotas para este fim.
+Na \autoref{fig:exemploRotas} é possível observar um exemplo de roteador utilizado no Laravel. O roteador é usado para determinar como será tratada uma requisição, dependendo de sua URI e verbo HTTP. No exemplo da \autoref{fig:exemploRotas}, é possível identificar quatro rotas possíveis no sistema. As chamadas são feitas usando a classe \textit{Route}, seguido de um método estático que representa o verbo HTTP da requisição, que recebe como o primeiro parâmetro a URI e no segundo o \textit{controller} seguido de um arroba e o nome do método que deverá tratar aquela requisição.
 
 \begin{figure}[H]
     \centering
-    \caption{Exemplo de operações CRUD de pessoas no Laravel}
-    \includegraphics[width=13cm]{dados/figuras/exemplo_Model_Eloquent.png}
+    \caption{Exemplo de roteador no Laravel}
+    \includegraphics[width=13cm]{dados/figuras/exemplo_Rotas_Laravel.png}
+    \label{fig:exemploRotas}
+    \fonte{Autoria própria}
+\end{figure}
+
+
+No Laravel, por padrão, as classes \textit{controllers} se encontram no diretório App/Http/Controllers. Uma classe \textit{controller} no no Laravel não pode ser acessada diretamente, devendo o desenvolvedor criar rotas para este fim.
+
+Na \autoref{fig:exemploController} é possível observar um exemplo de \textit{controller} no Laravel. O método \emph{store} é chamado quando uma requisição \emph{POST} é feita para a URI \emph{/properties}. Ao receber a requisição primeiramente é feita a validação dos dados e depois a criação do recurso na base de dados e então o usuário é redirecionada à listagem de propriedades.
+
+\begin{figure}[H]
+    \centering
+    \caption{Exemplo de controller no Laravel}
+    \includegraphics[width=13cm]{dados/figuras/exemplo_Controller_Laravel.png}
     \label{fig:exemploController}
     \fonte{Autoria própria}
 \end{figure}
@@ -130,19 +143,31 @@ Na \autoref{fig:excodeception} pode ser observado a facilidade de leitura e escr
 \label{sec:ferramentas}
 Nesta sessão serão apresentadas as ferramentas que serão úteis para o desenvolvimento e gerenciamento do projeto.
 
-\subsection{Astah UML}
+\subsection{Astah Community}
 \label{sub:astah}
 
-É um software
+A ferramenta Astah Community é uma excelente ferramenta para modelagem UML. Por ser uma versão gratuita, possui algumas limitações. Apesar disso, essa versão satisfaz às necessidades do projeto visto que oferece suporte para a criação dos diagramas de caso de uso, classe e implantação.
 
 \subsection{Trello}
 \label{sub:trello}
 
+O Trello é uma ferramenta de gerenciamento de projetos, simples e intuitiva baseada no conceito de kanban, recomendada para o gerenciamento de tarefas tanto individual quanto de equipes \cite{cardosopedro2016}.
+
+Os projetos no Trello são representados por quadros. Dentro de cada quadro temos as listas, que aglomeram cartões. A menor configuração de listas recomendada em um projeto são em três listas: A fazer, fazendo e feito. Cada cartão representa uma tarefa e pode ser movido de uma lista para outra de acordo com o estado da tarefa.
+
+Os cartões possuem diversas características, dentre as quais se destacam o prazo para conclusão, o rótulo, a possibilidade de criar \textit{checklists}, anexos e comentários.
+
 \subsection{MySQL Workbench}
 \label{sub:workbench}
 
+O MySQL Workbench é uma ferramenta gratuita para a modelagem de dados, que auxilia os desenvolvedores na criação de modelos e administração de banco de dados MySQL. Ela possui diversas características muito úteis como a engenharia reversa e sincronização entre bases de dados.
+
+Além disso, o Workbench é multiplataforma, oferecendo a aplicação nos ambientes Widnows, Linux e Mac OS. Ela fornece aos usuários diversas ferramentas para modelagem de banco de dados, realização de consultas com SQL e administração de banco.
+
 \subsection{Visual Studio Code}
 \label{sub:vscode}
+
+O Visual Studio Code é uma ferramenta gratuita, de código aberto, que tem ganhado grande importância no cenário de desenvolvimento de software. Ela possui suporte a diversas linguagens de programação, dentre as quais o PHP e JavaScript, que serão as linguagens essenciais para a construção da aplicação.
 
 \subsection{Git}
 \label{sub:git}
@@ -157,7 +182,7 @@ A aplicação será versionada por meio do Git e terá o código-fonte hospedado
     \fonte{Autoria própria}
 \end{figure}
 
-Conforme exemplificado na \ref{fig:exemplogit}, o repositório será divido em duas \textit{branches} principais: \textit{developer} e \textit{master}. A \textit{master} será a versão utilizada para a aplicação em produção. Enquanto a \textit{developer}, para o ambiente de homologação.
+Conforme exemplificado na \autoref{fig:exemplogit}, o repositório será divido em duas \textit{branches} principais: \textit{developer} e \textit{master}. A \textit{master} será a versão utilizada para a aplicação em produção. Enquanto a \textit{developer}, para o ambiente de homologação.
 
 Quando uma nova funcionalidade precisa ser desenvolvida, é criada uma \textit{branch} específica a partir da versão de homologação. Após a conclusão da tarefa o desenvolvedor deve fazer um \textit{pull request} ou \textit{merge request} para a versão de homologação.
 
@@ -189,15 +214,24 @@ Já na fase de gerenciamento são definidas as \textit{sprints}, formando o \tex
 \subsection{Kanban}
 \label{subsec:kanban}
 
-Para o gerenciamento de tarefas, será utilizado o conceito de quadros Kanban. As tarefas serão divididas em seis quadros que são:
+Para o gerenciamento de tarefas, será utilizado o conceito de quadros \textit{kanban}, utilizando a ferramenta Trello. As tarefas serão divididas em seis quadros, demonstrados na \autoref{fig:trelloquadro}, que são:
+
 \begin{itemize}
     \item \textbf{\textit{Product backlog}}: Os requisitos que foram definidos para o produto
     \item \textbf{\textit{Sprint backlog}}: Os requisitos que devem ser desenvolvidos na \textit{sprint} atual
     \item \textbf{\textit{Doing}}: Os requisitos que estão sendo desenvolvidos no momento
     \item \textbf{\textit{Done}}: Os requisitos que foram finalizados
-    \item \textbf{\textit{Test}}: Os requisitos que após a finalização, foram enviados para teste em um sevidor de homologação.
+    \item \textbf{\textit{Test}}: Os requisitos que após a finalização, foram enviados para teste em um servidor de homologação.
     \item \textbf{\textit{Deploy}}: Os requisitos que foram homologados e podem ir para produção.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \caption{Quadro \textit{kanban} do projeto}
+    \includegraphics[width=13cm]{dados/figuras/quadro_trello.png}
+    \label{fig:trelloquadro}
+    \fonte{Autoria própria}
+\end{figure}
 
 \subsection{Test Driven Development}
 \label{subsec:tdd}
@@ -232,8 +266,6 @@ O modelo apresentado na \autoref{fig:ciclotdd} representa as etapas de uma \text
 
 O controle do estado de cada requisito será feito usando o Trello, utilizando o conceito de Kanban. Após todos os requisitos passarem pelo processo, a aplicação deve estar totalmente funcional, executando todas as tarefas que foram enumeradas na \autoref{rf:tabela}.
 
-\clearpage
-
 \section{ARQUITETURA DO SOFTWARE}
 \label{sub:arquitetura}
 
@@ -247,7 +279,10 @@ Finalmente, a camada \textit{view} representa a interface pela qual o usuário i
 
 \section{CRONOGRAMA DO PROJETO}
 \label{sec:cronograma}
-O cronograma do abaixo demonstra a distribuição das atividades do projeto em relação ao tempo. A data da primeira reunião com o professor orientador foi considerada a data inicial do cronograma, na qual foi definido o tema a ser desenvolvido. A duração de cada atividade está na unidade de dias.
+
+O gráfico abaixo representa o cronograma do projeto. O desenvolvimento será divido em sprints, que serão 
+
+O gráfico do abaixo demonstra a distribuição das atividades do projeto em relação ao tempo. A data da primeira reunião com o professor orientador foi considerada a data inicial do cronograma, na qual foi definido o tema a ser desenvolvido. A duração de cada atividade está na unidade de dias.
 
 \begin{landscape}
 

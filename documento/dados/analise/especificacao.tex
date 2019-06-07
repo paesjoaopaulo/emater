@@ -2,560 +2,3440 @@
 \label{sec:titSecEspReq}
 
 Texto...
+\begingroup
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS300} & \textbf{Cadastrar dados para a correção do cálcio e magnésio no solo}                  \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário informar dados acerca da correção do cálcio no solo. \\
-        \hline
-        Pré-condições  & O usuário deve estar logado no sitema                                                  \\
-        \hline
-        Atores         & Usuário                                                                                \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                               \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                               \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informa um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                               \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  ESPECIFICAÇÃO DE REQUISITOS DO SISTEMA
+\\\end{enumerate}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS301} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                    \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                     \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                     \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                     \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS001}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrar informações do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por cadastrar informações do solo de um
+produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões referentes ao gerenciamento de uma
+  propriedade.
+\item
+  O usuário clica sobre o botão ``Cadastrar Nova Propriedade''.
+\item
+  O usuário cadastra as informações do solo de um produtor que são
+  exibidas na forma de um formulário, com os seguintes atributos: nome do produtor, data, município, lote, área total, talhão, área do talhão, matrícula do lote, textura de solo (argiloso ou textura média), sistema de cultivo (plantio direto ou convencional), profundidade da amostra de solos e número do resultado da análise de solos.
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário clica sobre o botão continuar ou salvar.
+\item
+  O sistema registra o cadastro da propriedade.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso não possua o nome do produtor no dropdown, o sistema permitirá
+  inserir um novo nome.
+\item
+  Caso não possua o nome do município no dropdown, o sistema permitirá
+  inserir um novo município.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o nome do produtor já exista, uma mensagem informando que este já
+  está cadastrado no sistema será exibida.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS302} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                    \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                     \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS303} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS002}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Remover cadastro de propriedade
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por remover um cadastro com informações do
+solo de um produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro de propriedade de algum produtor
+referente ao requisito de sistema \textbf{RS001}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre um ícone em forma de ``X'' no canto direito do
+  cadastro.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove o cadastro referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário também pode remover o cadastro da propriedade através do botão
+de editar que é exibido na forma de um ícone na parte direita do
+cadastro. Nesse caso, a remoção dos dados será manual.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  do solo de um produtor serão também excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS304} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS305} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS003}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar informações do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por alterar informações do solo de um
+produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro de propriedade de algum produtor
+referente ao requisito de sistema \textbf{RS001}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma ``tabela''.
+\item
+  O usuário clica sobre o botão de editar que é exibido na forma de um
+  ícone na parte direita do cadastro.
+\item
+  O mesmo formulário que é exibido no requisito de sistema \textbf{RS001} é
+  exibido, com as informações do solo do produtor podendo ser alteradas.
+\item
+  O usuário clica sobre o botão continuar.
+\item
+  O sistema registra o cadastro da propriedade.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário não precisa continuar o passo a passo das outras telas, basta
+clicar sobre o botão salvar que automaticamente o sistema registra a
+alteração.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o nome do produtor já exista, uma mensagem informando que este já
+  está cadastrado no sistema será exibida.
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  do solo de um produtor serão também alterados.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS306} & \textbf{Alterar dados para a correção do cálcio e magnésio no solo}          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS307} & \textbf{Exibir o percentual de cálcio ideal no solo}                         \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS004}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar informações do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por listar as informações do solo de um
+produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro de propriedade de algum produtor
+referente ao requisito de sistema \textbf{RS001}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o cadastro que deseja listar as informações.
+\item
+  O sistema mostra para o usuário as informações referentes ao cadastro
+  selecionado.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário pode fazer a utilização do filtro na parte superior da tabela
+através do nome do produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS308} & \textbf{Exibir teor de magnésio atualmente no solo}                          \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS309} & \textbf{Exibir o percentual ideal de magnésio no solo}                       \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS005}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrar nutrientes do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela inserção dos nutrientes coletados na
+análise do solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter inserido as informações do solo do produtor
+referentes ao requisito de sistema \textbf{RS001}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o cadastro que deseja cadastrar os nutrientes do
+  solo.
+\item
+  No formulário das informações da propriedade do produtor, o usuário
+  clica no botão continuar.
+\item
+  O usuário informa os teores de Fósforo, Potássio, Cálcio Magnésio,
+  Enxofre, Alumínio e H
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS310} & \textbf{Calcular e exibir o valor do magnésio no solo após as correções}     \\
-        \hline
-        Sumário        & O sistema deve permitir o usuário alterar os dados sobre a correção do solo. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                   \\
-        \hline
-        Atores         & Usuário                                                                      \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                    \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                    \\
-        \hline
-    \end{tabular}
-\end{quadro}
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    AL nos campos que são fornecidos na forma de um formulário. Os
+    campos de Enxofre, Alumínio e H + AL não possuem obrigatoriedade de
+    preenchimento.
+  \end{itemize}
+\item
+  O usuário clica sobre o botão continuar.
+\item
+  O sistema registra a inserção dos teores.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário também pode clicar sobre o botão salvar para que o cadastro
+  dos nutrientes seja registrado.
+\item
+  O cadastro dos nutrientes do solo também pode ser feito após o
+  cadastro das informações do solo referentes ao requisito do sistema
+  \textbf{RS001}, através do botão continuar na parte inferior do formulário.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS312} & \textbf{Calcular e exibir a quantidade de corretivo a ser aplicada no solo.}                           \\
-        \hline
-        Sumário        & O sistema deve calcular a quantidade a ser aplicada, em toneladas por hectare, do corretivo informado. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                                             \\
-        \hline
-        Atores         & Usuário                                                                                                \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                                              \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                                              \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                                              \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS314} & \textbf{Exibir a quantidade de enxofre que o corretivo fornecerá à terra}                                      \\
-        \hline
-        Sumário        & O sistema deve exibir o valor, em quilogramas por hectare, da quantidade de enxofre que o corretivo fornecerá. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                                                     \\
-        \hline
-        Atores         & Usuário                                                                                                        \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                                                      \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                                                      \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                                                      \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS006}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Remover nutrientes inseridos
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por remover um cadastro com informações do
+solo de um produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção dos nutrientes coletados na
+análise do solo referente ao requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre um ícone em forma de ``X'' no canto direito do
+  cadastro.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove o nutriente referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário também pode remover os nutrientes inseridos através do botão
+de editar que é exibido na forma de um ícone na parte direita do
+cadastro. Nesse caso, a remoção dos dados será manual.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas aos nutrientes do solo serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS315} & \textbf{Exibir a quantidade de enxofre necessária}                                                              \\
-        \hline
-        Sumário        & O sistema deve exibir a quantidade suficiente, em quilogramas por hectare, da quantidade de enxofre necessária. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item O usuário deverá acessar uma ??análise?? já existente
-        \end{itemize}                                                                                      \\
-        \hline
-        Atores         & Usuário                                                                                                         \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item Informa o percentual de cálcio desejado na CTC
-            \item Seleciona qual fonte de cálcio será utilizada na correção
-            \item Informa o custo médio em R\$/ha do corretivo
-            \item Informa o percentual de PRNT do corretivo
-            \item Informa o teor de CaO do corretivo
-        \end{itemize}                                                                                                       \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Caso o usuário não saiba o teor de CaO, será utilizado o valor médio do corretivo
-        \end{itemize}                                                                                                       \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Caso o usuário informe um valor percental fora do intervalo de 0 a 100, não poderá proseguir com o preenchimento de outros campos.
-            \item Caso o usuário informe um corretivo que não exista, uma mensagem de erro deverá ser exibida.
-        \end{itemize}                                                                                                       \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\end{longtable}
 
-\begin{quadro}[H]
-    \begin{tabular}{|p{3cm}|p{11cm}|}
-        \hline
-        \textbf{RS316} & \textbf{Calcular e exibir o valor de V\% atual, ideal e após as correções}           \\
-        \hline
-        Sumário        & O sistema deve calcular e exibir os valores de V\% atual, ideal e após as correções. \\
-        \hline
-        Pré-condições  & \begin{itemize}
-            \item O usuário deve estar logado
-            \item A etapa de preenchimento dos dados da propriedade deverá estar preenchida
-            \item A etapa de preenchimento da análise do solo deverá estar preenchida
-            \item A etapa de preenchimento da matéria orgânica deverá está preenchida
-            \item A etapa de preenchimento da correção do fósforo deverá estar preenchida
-            \item A etapa de preenchimento da correção do postássio deverá estar preenchida
-            \item A etapa de preenchimento da correção do cálcio e magnésio' deverá estar preenchida
-        \end{itemize}                                                           \\
-        \hline
-        Atores         & Usuário                                                                              \\
-        \hline
-        Descrição      &
-        \begin{itemize}
-            \item O sistema realiza o cálculo do V\% atual
-            \item O sistema exibe o resultado do cálculo do V\% atual
-            \item O sistema realiza o cálculo do V\% após as correções
-            \item O sistema exibe o resultado do cálculo do V\% após as correções
-            \item O sistema realiza o cálculo do V\% ideal
-            \item O sistema exibe o resultado do cálculo do V\% ideal
-        \end{itemize}                                                                            \\
-        \hline
-        Alternativas   &
-        \begin{itemize}
-            \item Sem alternativas
-        \end{itemize}                                                                            \\
-        \hline
-        Exceção        &
-        \begin{itemize}
-            \item Sem exceções
-        \end{itemize}                                                                            \\
-        \hline
-    \end{tabular}
-\end{quadro}
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS008}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar nutrientes do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por alterar nutrientes do solo que foram
+inseridos.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção dos nutrientes coletados na
+análise do solo referente ao requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o botão de editar que é exibido na forma de um
+  ícone na parte direita do cadastro que deseja alterar.
+\item
+  No formulário das informações da propriedade do produtor, o usuário
+  clica no botão continuar.
+\item
+  O usuário realiza as alterações nos teores do solo já inseridos.
+\item
+  O usuário clica no botão continuar.
+\item
+  O sistema registra a alteração feita.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário também pode clicar sobre o botão salvar para que as alterações
+dos nutrientes sejam registradas.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas aos nutrientes do solo serão alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS009}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar nutrientes do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por listar os nutrientes do solo de um
+produtor que foram inseridos.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção dos nutrientes coletados na
+análise do solo referente ao requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre a inserção que deseja listar.
+\item
+  O sistema mostra para o usuário as informações referentes.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS010}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir valores ideais dos nutrientes inseridos
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por mostrar na tela os valores considerados
+ideais para os nutrientes inseridos.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção dos nutrientes coletados na
+análise do solo referente ao requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o cadastro que deseja ver os valores ideais dos
+  nutrientes inseridos.
+\item
+  O sistema mostra para o usuário os valores ideais de cada nutriente
+  inserido na parte inferior da tela, de acordo com a textura de solo
+  feito no cadastro de informações do solo.
+\item
+  No caso de um solo ``Argiloso'', os seguintes valores serão exibidos:
+  ``9,0'' para o Fósforo, ``0,35'' para o Potássio, ``6,0'' para o
+  Cálcio, ``1,63'' para o Magnésio e ``3,67'' para o Enxofre.
+\item
+  Caso seja cadastrado um solo de ``Textura Média'', a exibição passa a
+  ser: ``12,0'' para o Fósforo, ``0,25'' para o Potássio, ``4,0'' para o
+  Cálcio, ``1,0'' para o Magnésio e ``6,0'' para o Enxofre.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+A exibição dos valores considerados ideais dos nutrientes inseridos
+também pode ser feito depois do cadastro das informações do solo
+referentes ao requisito do sistema \textbf{RS001}, logo que o usuário insere os
+nutrientes do solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS011}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir valores dos nutrientes após correções
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por mostrar na tela os valores corrigidos dos
+nutrientes inseridos.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção dos nutrientes coletados na
+análise do solo referente ao requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o cadastro que deseja ver os valores após as
+  correções dos nutrientes inseridos.
+\item
+  O sistema exibe para cada nutriente o seu valor após as correções na
+  parte inferior da tela.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS012}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrar matéria orgânica
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O caso de uso é responsável pela inserção do teor da matéria orgânica do
+solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deve ter inserido as informações do solo do produtor
+  referentes ao requisito de sistema \textbf{RS001}.
+\item
+  O usuário deve ter inserido as informações dos teores coletados na
+  análise do solo referentes ao requisito de sistema \textbf{RS005}.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o cadastro que deseja cadastrar o a matéria
+  orgânica do solo.
+\item
+  No formulário das informações da propriedade do produtor, o usuário
+  clica no botão continuar.
+\item
+  O usuário informa a quantidade de matéria orgânica (g.dm³, porcentagem
+  ou carbono).
+\item
+  O usuário clica sobre o botão continuar.
+\item
+  O sistema registra a inserção da matéria orgânica.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário também pode clicar sobre o botão salvar para que o cadastro
+  da matéria orgânica seja registrado.
+\item
+  O cadastro da matéria orgânica também pode ser feito após o cadastro
+  das informações do solo referentes ao requisito do sistema \textbf{RS001},
+  através do botão continuar na parte inferior do formulário.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS013}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Remover matéria orgânica inserida
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por remover as informações da matéria orgânica
+inserida do solo de um produtor.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção da matéria orgânica do solo
+referente ao requisito de sistema \textbf{RS012}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre um ícone em forma de ``X'' no canto direito do
+  cadastro.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove a matéria orgânica referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário também pode remover a matéria orgânica inserida através do
+botão de editar que é exibido na forma de um ícone na parte direita do
+cadastro. Nesse caso, a remoção dos dados será manual.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à matéria orgânica do solo também serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS014}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar matéria orgânica do solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por alterar a matéria orgânica do solo que foi
+inserida.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção da matéria orgânica coletados na
+análise do solo referente ao requisito de sistema \textbf{RS012}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre o botão de editar que é exibido na forma de um
+  ícone na parte direita do cadastro que deseja alterar.
+\item
+  No formulário das informações da propriedade do produtor, o usuário
+  clica no botão continuar.
+\item
+  O usuário realiza as alterações da matéria orgânica.
+\item
+  O usuário clica no botão continuar.
+\item
+  O sistema registra a alteração feita.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário também pode clicar sobre o botão salvar para que a alteração
+da matéria orgânica seja registrada.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à matéria orgânica do solo também serão alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS015}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar matéria orgânica
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por listar a matéria orgânica do solo de um
+produtor que foi inserido.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção da matéria orgânica coletado na
+análise do solo referente ao requisito de sistema \textbf{RS012}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre a inserção que deseja listar.
+\item
+  O sistema mostra para o usuário as informações referentes.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS017}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir teor ideal da Matéria Orgânica
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por mostrar na tela o valor considerado ideal
+da matéria orgânica
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado a inserção da matéria orgânica coletado na
+análise do solo referente ao requisito de sistema \textbf{RS012}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões na parte superior referentes ao
+  gerenciamento de uma propriedade, e na parte inferior exibe os
+  cadastros realizados pelo usuário na forma de uma tabela.
+\item
+  O usuário clica sobre a inserção que deseja ver o teor ideal da
+  matéria orgânica.
+\item
+  O sistema mostra para o usuário as informações referentes (o valor
+  independe de qualquer variável, trata-se de um intervalo padrão de 3,0
+  a 4,0\%).
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+A exibição do valor considerado ideal da matéria orgânica inserida
+também pode ser feito depois do cadastro das informações do solo
+referentes ao requisito do sistema \textbf{RS001}, logo que o usuário insere os
+teores do solo e a matéria orgânica.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS018}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrar informações relacionadas à correção/recuperação do Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela inserção de valores relacionados à
+correção/recuperação do Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter inserido informações relacionadas ao Fósforo conforme
+descrito no requisito de sistema \textbf{RS005}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema;
+\item
+  O sistema exibe uma tela com botões referentes ao gerenciamento de
+  informações relacionadas à correção/recuperação do Fósforo.
+\item
+  O usuário clica no botão ``Cadastrar correção/recuperação do
+  Fósforo''.
+\item
+  O usuário insere os valores relacionados ao Fósforo tais como:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  teor a ser atingido;
+\item
+  fonte a ser utilizada;
+\item
+  percentual de eficiência.
+\end{itemize}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O campo referente à fonte a ser utilizada deve ser um valor inteiro
+  preenchido em um intervalo de 0 à 12, sendo:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  ``1'' para Superfosfato Simples;
+\item
+  ``2'' para Superfosfato Triplo;
+\item
+  ``3'' para MAP; 
+\item
+  ``4'' para DAP;
+\item
+  ``5'' para Termofosfato Yoorin;
+\item
+  ``6'' para Fosfato Reativo Arad;
+\item
+  ``7'' para Fosfato Reativo de Gafsa;
+\item
+  ``8'' para Fosfato Reativo Daoui;
+\item
+  ``9'' para Fosfato Natural Patos de Minas;
+\item
+  ``10'' para Escória de Thomas;
+\item
+  ``11'' para Ácido Fosfórico;
+\item
+  ``12'' para Multifosfato Magnesiano.
+\end{itemize}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS019}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Excluir informações relacionadas à correção/recuperação do Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela remoção de valores relacionados à
+correção/recuperação do Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Fósforo conforme descrito no requisito de sistema \textbf{RS018}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Fósforo em forma de tabela.
+\item
+  O usuário clica no ícone com um ``X'' ao lado dos valores que deseja
+  remover.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário com as opções
+  de ``OK'' e ``CANCELAR''.
+\item
+  O usuário clica em OK. 
+\item
+  O sistema remove o cadastro referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário clique no botão ``CANCELAR'' descrito no passo 4, o
+  sistema deve retornar ao passo 2.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à correção/recuperação do Fósforo serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS020}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar informações relacionadas à correção/recuperação do
+Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela alteração de valores relacionados à
+correção/recuperação do Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Fósforo conforme descrito no requisito de sistema \textbf{RS018}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Fósforo em forma de tabela.
+\item
+  O usuário clica em um ícone que representa a edição.
+\item
+  O mesmo formulário descrito no requisito de sistema \textbf{RS018}é exibido,
+  com as informações do Fósforo podendo ser editadas.
+\item
+  O usuário faz as alterações. 
+\item
+  O usuário clica no botão confirmar.
+\item
+  O sistema registra as novas informações relacionadas ao Fósforo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à correção/recuperação do Fósforo serão alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS021}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar informações relacionadas à correção/recuperação do Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela listagem de valores relacionados à
+correção/recuperação do Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Fósforo conforme descrito no requisito de sistema \textbf{RS018}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Fósforo em forma de tabela.
+\item
+  O usuário clica sobre o cadastro que deseja listas as informações.
+\item
+  O sistema exibe ao usuário as informações referentes ao cadastro
+  selecionado.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS022}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir valores a serem aplicados no processo de correção/recuperação de
+Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por exibir valores úteis para o processo de
+correção/recuperação do Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter inserido as informações quanto ao teor de Fósforo a
+ser atingido, fonte de Fósforo a utilizar e eficiência do Fósforo
+conforme descrito no requisito de sistema \textbf{RS018}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Sistema
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O usuário preenche os dados relacionados ao processo de
+  correção/recuperação do Fósforo.
+\item
+  O sistema exibe logo depois do formulário a quantidade de Fósforo a
+  ser aplicada (em kg/hectare) e também seu custo (em R\$/ha).
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Nenhum valor será exibido caso o usuário tenha deixado de preencher
+algum campo conforme descrito no requisito de sistema \textbf{RS018}.
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS023}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrarvalor/ton. (R\$) no processo relacionado às fontes de Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por inserir dados referente às fontes de
+Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões referentes ao gerenciamento de
+  informações relacionadas às fontes do Fósforo.
+\item
+  O usuário clica no botão ``Cadastrar fontes de Fósforo''.
+\item
+  O usuário insere valores relacionados às fontes de Fósforo tais como:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Superfosfato simples;
+\item
+  Superfosfato triplo;
+\item
+  MAP;
+\item
+  DAP;
+\item
+  Yoorin;
+\item
+  Fosfato Arad;
+\item
+  Fosfato Gafsa;
+\item
+  Fosfato Daoui;
+\item
+  Fosfato Patos Minas;
+\item
+  Escória de Thomas;
+\item
+  Ácido Fosfórico;
+\item
+  Multifosfato magnesiano.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário clica no botão continuar.
+\item
+  O sistema registra a inserção dos valores.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS024}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Excluirvalor/ton. (R\$) no processo relacionado às fontes de Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por remover dados referentes às fontes de
+Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações
+relacionadas às fontes de Fósforo conforme descrito no requisito
+de sistema \textbf{RS023}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Fósforo em forma de tabela.
+\item
+  O usuário clica no ícone com um ``X'' ao lado dos valores que deseja
+  remover. 
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário com as opções
+  ``OK'' e ``CANCELAR''.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove o cadastro referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário clique no botão ``CANCELAR'' descrito no passo 4, o
+  sistema executa o passo 2.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas às fontes de Fósforo serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS025}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterarvalor/ton. (R\$) no processo relacionado às fontes de Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por alterar dados referentes às fontes de
+Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas às
+fontes de Fósforo conforme descrito no requisito de sistema \textbf{RS023}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Fósforo em forma de tabela.
+\item
+  O usuário clica em um ícone que representa a edição.
+\item
+  O mesmo formulário descrito no requisito de sistema \textbf{RS023}é exibido,
+  com as informações das fontes de Fósforo podendo ser editadas.
+\item
+  O usuário faz as alterações.
+\item
+  O usuário clica no botão confirmar.
+\item
+  O sistema registra as novas informações relacionadas às fontes de
+  Fósforo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas às fontes de Fósforo serão alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS026}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar informações relacionadas às fontes de Fósforo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela listagem de valores relacionados às
+fontes de Fósforo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas às
+fontes de Fósforo conforme descrito no requisito de sistema \textbf{RS023}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Fósforo em forma de tabela.
+\item
+  O usuário clica sobre o cadastro que deseja listar as informações.
+\item
+  O sistema exibe ao usuário as informações referentes ao cadastro
+  selecionado.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS027}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrar informações relacionadas à correção/recuperação de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela inserção de valores relacionados à
+correção/recuperação de Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões referentes ao gerenciamento de
+  informações relacionadas à correção/recuperação de Potássio.
+\item
+  O usuário clica no botão ``Cadastrar correção/recuperação de
+  Potássio''.
+\item
+  O usuário insere valores relacionados ao Potássio tais como:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  participação do Potássio na CTC;
+\item
+  fonte de Potássio a ser utilizada.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário clica em continuar.
+\item
+  O sistema registra a inserção dos valores.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No campo referente à fonte de Potássio a ser utilizada, o valor
+  informado deve ser um número inteiro dentro do intervalo de 1 à 3,
+  onde:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  ``1'' representa Cloreto de Potássio;
+\item
+  ``2'' representa Sulfato de Potássio.
+\item
+  ``3'' representa Sulfato de Potássio e Magnésio.
+\end{itemize}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS028}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Excluir informações relacionadas à correção/recuperação de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela remoção de valores relacionados à
+correção/recuperação de Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Fósforo conforme descrito no requisito de sistema \textbf{RS027}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Potássio em forma de tabela.
+\item
+  O usuário clica no ícone com um ``X'' ao lado dos valores que deseja
+  remover.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário com as opções
+  de ``OK'' e ``CANCELAR''.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove o cadastro referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No passo 4, caso o usuário clique em ``CANCELAR'', o sistema executa o
+  passo 2.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à correção/recuperação do Potássio serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS029}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar informações relacionadas à correção/recuperação de
+Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela alteração de valores relacionados à
+correção/recuperação de Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Potássio conforme descrito no requisito de sistema \textbf{RS027}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Potássio em forma de tabela.
+\item
+  O usuário clica em um ícone que representa a edição.
+\item
+  O mesmo formulário descrito no requisito de sistema \textbf{RS027}é exibido,
+  com as informações do Potássio podendo ser editadas.
+\item
+  O usuário faz as alterações.
+\item
+  O usuário clica no botão confirmar.
+\item
+  O sistema registra as novas informações relacionadas ao Potássio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas à correção/recuperação do Potássio serão alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS030}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar informações relacionadas à correção/recuperação de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela listagem de valores relacionados à
+correção/recuperação de Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas ao
+Potássio conforme descrito no requisito de sistema \textbf{RS027}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados ao Potássio em forma de tabela.
+\item
+  O usuário clica sobre o cadastro que deseja listas as informações.
+\item
+  O sistema exibe ao usuário as informações referentes ao cadastro
+  selecionado.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS031}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir valores relacionados à correção/recuperação do Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por dispor dados que dizem respeito à
+correção/recuperação do Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter inserido as informações do Potássio conforme descrito
+no requisito de sistema \textbf{RS027}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O usuário preenche os dados relacionados ao processo de
+  correção/recuperação do Potássio.
+\item
+  O sistema exibe dados relacionados ao percentual de participação atual
+  do Potássio na CTC, percentual de participação do Potássio na CTC após
+  correção, percentual de participação ideal do Potássio na CTC e a
+  fonte de Potássio a ser utilizada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS032}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Cadastrarvalor/ton. (R\$) no processo relacionado às fontes de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por inserir dados referente às fontes de
+Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com botões referentes ao gerenciamento de
+  informações relacionadas às fontes de Potássio.
+\item
+  O usuário clica no botão ``Cadastrar fontes de Potássio''.
+\item
+  O usuário insere valores relacionados às fontes de Potássio tais como:
+\\\end{enumerate}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Cloreto de Potássio;
+\item
+  Sulfato de Potássio;
+\item
+  Sulfato de Potássio/Magnésio.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário clica no botão continuar.
+\item
+  O sistema registra a inserção dos valores.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS033}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Excluirvalor/ton. (R\$) no processo relacionado às fontes de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por remover dados referentes às fontes de
+Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas às
+fontes de Potássio conforme descrito no requisito de sistema \textbf{RS032}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Potássio em forma de tabela.
+\item
+  O usuário clica no ícone com um ``X'' ao lado dos valores que deseja
+  remover.
+\item
+  O sistema exibe uma mensagem de confirmação ao usuário com as opções
+  ``OK'' e ``CANCELAR''.
+\item
+  O usuário clica em OK.
+\item
+  O sistema remove o cadastro referente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário clique no botão ``CANCELAR'' descrito no passo 4, o
+  sistema executa o passo 2.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da exclusão, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas às fontes de Potássio serão excluídas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS034}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterarvalor/ton. (R\$) no processo relacionado às fontes de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável por alterar dados referentes às fontes de
+Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas às
+fontes de Potássio conforme descrito no requisito de sistema \textbf{RS032}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Potássio em forma de tabela.
+\item
+  O usuário clica em um ícone que representa a edição.
+\item
+  O mesmo formulário descrito no requisito de sistema \textbf{RS032} é exibido,
+  com as informações das fontes de Potássio podendo ser editadas.
+\item
+  O usuário faz as alterações.
+\item
+  O usuário clica no botão confirmar.
+\item
+  O sistema registra as novas informações relacionadas às fontes de
+  Potássio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas às fontes de Potássio serão alteração.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+ 
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS035}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Listar informações relacionadas às fontes de Potássio
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O requisito é responsável pela listagem de valores relacionados às
+fontes de Potássio.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve ter realizado o cadastro das informações relacionadas às
+fontes de Potássio conforme descrito no requisito de sistema \textbf{RS032}.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário loga no sistema.
+\item
+  O sistema exibe uma tela com todos os registros já cadastrados
+  relacionados às fontes de Potássio em forma de tabela.
+\item
+  O usuário clica sobre o cadastro que deseja listar as informações.
+\item
+  O sistema exibe ao usuário as informações referentes ao cadastro
+  selecionado.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS036}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Informar dados para a correção do cálcio e magnésio no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve permitir o usuário informar dados acerca da correção do
+cálcio no solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O usuário deve estar logado no sistema.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Informa o percentual de cálcio desejado na CTC.
+\item
+  Seleciona qual fonte de cálcio será utilizada na correção.
+\item
+  Informa o custo médio em R\$/ha do corretivo.
+\item
+  Informa o percentual de PRNT do corretivo.
+\item
+  Informa o teor de CaO do corretivo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário não saiba o teor de CaO, será utilizado o valor médio
+  do corretivo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário informe um corretivo que não exista, uma mensagem de
+  erro deverá ser exibida.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS037}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Alterar dados para a correção do cálcio e magnésio no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário, o percentual de Cálcio na CTC
+atual (antes das correções).
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deve estar logado.
+\item
+  O usuário deverá acessar uma análisejá existente.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Informa o percentual de cálcio desejado na CTC.
+\item
+  Seleciona qual fonte de cálcio será utilizada na correção.
+\item
+  Informa o custo médio em R\textbackslash{}\$/ha do corretivo.
+\item
+  Informa o percentual de PRNT do corretivo.
+\item
+  Informa o teor de CaO do corretivo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário não saiba o teor de CaO, será utilizado o valor médio
+  do corretivo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Caso o usuário informe um corretivo que não exista, uma mensagem de
+  erro deverá ser exibida.
+\item
+  No ato da alteração, uma mensagem de aviso deverá ser exibida,
+  informando ao usuário que todos os dados que dependem das informações
+  relacionadas ao processo de correção do cálcio e magnésio serão
+  alteradas.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS038}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir o teor de cálcio atualmente no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário, o percentual de Cálcio na CTC
+atual (antes das correções)
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe em um input read-onlyo percentual de cálcio al no
+  solo, de acordo com a textura do solo selecionada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS039}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir o teor de cálcio ideal no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário, o percentual ideal de Cálcio na
+CTC.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter calculado o percentual de cálcio ideal na CTC.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o percentual de cálcio ideal no solo, de acordo com a
+  textura do solo selecionada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS040}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Calcular o percentual de cálcio ideal no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário, o percentual ideal de Cálcio na
+CTC.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o percentual de cálcio ideal no solo, de acordo com a
+  textura do solo selecionada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS041}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir teor de magnésio atualmente no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário o percentual de Magnésio atual na
+CTC.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o percentual de cálcio atual no solo, de acordo com a
+  textura do solo selecionada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS042}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir o percentual ideal de magnésio no solo
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário o percentual de Magnésio ideal na
+CTC.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o percentual de magnésio ideal no solo, de acordo com
+  a textura do solo selecionada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS043}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir o valor do magnésio no solo após as correções
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve apresentar ao usuário o percentual de Magnésio na CTC
+após as correções.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter preenchido os dados sobre a correção do cálcio e
+  magnésio no solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o percentual de magnésio no solo após as correções.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS044}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Calcular o teor de magnésio no solo após as correções
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve calcular o percentual de Magnésio na CTC após as
+correções.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter preenchido a etapa de correção do cálcio e
+  magnésio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema calcula o valor do magnésio no solo após as correções.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS045}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir a quantidade de corretivo de cálcio e magnésio a ser aplicada no
+solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve exibir a quantidade a ser aplicada, em toneladas por
+hectare, do corretivo informado.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter calculado a quantidade de corretivo a ser
+  aplicada no solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe a quantidade em toneladas por hectare (ton/ha) de
+  corretivo a ser utilizada na correção do cálcio e magnésio do solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS046}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Calcular a quantidade de corretivo a ser aplicada no solo.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve calcular a quantidade a ser aplicada, em toneladas por
+hectare, do corretivo informado.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter preenchido a etapa de correção do cálcio e
+  magnésio.
+\item
+  O usuário deverá ter informado as informações da propriedade.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema calcula a quantidade de corretivo a ser utilizada.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS047}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir a quantidade de enxofre que o corretivo fornecerá à terra
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve exibir o valor, em quilogramas por hectare, da quantidade
+de enxofre que o corretivo fornecerá.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter preenchido a etapa de correção do cálcio e
+  magnésio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema calcula a quantidade de enxofre que o corretivo fornecerá à
+  terra.
+\item
+  Exibe o valor para o usuário na tela de correção/equilíbrio do cálcio
+  e magnésio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Quando a quantidade for igual a 0, o campo pode ficar oculto.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS048}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Exibir a quantidade de enxofre necessária
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve exibir a quantidade suficiente, em quilogramas por
+hectare, da quantidade de enxofre necessária.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deverá ter preenchido a textura do solo.
+\item
+  O usuário deverá ter preenchido a análise do solo.
+\item
+  O usuário deverá ter preenchido a fonte de corretivo de cálcio e
+  magnésio.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe a quantidade de enxofre necessária para a correção do
+  cálcio e magnésio no solo.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Só será exibido caso a quantidade de enxofre seja maior que 0.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}[c]{@{}|p{4cm}|p{9cm}|@{}}
+\hline
+\begin{minipage}[t]{0.47\columnwidth}
+\textbf{RS049}
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Calcular e exibir o valor de V\% atual, ideal e após as correções
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+SUMÁRIO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+O sistema deve calcular e exibir os valores de V\% atual, ideal e após
+as correções.
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+PRÉ-CONDIÇÕES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O usuário deve estar logado.
+\item
+  A etapa de preenchimento dos dados da propriedade deverá estar
+  preenchida.
+\item
+  A etapa de preenchimento da análise do solo deverá estar preenchida.
+\item
+  A etapa de preenchimento da matéria orgânica deverá estar preenchida.
+\item
+  A etapa de preenchimento da correção do fósforo deverá estar
+  preenchida.
+\item
+  A etapa de preenchimento da correção do potássio deverá estar
+  preenchida.
+\item
+  A etapa de preenchimento da correção do cálcio e magnésio deverá estar
+  preenchida.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ATORES
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+Usuário
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+DESCRIÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  O sistema exibe o valor de V\% atual.
+\item
+  O sistema exibe o valor de V\% após as correções.
+\item
+  O sistema exibe o valor de V\% ideal.
+\\\end{enumerate}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+ALTERNATIVAS
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+\begin{minipage}[t]{0.47\columnwidth}
+EXCEÇÃO
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}
+\end{minipage}
+\\\hline
+
+\end{longtable}
+
+\endgroup
+

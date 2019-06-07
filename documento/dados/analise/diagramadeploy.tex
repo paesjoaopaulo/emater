@@ -6,10 +6,10 @@ O Diagrama de Implantação determina as necessidades de \textit{hardware} do si
 \begin{figure}[H]
     \centering
     \caption{Representação do Diagrama de Implantação}
-    \includegraphics[width=13cm]{./dados/analise/diagramadeploy.jpg}
+    \includegraphics[width=13cm]{dados/figuras/diagramadeploy.jpg}
     \label{fig:diagramaDeploy}
     \fonte{Autoria própria}
 \end{figure}
 
-A \autoref{fig:diagramaDeploy} mostra a aplicação desse conceito no projeto. Nela é possível observar a distribuição do sistema em dois nós principais. O primeiro é o servidor de aplicação, que faz o encapsulamento do servidor Apache. Nesse mesmo servidor é possível observar a presença de um servidor de banco de dados MySQL, o qual será responsável por armazenar os dados do sistema e só receberá acessos locais.
-O outro nó, representa o lado do cliente da aplicação, responsável pelas chamadas ao recursos contidos no servidor \textit{web} por meio de requisições Ajax.
+A \autoref{fig:diagramaDeploy} mostra a aplicação desse conceito no projeto. Nela é possível observar a distribuição do sistema em dois nós principais. O primeiro é o servidor de aplicação, que faz o encapsulamento do servidor Apache. Nesse mesmo servidor é possível observar a presença de um servidor MySQL, o qual será responsável por armazenar os dados do sistema e só receberá acessos locais.
+O outro nó, representa o lado do cliente da aplicação, responsável pelas chamadas ao recursos contidos no servidor \textit{web} por meio de requisições Ajax, por meio do protocolo HTTP.
