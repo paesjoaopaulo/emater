@@ -8,7 +8,7 @@ Neste capítulo serão expostas as tecnologias e ferramentas que serão utilizad
 \section{TECNOLOGIAS}
 \label{sec:tecnologias}
 
-A presente proposta diz respeito ao desenvolvimento de um sistema \textit{web}. Um sistema \textit{web} consiste em um programa de computador instalado em um servidor HTTP, que disponibiliza páginas \textit{web} para os clientes HTTP como \textit{web browsers}.
+% A presente proposta diz respeito ao desenvolvimento de um sistema \textit{web}. Um sistema \textit{web} consiste em um programa de computador instalado em um servidor HTTP, que disponibiliza páginas \textit{web} para os clientes HTTP como \textit{web browsers}.
 
 As tecnologias necessárias para o desenvolvimento da aplicação identificadas serão descritas abaixo.
 
@@ -191,52 +191,54 @@ Caso tenha passado pelos testes e aprovada pelo cliente, então essa nova versã
 \section{METODOLOGIA}
 \label{sec:metodologiadev}
 
-Neste capítulo será apresentada a metodologia para o desenvolvimento da aplicação. Como o desenvolvimento da aplicação será realizado apenas por um desenvolvedor, fica inviável seguir um processo de software. Com isso, foi necessário uma adaptação de um modelo existente para o presente projeto. O modelo desenvolvido segue alguns traços do modelo iterativo-incremental, pois dos modelos consolidados disponíveis é o que mais se adéqua às mudanças no projeto, além de ser o modelo adotado pelo Scrum que influenciou a modelagem deste processo.
+% Neste capítulo será apresentada a metodologia para o desenvolvimento da aplicação. Como o desenvolvimento da aplicação será realizado apenas por um desenvolvedor, fica inviável seguir um processo de software. Com isso, foi necessário uma adaptação de um modelo existente para o presente projeto. O modelo desenvolvido segue alguns traços do modelo iterativo-incremental, pois dos modelos consolidados disponíveis é o que mais se adéqua às mudanças no projeto, além de ser o modelo adotado pelo Scrum que influenciou a modelagem deste processo.
 
-\subsection{Processo}
-\label{sub:processo}
-Nesta seção será explicada a \autoref{fig:modeloprocesso}, o fluxo dos requisitos do sistema desde a fase de análise até chegar na etapa de implementação.
+% \subsection{Processo}
+% \label{sub:processo}
+% Nesta seção será explicada a \autoref{fig:modeloprocesso}, o fluxo dos requisitos do sistema desde a fase de análise até chegar na etapa de implementação.
 
-\begin{figure}[H]
-    \centering
-    \caption{Modelo de aplicação do TDD no projeto}
-    \includegraphics[width=13cm]{dados/figuras/ModeloDoProcesso.png}
-    \label{fig:modeloprocesso}
-    \fonte{Autoria própria}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \caption{Modelo de aplicação do TDD no projeto}
+%     \includegraphics[width=13cm]{dados/figuras/ModeloDoProcesso.png}
+%     \label{fig:modeloprocesso}
+%     \fonte{Autoria própria}
+% \end{figure}
 
-Primeiramente, é necessário o levantamento do requisitos, que é a etapa na qual o desenvolvedor deve entender qual é a necessidade do cliente. Existem diversos métodos para este fim, porém no presente projeto foi utilizado análise de documentos, no caso da planilha usado nos cálculos. Análise de requisitos foi feita em conjunto com o orientador, pois representa o cliente no projeto assim como o desenvolvimento dos protótipos. 
+% Primeiramente, é necessário o levantamento do requisitos, que é a etapa na qual o desenvolvedor deve entender qual é a necessidade do cliente. Existem diversos métodos para este fim, porém no presente projeto foi utilizado análise de documentos, no caso da planilha usado nos cálculos. Análise de requisitos foi feita em conjunto com o orientador, pois representa o cliente no projeto assim como o desenvolvimento dos protótipos. 
 
-Após a análise foi iniciada a fase de projeto, Com os protótipos construídos, é dado início a etapa de documentação dos requisitos funcionais e não funcionais, além da especificação. Logo após, os diagramas da UML foram desenvolvidos, servindo de subsídios para a próxima fase.
+% Após a análise foi iniciada a fase de projeto, Com os protótipos construídos, é dado início a etapa de documentação dos requisitos funcionais e não funcionais, além da especificação. Logo após, os diagramas da UML foram desenvolvidos, servindo de subsídios para a próxima fase.
 
-Já na fase de gerenciamento são definidas as \textit{sprints}, formando o \textit{Sprint backlog} da próxima iteração da fase de implementação, descrita na \autoref{subsec:tdd}, que tem como entrada este artefato.
+% Já na fase de gerenciamento são definidas as \textit{sprints}, formando o \textit{Sprint backlog} da próxima iteração da fase de implementação, descrita na \autoref{subsec:tdd}, que tem como entrada este artefato.
 
-\subsection{Kanban}
-\label{subsec:kanban}
+% \subsection{Kanban}
+% \label{subsec:kanban}
 
-Para o gerenciamento de tarefas, será utilizado o conceito de quadros \textit{kanban}, utilizando a ferramenta Trello. As tarefas serão divididas em seis quadros, demonstrados na \autoref{fig:trelloquadro}, que são:
+% Para o gerenciamento de tarefas, será utilizado o conceito de quadros \textit{kanban}, utilizando a ferramenta Trello. As tarefas serão divididas em seis quadros, demonstrados na \autoref{fig:trelloquadro}, que são:
 
-\begin{itemize}
-    \item \textbf{\textit{Product backlog}}: Os requisitos que foram definidos para o produto
-    \item \textbf{\textit{Sprint backlog}}: Os requisitos que devem ser desenvolvidos na \textit{sprint} atual
-    \item \textbf{\textit{Doing}}: Os requisitos que estão sendo desenvolvidos no momento
-    \item \textbf{\textit{Done}}: Os requisitos que foram finalizados
-    \item \textbf{\textit{Test}}: Os requisitos que após a finalização, foram enviados para teste em um servidor de homologação.
-    \item \textbf{\textit{Deploy}}: Os requisitos que foram homologados e podem ir para produção.
-\end{itemize}
+% \begin{itemize}
+%     \item \textbf{\textit{Product backlog}}: Os requisitos que foram definidos para o produto
+%     \item \textbf{\textit{Sprint backlog}}: Os requisitos que devem ser desenvolvidos na \textit{sprint} atual
+%     \item \textbf{\textit{Doing}}: Os requisitos que estão sendo desenvolvidos no momento
+%     \item \textbf{\textit{Done}}: Os requisitos que foram finalizados
+%     \item \textbf{\textit{Test}}: Os requisitos que após a finalização, foram enviados para teste em um servidor de homologação.
+%     \item \textbf{\textit{Deploy}}: Os requisitos que foram homologados e podem ir para produção.
+% \end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \caption{Quadro \textit{kanban} do projeto}
-    \includegraphics[width=13cm]{dados/figuras/quadro_trello.png}
-    \label{fig:trelloquadro}
-    \fonte{Autoria própria}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \caption{Quadro \textit{kanban} do projeto}
+%     \includegraphics[width=13cm]{dados/figuras/quadro_trello.png}
+%     \label{fig:trelloquadro}
+%     \fonte{Autoria própria}
+% \end{figure}
 
-\subsection{Test Driven Development}
-\label{subsec:tdd}
+% \subsection{Test Driven Development}
+% \label{subsec:tdd}
 
-Para aumentar a confiabilidade e a qualidade, um sistema requer a presença de testes automatizados \cite{myers2004art}. Devido a esse fato, o sistema será desenvolvidos seguindo os princípios do \textit{Test} \textit{Driven} \textit{Development} (TDD). Esta técnica tem como principal característica a escrita do teste antes da implementação da funcionalidade, sendo assim, há uma inversão de lógica quando comparamos aos modelos tradicionais \cite{erdogmus2005effectiveness}. A geração de testes antes da implementação da funcionalidade auxilia no desenvolvimento de sistemas mais bem estruturados, com menos problemas e mais flexíveis \cite{melnik2007empirical}.
+% Para aumentar a confiabilidade e a qualidade, um sistema requer a presença de testes automatizados \cite{myers2004art}. Devido a esse fato, o sistema será desenvolvidos seguindo os princípios do \textit{Test} \textit{Driven} \textit{Development} (TDD). Esta técnica tem como principal característica a escrita do teste antes da implementação da funcionalidade, sendo assim, há uma inversão de lógica quando comparamos aos modelos tradicionais \cite{erdogmus2005effectiveness}. A geração de testes antes da implementação da funcionalidade auxilia no desenvolvimento de sistemas mais bem estruturados, com menos problemas e mais flexíveis \cite{melnik2007empirical}.
+
+O sistema será desenvolvidos seguindo os princípios do \textit{Test} \textit{Driven} \textit{Development} (TDD). Esta técnica tem como principal característica a escrita do teste antes da implementação da funcionalidade. A geração de testes antes da implementação da funcionalidade auxilia no desenvolvimento de sistemas mais bem estruturados, com menos problemas e mais flexíveis \cite{melnik2007empirical}.
 
 Neste ciclo, cada iteração possui três momentos. O primeiro é o \textit{red}, no qual o teste é escrito e, como a funcionalidade ainda não está implementada, o teste deve falhar. O próximo passo é o \textit{green}, no qual a funcionalidade é escrita sem se preocupar com os conceitos de \textit{clean} \textit{code}, tendo como único objetivo passar no teste. Após passar pelo teste, o código implementado deve ser refatorado (\textit{refactor}), procurando se adequar aos padrões de código para garantir a legibilidade e a correta organização desse trecho.
 
@@ -250,98 +252,96 @@ Este técnica, segundo \citeonline{aniche2014test}, pode ser vantajosa para seus
     \item O desenvolvedor sempre está recebendo \textit{feedbacks} sobre o estado do código que foi desenvolvido, enquanto no modelo tradicional esses \textit{feedbacks} só serão gerados após o desenvolvimento de vários trechos de código.
 \end{itemize}
 
-Em suma, o TDD potencializa a quantidade de \textit{feedback} sobre o código que está sendo gerado, fazendo o programador reconhecer os defeitos antecipadamente, diminuindo o retrabalho e os custos de manutenção e aumentando a qualidade do código. 
+% Em suma, o TDD potencializa a quantidade de \textit{feedback} sobre o código que está sendo gerado, fazendo o programador reconhecer os defeitos antecipadamente, diminuindo o retrabalho e os custos de manutenção e aumentando a qualidade do código. 
 
-Na figura \autoref{fig:ciclotdd}, é exemplificado o ciclo do TDD no desenvolvimento dessa aplicação.
+% Na figura \autoref{fig:ciclotdd}, é exemplificado o ciclo do TDD no desenvolvimento dessa aplicação.
 
-\begin{figure}[H]
-    \centering
-    \caption{Modelo de aplicação do TDD no projeto}
-    \includegraphics[width=13cm]{dados/figuras/ModeloDeAplicacaoTDD.png}
-    \label{fig:ciclotdd}
-    \fonte{Autoria própria}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \caption{Modelo de aplicação do TDD no projeto}
+%     \includegraphics[width=13cm]{dados/figuras/ModeloDeAplicacaoTDD.png}
+%     \label{fig:ciclotdd}
+%     \fonte{Autoria própria}
+% \end{figure}
 
-O modelo apresentado na \autoref{fig:ciclotdd} representa as etapas de uma \textit{Sprint}. É possível observar que na primeira etapa o desenvolvedor seleciona um requisito do \textit{Sprint backlog} e cria uma \textit{branch} para trabalhar nessa funcionalidade, logo após, ele deve escrever um teste, fazer um \textit{commit} então executar o teste que falhará, pois neste momento a funcionalidade ainda não foi implementada. Então, o usuário deverá seguir para a etapa de Implementação/Correção de Funcionalidade. Após concluir, deverá executar novamente o teste. Neste momento, caso o teste passe, deverá seguir para a etapa de refatoração. Após a refatoração o programador deve executar os testes de integração para ver se a nova funcionalidade se encaixou sem quebrar o sistema. Caso passe nos testes, essa funcionalidade deverá ser marcada com \textit{commit} e então enviada para \textit{deploy} no servidor de homologação para aprovação. Caso aprovado o código será incluído no servidor de produção.
+% O modelo apresentado na \autoref{fig:ciclotdd} representa as etapas de uma \textit{Sprint}. É possível observar que na primeira etapa o desenvolvedor seleciona um requisito do \textit{Sprint backlog} e cria uma \textit{branch} para trabalhar nessa funcionalidade, logo após, ele deve escrever um teste, fazer um \textit{commit} então executar o teste que falhará, pois neste momento a funcionalidade ainda não foi implementada. Então, o usuário deverá seguir para a etapa de Implementação/Correção de Funcionalidade. Após concluir, deverá executar novamente o teste. Neste momento, caso o teste passe, deverá seguir para a etapa de refatoração. Após a refatoração o programador deve executar os testes de integração para ver se a nova funcionalidade se encaixou sem quebrar o sistema. Caso passe nos testes, essa funcionalidade deverá ser marcada com \textit{commit} e então enviada para \textit{deploy} no servidor de homologação para aprovação. Caso aprovado o código será incluído no servidor de produção.
 
-O controle do estado de cada requisito será feito usando o Trello, utilizando o conceito de Kanban. Após todos os requisitos passarem pelo processo, a aplicação deve estar totalmente funcional, executando todas as tarefas que foram enumeradas na \autoref{rf:tabela}.
+% O controle do estado de cada requisito será feito usando o Trello, utilizando o conceito de Kanban. Após todos os requisitos passarem pelo processo, a aplicação deve estar totalmente funcional, executando todas as tarefas que foram enumeradas na \autoref{rf:tabela}.
 
 \section{ARQUITETURA DO SOFTWARE}
 \label{sub:arquitetura}
 
-O presente projeto seguirá o padrão arquitetural Model-View-Controller (MVC), este que \citeonline{da2012revisao} sugere uma arquitetura de software dividida em componentes, de tal forma que o código fique mais limpo e organizado, o que favorece o reaproveitamento de código e fornece uma manutenção mais segura. Porém, para que haja a independência entre os componentes, deve haver uma organização do sistema em camadas, garantindo a facilidade de escala, reuso e eficiência.
+% O presente projeto seguirá o padrão arquitetural Model-View-Controller (MVC), este que \citeonline{da2012revisao} sugere uma arquitetura de software dividida em componentes, de tal forma que o código fique mais limpo e organizado, o que favorece o reaproveitamento de código e fornece uma manutenção mais segura. Porém, para que haja a independência entre os componentes, deve haver uma organização do sistema em camadas, garantindo a facilidade de escala, reuso e eficiência.
 
-A camada \textit{model} é responsável por tratar a manipulação e persistência de dados internos, comunicando, sobretudo, com o armazenamento de dados.
+A arquitetura em camadas será usada para decompor a aplicação em três camadas distintas. Este padrão permite cohesão entre as unidades de código em uma mesma camada além de aumentar a manutenibilidade e portabilidade da aplicação. Neste padrão, cada camada representa um conjunto de interesses específicos da aplicação, em particular: (i) camada de apresentação, responsável pela interação com usuários; (ii) camada de regras de negócio, responsável pela definição das regras de funcionamento do sistema; e (iii) camada de dados, responsável por realizar a persistência dos dados.
 
-Já a camada \textit{controller} é responsável pelo intermédio entre as ações que o usuário executa na interface (\textit{View}) e a resposta do servidor para essa ação, que normalmente é entregue por \textit{model}. 
+O padrão MVC, sigla em Inglês para Model-View-Controller será usado na camada de apresentação. Neste padrão, cada elemento na camada de apresentação exerce um papel específico. O \textit{model} é responsável por tratar a manipulação e persistência de dados internos, comunicando, sobretudo, com o armazenamento de dados. O \textit{controller} é responsável por intermediar as interações entre usuário e sistema. A (\textit{View}) é responsável por receber e apresentar dados de/para o usuário. 
 
-Finalmente, a camada \textit{view} representa a interface pela qual o usuário interage com a aplicação. Ela define o formato de renderização mais adequado para a resposta de uma requisição.
+% \section{CRONOGRAMA DO PROJETO}
+% \label{sec:cronograma}
 
-\section{CRONOGRAMA DO PROJETO}
-\label{sec:cronograma}
+% O gráfico abaixo representa o cronograma do projeto. O desenvolvimento será divido em sprints, que serão 
 
-O gráfico abaixo representa o cronograma do projeto. O desenvolvimento será divido em sprints, que serão 
+% O gráfico do abaixo demonstra a distribuição das atividades do projeto em relação ao tempo. A data da primeira reunião com o professor orientador foi considerada a data inicial do cronograma, na qual foi definido o tema a ser desenvolvido. A duração de cada atividade está na unidade de dias.
 
-O gráfico do abaixo demonstra a distribuição das atividades do projeto em relação ao tempo. A data da primeira reunião com o professor orientador foi considerada a data inicial do cronograma, na qual foi definido o tema a ser desenvolvido. A duração de cada atividade está na unidade de dias.
+% \begin{landscape}
 
-\begin{landscape}
+%     \begin{ganttchart}
+%         [
+%             y unit title=0.4cm,
+%             y unit chart=0.5cm,
+%             vgrid,hgrid,
+%             title height=1,
+%             bar/.style={draw,fill=green},
+%             bar incomplete/.append style={fill=yellow!50},
+%             bar height=0.7
+%         ]{1}{36}
 
-    \begin{ganttchart}
-        [
-            y unit title=0.4cm,
-            y unit chart=0.5cm,
-            vgrid,hgrid,
-            title height=1,
-            bar/.style={draw,fill=green},
-            bar incomplete/.append style={fill=yellow!50},
-            bar height=0.7
-        ]{1}{36}
+%         \gantttitle{Junho}{6}
+%         \gantttitle{Julho}{5}
+%         \gantttitle{Agosto}{5}
+%         \gantttitle{Setembro}{5}
+%         \gantttitle{Outubro}{5}
+%         \gantttitle{Novembro}{5}
+%         \gantttitle{Dezembro}{5} \\
 
-        \gantttitle{Junho}{6}
-        \gantttitle{Julho}{5}
-        \gantttitle{Agosto}{5}
-        \gantttitle{Setembro}{5}
-        \gantttitle{Outubro}{5}
-        \gantttitle{Novembro}{5}
-        \gantttitle{Dezembro}{5} \\
+%         \gantttitlelist{1,...,6}{1}
+%         \gantttitlelist{1,...,5}{1}
+%         \gantttitlelist{1,...,5}{1}
+%         \gantttitlelist{1,...,5}{1}
+%         \gantttitlelist{1,...,5}{1}
+%         \gantttitlelist{1,...,5}{1}
+%         \gantttitlelist{1,...,5}{1} \\
 
-        \gantttitlelist{1,...,6}{1}
-        \gantttitlelist{1,...,5}{1}
-        \gantttitlelist{1,...,5}{1}
-        \gantttitlelist{1,...,5}{1}
-        \gantttitlelist{1,...,5}{1}
-        \gantttitlelist{1,...,5}{1}
-        \gantttitlelist{1,...,5}{1} \\
+%         \gantttitlelist{1,...,36}{1} \\
 
-        \gantttitlelist{1,...,36}{1} \\
+%         \ganttbar{Desenvolvimento da Interfaces}{2}{17} \\
 
-        \ganttbar{Desenvolvimento da Interfaces}{2}{17} \\
+%         \ganttbar{Desenvolvimento da API Rest}{4}{20} \\
 
-        \ganttbar{Desenvolvimento da API Rest}{4}{20} \\
+%         \ganttbar{Correções no Documento}{5}{5}
+%         \ganttbar{}{10}{10}
+%         \ganttbar{}{15}{15}
+%         \ganttbar{}{20}{20}
+%         \ganttbar{}{24}{30}\\
 
-        \ganttbar{Correções no Documento}{5}{5}
-        \ganttbar{}{10}{10}
-        \ganttbar{}{15}{15}
-        \ganttbar{}{20}{20}
-        \ganttbar{}{24}{30}\\
+%         \ganttbar{Entrega do Documento}{31}{30} \\
 
-        \ganttbar{Entrega do Documento}{31}{30} \\
+%         \ganttbar{Validação pelo técnico}{5}{4}
+%         \ganttbar{}{10}{9}
+%         \ganttbar{}{15}{14}
+%         \ganttbar{}{20}{19} \\
 
-        \ganttbar{Validação pelo técnico}{5}{4}
-        \ganttbar{}{10}{9}
-        \ganttbar{}{15}{14}
-        \ganttbar{}{20}{19} \\
+%         \ganttbar{Entrega parcial}{7}{6}
+%         \ganttbar{}{12}{11}
+%         \ganttbar{}{17}{16}
+%         \ganttbar{}{22}{21} \\
 
-        \ganttbar{Entrega parcial}{7}{6}
-        \ganttbar{}{12}{11}
-        \ganttbar{}{17}{16}
-        \ganttbar{}{22}{21} \\
+%         \ganttbar{Implantação}{22}{24} \\
 
-        \ganttbar{Implantação}{22}{24} \\
+%         \ganttbar{Testes exploratórios pelo cliente}{25}{29} \\
+%         \ganttbar{Correção de bugs}{25}{29} \\
 
-        \ganttbar{Testes exploratórios pelo cliente}{25}{29} \\
-        \ganttbar{Correção de bugs}{25}{29} \\
+%     \end{ganttchart}
 
-    \end{ganttchart}
-
-\end{landscape}
+% \end{landscape}

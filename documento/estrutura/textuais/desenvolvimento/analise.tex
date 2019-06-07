@@ -2,7 +2,7 @@
 
 \section{ANÁLISE E PROJETO}
 \label{chap:analise}
-Neste capítulo serão exibidos os Requisitos Funcionais e Não Funcionais, bem como a Especificação dos Requisitos Funcionais, o Diagrama de Casos de Uso Geral, o Diagrama de Classes e o Diagrama Entidade-Relacionamento.
+Esta seção apresenta os requisitos funcionais e não funcionais, a especificação dos requisitos funcionais, e os diagramas de caso de uso, classes e entidade-relacionamento.
 
 \input{./dados/analise/reqfuncionais.tex}
 \clearpage
@@ -27,3 +27,73 @@ Neste capítulo serão exibidos os Requisitos Funcionais e Não Funcionais, bem 
 
 \input{./dados/analise/prototipos.tex}
 \clearpage
+
+
+\chapter{CRONOGRAMA DO PROJETO}
+
+% \section{CRONOGRAMA DO PROJETO}
+% \label{sec:cronograma}
+
+O gráfico do abaixo demonstra a distribuição das atividades do projeto em relação ao tempo. A data da primeira reunião com o professor orientador foi considerada a data inicial do cronograma, na qual foi definido o tema a ser desenvolvido. A duração de cada atividade está na unidade de dias.
+
+\begin{landscape}
+
+    \begin{ganttchart}
+        [
+            y unit title=0.4cm,
+            y unit chart=0.5cm,
+            vgrid,hgrid,
+            title height=1,
+            bar/.style={draw,fill=green},
+            bar incomplete/.append style={fill=yellow!50},
+            bar height=0.7
+        ]{1}{36}
+
+        \gantttitle{Junho}{6}
+        \gantttitle{Julho}{5}
+        \gantttitle{Agosto}{5}
+        \gantttitle{Setembro}{5}
+        \gantttitle{Outubro}{5}
+        \gantttitle{Novembro}{5}
+        \gantttitle{Dezembro}{5} \\
+
+        \gantttitlelist{1,...,6}{1}
+        \gantttitlelist{1,...,5}{1}
+        \gantttitlelist{1,...,5}{1}
+        \gantttitlelist{1,...,5}{1}
+        \gantttitlelist{1,...,5}{1}
+        \gantttitlelist{1,...,5}{1}
+        \gantttitlelist{1,...,5}{1} \\
+
+        \gantttitlelist{1,...,36}{1} \\
+
+        \ganttbar{Desenvolvimento da Interfaces}{2}{17} \\
+
+        \ganttbar{Desenvolvimento da API Rest}{4}{20} \\
+
+        \ganttbar{Correções no Documento}{5}{5}
+        \ganttbar{}{10}{10}
+        \ganttbar{}{15}{15}
+        \ganttbar{}{20}{20}
+        \ganttbar{}{24}{30}\\
+
+        \ganttbar{Entrega do Documento}{31}{30} \\
+
+        \ganttbar{Validação pelo técnico}{5}{4}
+        \ganttbar{}{10}{9}
+        \ganttbar{}{15}{14}
+        \ganttbar{}{20}{19} \\
+
+        \ganttbar{Entrega parcial}{7}{6}
+        \ganttbar{}{12}{11}
+        \ganttbar{}{17}{16}
+        \ganttbar{}{22}{21} \\
+
+        \ganttbar{Implantação}{22}{24} \\
+
+        \ganttbar{Testes exploratórios pelo cliente}{25}{29} \\
+        \ganttbar{Correção de bugs}{25}{29} \\
+
+    \end{ganttchart}
+
+\end{landscape}
