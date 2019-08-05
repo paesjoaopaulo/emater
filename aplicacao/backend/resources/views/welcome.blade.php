@@ -95,5 +95,8 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="react"></div>
     </body>
 </html>
