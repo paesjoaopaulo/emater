@@ -2,96 +2,98 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import StepButton from '@material-ui/core/StepButton';
-
-import { connect } from 'react-redux';
-
-import { PropriedadeStep, AnaliseStep } from './steps';
-import { StepContent, Paper } from '@material-ui/core';
+import { PropriedadeStep, AnaliseStep, FosforoStep, PotassioStep, ResultadoStep, CalcioMagnesioStep } from './steps';
+import MateriaOrganicaStep from './steps/MateriaOrganicaStep';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(4)
+    width: '90%'
   },
   button: {
+    marginTop: theme.spacing(1),
     marginRight: theme.spacing(1)
+  },
+  actionsContainer: {
+    marginBottom: theme.spacing(2)
+  },
+  resetContainer: {
+    padding: theme.spacing(3)
   }
 }));
 
-function getSteps() {
-  return [
-    <PropriedadeStep />,
-    <AnaliseStep />,
-    'Fósforo',
-    'Potássio',
-    'Cálcio e Magnésio',
-    'Finalizar'
-  ];
-}
+const steps = [
+  {
+    title: 'Dados da Propriedade',
+    completed: false,
+    component: <PropriedadeStep />
+  },
+  {
+    title: 'Dados da Análise do Solo',
+    completed: false,
+    component: <AnaliseStep />
+  },
+  {
+    title: 'Dados da Matéria Orgânica',
+    completed: false,
+    component: <MateriaOrganicaStep />
+  },
+  {
+    title: 'Correção do Fósforo',
+    completed: false,
+    component: <FosforoStep />
+  },
+  {
+    title: 'Correção do Potássio',
+    completed: false,
+    component: <PotassioStep />
+  },
+  {
+    title: 'Correção do Cálcio e Magnésio',
+    completed: false,
+    component: <CalcioMagnesioStep />
+  },
+  {
+    title: 'Finalizar',
+    completed: false,
+    component: <ResultadoStep />
+  },
+];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <PropriedadeStep />;
-    case 1:
-      return <AnaliseStep />;
-    case 2:
-    default:
-  }
-}
-
-const Calculo = ({ tudo }) => {
+export default function CalculoCreate() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
-  const steps = getSteps();
-
-  function isStepOptional(step) {
-    return step === 10;
-  }
-
-  function isStepSkipped(step) {
-    return skipped.has(step);
-  }
 
   function handleNext() {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
     setActiveStep(prevActiveStep => prevActiveStep + 1);
-    setSkipped(newSkipped);
   }
 
   function handleBack() {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   }
 
-  function handleSkip() {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error('You can\'t skip a step that isn\'t optional.');
-    }
-
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-    setSkipped(prevSkipped => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  }
-
-  const handleStep = step => () => {
-    setActiveStep(step);
-  };
-
   function handleReset() {
     setActiveStep(0);
+  }
+
+  function prevStepButton() {
+    if (activeStep === 0) {
+      return 'Inicio';
+    } else {
+      return steps[activeStep - 1].title;
+    }
+  }
+
+  function nextStepButton() {
+    if (activeStep === steps.length - 1) {
+      return 'Fim';
+    } else {
+      return steps[activeStep + 1].title;
+    }
   }
 
   return (
@@ -100,16 +102,11 @@ const Calculo = ({ tudo }) => {
         activeStep={activeStep}
         orientation="vertical"
       >
-        {steps.map((label, index) => (
-          <Step key={label}>
-            <StepButton
-              completed={completed[index]}
-              onClick={handleStep(index)}
-            >
-              {label}
-            </StepButton>
-            <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
+        {steps.map((step, index) => (
+          <Step key={index}>
+            <StepLabel>{step.title}</StepLabel>
+            <StepContent timeout={1000}>
+              {step.component}
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -117,7 +114,7 @@ const Calculo = ({ tudo }) => {
                     disabled={activeStep === 0}
                     onClick={handleBack}
                   >
-                    Back
+                    {prevStepButton()}
                   </Button>
                   <Button
                     className={classes.button}
@@ -125,7 +122,7 @@ const Calculo = ({ tudo }) => {
                     onClick={handleNext}
                     variant="contained"
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {nextStepButton()}
                   </Button>
                 </div>
               </div>
@@ -151,5 +148,3 @@ const Calculo = ({ tudo }) => {
     </div>
   );
 }
-
-export default connect(state => ({ tudo: state }))(Calculo);

@@ -1,187 +1,187 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Typography } from '@material-ui/core';
-import { connect } from 'react-redux';
+import { TextField, MenuItem, InputAdornment } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(4)
-  },
-  button: {
-    marginRight: theme.spacing(1)
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
-  },
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-  dense: {
-    marginTop: 19,
-  },
-  menu: {
-    width: 200,
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
+const PropriedadeStep = () => {
 
-
-/*function updateField(field, value) {
-    return {
-        type: 'UPDATE_FIELD',
-        field,
-        value
+  const texturas = [
+    {
+      id: 0,
+      name: 'Argiloso',
+      description: '< 35% de argila'
+    },
+    {
+      id: 1,
+      name: 'Textura média',
+      description: '>= 35% de argila'
     }
-}*/
+  ];
 
-const PropriedadeStep = ({ tudo, dispatch }) => {
-  const classes = useStyles();
+  const tipos_plantio = [
+    {
+      id: 0,
+      name: 'Direto',
+    },
+    {
+      id: 1,
+      name: 'Convencional',
+    }
+  ];
+
+  const cities = [
+    {
+      id: 0,
+      name: 'Palmital',
+      region: 'SP'
+    },
+    {
+      id: 1,
+      name: 'Assis',
+      region: 'SP'
+    },
+    {
+      id: 2,
+      name: 'Cornélio Procópio',
+      region: 'PR'
+    },
+    {
+      id: 3,
+      name: 'Dois Vizinhos',
+      region: 'PR'
+    },
+    {
+      id: 4,
+      name: 'Bandeirantes',
+      region: 'PR'
+    },
+  ];
 
   return (
-    <div className={classes.root}>
-
-      <Typography
-        gutterBottom
-        variant="h2"
-      >
-                Dados da Propriedade
-      </Typography>
-
+    <>
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="nome_do_proprietario"
         label="Nome do Proprietário"
-        //value={tudo.propriedade.nome_do_proprietario}
-        //onChange={dispatch(updateField('nome_do_proprietario'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="municipio"
-        label="Nome do Município"
-        //value={tudo.propriedade.municipio}
-        //onChange={dispatch(updateField('municipio'))}
+        label="Município"
         margin="normal"
-      />
+        select
+        value={0}
+      >
+        {
+          cities.map((city, key) => {
+            return (
+              <MenuItem
+                key={key}
+                value={city.id}
+              >
+                {city.name}
+              </MenuItem>
+            )
+          })
+        }
+      </TextField>
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="lote"
         label="Lote"
-        //value={tudo.propriedade.lote}
-        //onChange={dispatch(updateField('lote'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="area_total"
+        InputProps={{
+          endAdornment: <InputAdornment position="end">m²</InputAdornment>,
+        }}
         label="Área Total"
-        //value={tudo.propriedade.area_total}
-        //onChange={dispatch(updateField('area_total'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="talhao"
         label="Talhão"
-        //value={tudo.propriedade.talhao}
-        //onChange={dispatch(updateField('talhao'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="area_do_talhao"
+        InputProps={{
+          endAdornment: <InputAdornment position="end">m²</InputAdornment>,
+        }}
         label="Área do Talhão"
-        //value={tudo.propriedade.area_do_talhao}
-        //onChange={dispatch(updateField('area_do_talhao'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="matricula_do_lote"
         label="Matrícula do Lote"
-        //value={tudo.propriedade.matricula_do_lote}
-        //onChange={dispatch(updateField('matricula_do_lote'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="textura_do_solo"
         label="Textura do Solo"
-        //value={tudo.propriedade.textura_do_solo}
-        //onChange={dispatch(updateField('textura_do_solo'))}
         margin="normal"
-      />
+        select
+        value={0}
+      >
+        {
+          texturas.map((textura, key) => {
+            return (
+              <MenuItem
+                key={key}
+                value={textura.id}
+              >
+                {textura.name}
+              </MenuItem>
+            )
+          })
+        }
+      </TextField>
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="sistema_de_cultivo"
         label="Sistema de Cultivo"
-        //value={tudo.propriedade.sistema_de_cultivo}
-        //onChange={dispatch(updateField('sistema_de_cultivo'))}
         margin="normal"
-      />
+        select
+        value={0}
+      >
+        {
+          tipos_plantio.map((tipo, key) => {
+            return (
+              <MenuItem
+                key={key}
+                value={tipo.id}
+              >
+                {tipo.name}
+              </MenuItem>
+            )
+          })
+        }
+      </TextField>
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="nome_do_responsavel_tecnico"
         label="Responsável Técnico"
-        //value={tudo.propriedade.nome_do_responsavel_tecnico}
-        //onChange={dispatch(updateField('nome_do_responsavel_tecnico'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="profundidade_da_amostra"
         label="Profundidade da Amostra"
-        //value={tudo.propriedade.profundidade_da_amostra}
-        //onChange={dispatch(updateField('profundidade_da_amostra'))}
         margin="normal"
       />
 
       <TextField
-        className={classes.textField}
-        helperText="knsknslnskl"
         id="numero_do_resultado_da_analise_do_solo"
         label="Nº da Análise do Solo"
-        //value={tudo.propriedade.numero_do_resultado_da_analise_do_solo}
-        //onChange={dispatch(updateField('numero_do_resultado_da_analise_do_solo'))}
         margin="normal"
       />
-
-    </div>
+    </>
   );
+
 }
 
-export default connect(state => ({ tudo: state }))(PropriedadeStep);
+export default PropriedadeStep;
