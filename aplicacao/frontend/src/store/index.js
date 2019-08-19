@@ -1,11 +1,55 @@
 import { createStore } from 'redux';
 
 const INITIAL_STATE = {
-  activeStep: null,
-  steps: [],
-  municipios: [],
-  sistemas_cultivo: [],
-  fontes_corretivo: [],
+  texturas: [
+    {
+      id: 0,
+      name: 'Argiloso',
+      description: '< 35% de argila'
+    },
+    {
+      id: 1,
+      name: 'Textura média',
+      description: '>= 35% de argila'
+    }
+  ],
+  tipos_plantio: [
+    {
+      id: 0,
+      name: 'Direto',
+    },
+    {
+      id: 1,
+      name: 'Convencional',
+    }
+  ],
+  cities: [
+    {
+      id: 0,
+      name: 'Palmital',
+      region: 'SP'
+    },
+    {
+      id: 1,
+      name: 'Assis',
+      region: 'SP'
+    },
+    {
+      id: 2,
+      name: 'Cornélio Procópio',
+      region: 'PR'
+    },
+    {
+      id: 3,
+      name: 'Dois Vizinhos',
+      region: 'PR'
+    },
+    {
+      id: 4,
+      name: 'Bandeirantes',
+      region: 'PR'
+    },
+  ],
   propriedade: {
     nome_do_proprietario: '',
     municipio: '',
@@ -50,9 +94,8 @@ const INITIAL_STATE = {
   },
 };
 
-function reducer(state = INITIAL_STATE, action) {
-  if (action.type === 'UPDATE_FIELD') {}
-  return {}
+function reducer(state = INITIAL_STATE) {
+  return state;
 }
 
 const store = createStore(reducer);
