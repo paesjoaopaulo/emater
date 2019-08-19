@@ -97,6 +97,7 @@ const PropriedadeStep = () => {
         }}
         label="Área Total"
         margin="normal"
+        prefix="R$"
       />
 
       <TextField
