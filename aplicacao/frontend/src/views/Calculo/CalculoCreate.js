@@ -23,22 +23,37 @@ const useStyles = makeStyles(theme => ({
   },
   resetContainer: {
     padding: theme.spacing(3)
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
   }
 }));
 
 const steps = [
   {
-    title: 'Dados da Propriedade',
+    title: 'Propriedade',
     completed: false,
     component: <PropriedadeStep />
   },
   {
-    title: 'Dados da Análise do Solo',
+    title: 'Análise do Solo',
     completed: false,
-    component: <AnaliseStep />
+    component: <AnaliseStep useStyles={useStyles} />
   },
   {
-    title: 'Dados da Matéria Orgânica',
+    title: 'Matéria Orgânica',
     completed: false,
     component: <MateriaOrganicaStep />
   },
@@ -119,6 +134,7 @@ export default function CalculoCreate() {
                   <Button
                     className={classes.button}
                     color="primary"
+                    disabled={activeStep === steps.length - 1}
                     onClick={handleNext}
                     variant="contained"
                   >

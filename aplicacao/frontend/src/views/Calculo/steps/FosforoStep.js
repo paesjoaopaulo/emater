@@ -1,5 +1,25 @@
 import React from 'react';
 import { TextField, InputAdornment, MenuItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+}));
 
 const fontes = [
   {
@@ -65,6 +85,8 @@ const fontes = [
 ];
 
 const FosforoStep = () => {
+  const classes = useStyles();
+
   return (
     <>
       <TextField
@@ -74,11 +96,13 @@ const FosforoStep = () => {
         }}
         label="Teor desejado"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="fonte_fosforo"
         label="Fonte de fósforo"
         margin="normal"
+        className={classes.textField}
         select
         value={0}
       >
@@ -101,6 +125,7 @@ const FosforoStep = () => {
         id="custo_fonte_fosforo"
         label="Custo"
         margin="normal"
+        className={classes.textField}
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
           endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,

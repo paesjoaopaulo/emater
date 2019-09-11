@@ -1,42 +1,60 @@
 import React from 'react';
-import { TextField, MenuItem, InputAdornment } from '@material-ui/core';
+import { TextField, MenuItem, InputAdornment, makeStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 
-function handleInputChange(name, teste) {
-  return {
-    type: 'HANDLE_CALCULO_INPUT_CHANGE',
-    input: {
-      name,
-      //value: this.value
-    }
-  }
-}
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+}));
 
-const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatch }) => {
+
+const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispatch }) => {
+  const classes = useStyles();
+
+  function handleInputChange(e) {
+    dispatch({
+      type: 'PREENCHER_PROPRIEDADE',
+      value: { [e.target.name]: e.target.value }
+    })
+    console.log(propriedade)
+  }
 
   return (
     <>
       <TextField
+        className={classes.textField}
         id="nome_do_proprietario"
         label="Nome do Proprietário"
         margin="normal"
         name="nome_do_proprietario"
-        onChange={() => dispatch(handleInputChange('propriedade.nome_do_proprietario', this.value))}
-        value={propriedade.nome_do_proprietario}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="municipio"
         label="Município"
         margin="normal"
         name="municipio"
-        onChange={() => dispatch(handleInputChange('propriedade.municipio', this.value))}
+        onChange={handleInputChange}
         select
-        value={propriedade.municipio}
-        value={0}
+        value={1}
       >
         {
-          cities.map((city, key) => {
+          cidades.map((city, key) => {
             return (
               <MenuItem
                 key={key}
@@ -50,15 +68,16 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
       </TextField>
 
       <TextField
+        className={classes.textField}
         id="lote"
         label="Lote"
         margin="normal"
         name="lote"
-        onChange={() => dispatch(handleInputChange('propriedade.lote', this.value))}
-        value={propriedade.lote}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="area_total"
         InputProps={{
           endAdornment: <InputAdornment position="end">m²</InputAdornment>,
@@ -66,22 +85,22 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
         label="Área Total"
         margin="normal"
         name="area_total"
-        onChange={() => dispatch(handleInputChange('propriedade.area_total', this.value))}
+        onChange={handleInputChange}
         prefix="R$"
         type="number"
-        value={propriedade.area_total}
       />
 
       <TextField
+        className={classes.textField}
         id="talhao"
         label="Talhão"
         margin="normal"
         name="talhao"
-        onChange={() => dispatch(handleInputChange('propriedade.talhao', this.value))}
-        value={propriedade.talhao}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="area_do_talhao"
         InputProps={{
           endAdornment: <InputAdornment position="end">m²</InputAdornment>,
@@ -89,28 +108,27 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
         label="Área do Talhão"
         margin="normal"
         name="area_do_talhao"
-        onChange={() => dispatch(handleInputChange('propriedade.area_do_talhao', this.value))}
-        value={propriedade.area_do_talhao}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="matricula_do_lote"
         label="Matrícula do Lote"
         margin="normal"
         name="matricula_do_lote"
-        onChange={() => dispatch(handleInputChange('propriedade.matricula_do_lote', this.value))}
-        value={propriedade.matricula_do_lote}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="textura_do_solo"
         label="Textura do Solo"
         margin="normal"
         name="textura_do_solo"
-        onChange={() => dispatch(handleInputChange('propriedade.textura_do_solo', this.value))}
+        onChange={handleInputChange}
         select
-        value={propriedade.textura_do_solo}
-        value={0}
+        value={1}
       >
         {
           texturas.map((textura, key) => {
@@ -127,14 +145,14 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
       </TextField>
 
       <TextField
+        className={classes.textField}
         id="sistema_de_cultivo"
         label="Sistema de Cultivo"
         margin="normal"
         name="sistema_de_cultivo"
-        onChange={() => dispatch(handleInputChange('propriedade.sistema_de_cultivo', this.value))}
+        onChange={handleInputChange}
         select
-        value={propriedade.sistema_de_cultivo}
-        value={0}
+        value={1}
       >
         {
           tipos_plantio.map((tipo, key) => {
@@ -151,30 +169,33 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
       </TextField>
 
       <TextField
+        className={classes.textField}
         id="nome_do_responsavel_tecnico"
         label="Responsável Técnico"
         margin="normal"
         name="nome_do_responsavel_tecnico"
-        onChange={() => dispatch(handleInputChange('propriedade.nome_do_responsavel_tecnico', this.value))}
-        value={propriedade.nome_do_responsavel_tecnico}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="profundidade_da_amostra"
+        InputProps={{
+          endAdornment: <InputAdornment position="end">cm</InputAdornment>,
+        }}
         label="Profundidade da Amostra"
         margin="normal"
         name="profundidade_da_amostra"
-        onChange={() => dispatch(handleInputChange('propriedade.profundidade_da_amostra', this.value))}
-        value={propriedade.profundidade_da_amostra}
+        onChange={handleInputChange}
       />
 
       <TextField
+        className={classes.textField}
         id="numero_do_resultado_da_analise_do_solo"
         label="Nº da Análise do Solo"
         margin="normal"
         name="numero_do_resultado_da_analise_do_solo"
-        onChange={() => dispatch(handleInputChange('propriedade.numero_do_resultado_da_analise_do_solo', this.value))}
-        value={propriedade.numero_do_resultado_da_analise_do_solo}
+        onChange={handleInputChange}
       />
     </>
   );
@@ -182,7 +203,7 @@ const PropriedadeStep = ({ cities, tipos_plantio, texturas, propriedade, dispatc
 
 export default connect(state => (
   {
-    cities: state.cities,
+    cidades: state.cidades,
     texturas: state.texturas,
     tipos_plantio: state.tipos_plantio,
     propriedade: state.propriedade

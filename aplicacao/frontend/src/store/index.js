@@ -23,7 +23,7 @@ const INITIAL_STATE = {
       name: 'Convencional',
     }
   ],
-  cities: [
+  cidades: [
     {
       id: 0,
       name: 'Palmital',
@@ -94,7 +94,16 @@ const INITIAL_STATE = {
   },
 };
 
-function reducer(state = INITIAL_STATE) {
+function reducer(state = INITIAL_STATE, action) {
+  
+  if(action.type === 'PREENCHER_PROPRIEDADE'){
+    return {
+      ...state,
+      ...state.propriedade,
+      ...action.value
+    }
+  }
+
   return state;
 }
 

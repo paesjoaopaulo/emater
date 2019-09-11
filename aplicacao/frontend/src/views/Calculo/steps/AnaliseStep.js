@@ -1,7 +1,27 @@
 import React from 'react';
-import { TextField, InputAdornment } from '@material-ui/core';
+import { TextField, InputAdornment, makeStyles } from '@material-ui/core';
 
-const AnaliseStep = () => {
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+}));
+
+
+const AnaliseStep = ({props}) => {
+  const classes = useStyles();
   return (
     <>
       <TextField
@@ -11,6 +31,7 @@ const AnaliseStep = () => {
         }}
         label="P"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_potassio"
@@ -19,6 +40,7 @@ const AnaliseStep = () => {
         }}
         label="K"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_calcio"
@@ -27,6 +49,7 @@ const AnaliseStep = () => {
         }}
         label="Ca"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_magnesio"
@@ -35,6 +58,7 @@ const AnaliseStep = () => {
         }}
         label="Mg"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_enxofre"
@@ -43,6 +67,7 @@ const AnaliseStep = () => {
         }}
         label="S"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_aluminio"
@@ -51,6 +76,7 @@ const AnaliseStep = () => {
         }}
         label="Al"
         margin="normal"
+        className={classes.textField}
       />
       <TextField
         id="atualmente_hidrogenio_aluminio"
@@ -59,6 +85,7 @@ const AnaliseStep = () => {
         }}
         label="H + Al"
         margin="normal"
+        className={classes.textField}
       />
     </>
   );
