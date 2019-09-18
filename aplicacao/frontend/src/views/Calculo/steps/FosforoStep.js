@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField, InputAdornment, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { connect } from 'react-redux';
 
 
 const useStyles = makeStyles(theme => ({
@@ -21,90 +22,39 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const fontes = [
-  {
-    id: 0,
-    name: 'Superfosfato Simples',
-    eficiencia: 70
-  },
-  {
-    id: 1,
-    name: 'Superfosfato Triplo',
-    eficiencia: 70
-  },
-  {
-    id: 2,
-    name: 'MAP',
-    eficiencia: 70
-  },
-  {
-    id: 3,
-    name: 'DAP',
-    eficiencia: 70
-  },
-  {
-    id: 4,
-    name: 'Yoorin',
-    eficiencia: 70
-  },
-  {
-    id: 5,
-    name: 'Fosfato  Arad',
-    eficiencia: 70
-  },
-  {
-    id: 6,
-    name: 'Fosfato  Gafsa',
-    eficiencia: 70
-  },
-  {
-    id: 7,
-    name: 'Fosfato  Daoui',
-    eficiencia: 70
-  },
-  {
-    id: 8,
-    name: 'Fosf.  Patos Minas',
-    eficiencia: 70
-  },
-  {
-    id: 9,
-    name: 'Escória de Thomas',
-    eficiencia: 70
-  },
-  {
-    id: 10,
-    name: 'Ácido Fosfórico',
-    eficiencia: 70
-  },
-  {
-    id: 11,
-    name: 'Multif.Magnesiano',
-    eficiencia: 70
-  }
-];
-
-const FosforoStep = () => {
+const FosforoStep = ({ fosforo, fontes, dispatch }) => {
   const classes = useStyles();
+
+  function handleInputChange(e) {
+    dispatch({
+      type: 'PREENCHER_P',
+      value: { [e.target.name]: e.target.value }
+    })
+  }
 
   return (
     <>
       <TextField
+        className={classes.textField}
         id="atualmente_fosforo"
         InputProps={{
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         label="Teor desejado"
         margin="normal"
-        className={classes.textField}
+        name="atualmente_fosforo"
+        onChange={handleInputChange}
+        value={fosforo.atualmente_fosforo}
       />
       <TextField
+        className={classes.textField}
         id="fonte_fosforo"
         label="Fonte de fósforo"
         margin="normal"
-        className={classes.textField}
+        name="fonte_fosforo"
+        onChange={handleInputChange}
         select
-        value={0}
+        value={fosforo.fonte_fosforo}
       >
         {
           fontes.map((fonte, key) => {
@@ -122,18 +72,26 @@ const FosforoStep = () => {
         }
       </TextField>
       <TextField
-        id="custo_fonte_fosforo"
-        label="Custo"
-        margin="normal"
         className={classes.textField}
+        id="custo_fonte_fosforo"
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
           endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
         }}
+        label="Custo"
+        margin="normal"
+        name="custo_fonte_fosforo"
+        onChange={handleInputChange}
         type="number"
+        value={fosforo.custo_fonte_fosforo}
       />
     </>
   );
 }
 
-export default FosforoStep;
+export default connect(state => (
+  {
+    fosforo: state.fosforo,
+    fontes: state.fontes,
+  }
+))(FosforoStep);

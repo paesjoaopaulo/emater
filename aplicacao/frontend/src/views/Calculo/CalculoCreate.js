@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { PropriedadeStep, AnaliseStep, FosforoStep, PotassioStep, ResultadoStep, CalcioMagnesioStep } from './steps';
 import MateriaOrganicaStep from './steps/MateriaOrganicaStep';
 
+import {connect} from 'react-redux';
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '90%'
@@ -79,15 +81,17 @@ const steps = [
   },
 ];
 
-export default function CalculoCreate() {
+function CalculoCreate({state}) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
   function handleNext() {
+    console.log(state)
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   }
 
   function handleBack() {
+    console.log(state)
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   }
 
@@ -164,3 +168,7 @@ export default function CalculoCreate() {
     </div>
   );
 }
+
+export default connect(
+  state => ({state})
+)(CalculoCreate);

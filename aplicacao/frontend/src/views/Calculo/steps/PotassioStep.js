@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField, MenuItem, InputAdornment, makeStyles } from '@material-ui/core';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -19,41 +20,37 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const fontes = [
-  {
-    id: 0,
-    name: 'Cloreto de Potássio'
-  },
-  {
-    id: 1,
-    name: 'Sulfato de Potássio'
-  },
-  {
-    id: 2,
-    name: 'Sulf.Potássio/Mag.'
-  },
-]
-
-const PotassioStep = () => {
+const PotassioStep = ({ fontes, potassio, dispatch }) => {
   const classes = useStyles();
+  function handleInputChange(e) {
+    dispatch({
+      type: 'PREENCHER_MO',
+      value: { [e.target.name]: e.target.value }
+    })
+  }
   return (
     <>
       <TextField
-        id="atualmente_potassio"
-        label="Teor desejado"
-        margin="normal"
         className={classes.textField}
+        id="atualmente_potassio"
         InputProps={{
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
+        label="Teor desejado"
+        margin="normal"
+        name="atualmente_potassio"
+        onChange={handleInputChange}
+        value={potassio.atualmente_potassio}
       />
       <TextField
+        className={classes.textField}
         id="fonte_potassio"
         label="Fonte de potássio"
         margin="normal"
-        className={classes.textField}
+        name="fonte_potassio"
+        onChange={handleInputChange}
         select
-        value={0}
+        value={potassio.fonte_potassio}
       >
         {
           fontes.map((fonte, key) => {
@@ -71,18 +68,21 @@ const PotassioStep = () => {
         }
       </TextField>
       <TextField
-        id="custo_fonte_potassio"
-        label="Custo"
-        margin="normal"
         className={classes.textField}
+        id="custo_fonte_potassio"
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
           endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
         }}
+        label="Custo"
+        margin="normal"
+        name="custo_fonte_potassio"
+        onChange={handleInputChange}
         type="number"
+        value={potassio.custo_fonte_potassio}
       />
     </>
   );
 }
 
-export default PotassioStep;
+export default connect(state => ({ potassio: state.potassio, fontes: state.fontes }))(PotassioStep);

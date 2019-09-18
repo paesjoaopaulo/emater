@@ -13,6 +13,94 @@ const INITIAL_STATE = {
       description: '>= 35% de argila'
     }
   ],
+  fontes: [
+    {
+      id: 0,
+      name: 'Superfosfato Simples',
+      eficiencia: 70
+    },
+    {
+      id: 1,
+      name: 'Superfosfato Triplo',
+      eficiencia: 70
+    },
+    {
+      id: 2,
+      name: 'MAP',
+      eficiencia: 70
+    },
+    {
+      id: 3,
+      name: 'DAP',
+      eficiencia: 70
+    },
+    {
+      id: 4,
+      name: 'Yoorin',
+      eficiencia: 70
+    },
+    {
+      id: 5,
+      name: 'Fosfato  Arad',
+      eficiencia: 70
+    },
+    {
+      id: 6,
+      name: 'Fosfato  Gafsa',
+      eficiencia: 70
+    },
+    {
+      id: 7,
+      name: 'Fosfato  Daoui',
+      eficiencia: 70
+    },
+    {
+      id: 8,
+      name: 'Fosf.  Patos Minas',
+      eficiencia: 70
+    },
+    {
+      id: 9,
+      name: 'Escória de Thomas',
+      eficiencia: 70
+    },
+    {
+      id: 10,
+      name: 'Ácido Fosfórico',
+      eficiencia: 70
+    },
+    {
+      id: 11,
+      name: 'Multif. Magnesiano',
+      eficiencia: 70
+    },
+    {
+      id: 30,
+      name: 'Cloreto de Potássio'
+    },
+    {
+      id: 31,
+      name: 'Sulfato de Potássio'
+    },
+    {
+      id: 32,
+      name: 'Sulf.Potássio/Mag.'
+    },
+  ],
+  unidades: [
+    {
+      id: 0,
+      name: 'Carbono',
+    },
+    {
+      id: 1,
+      name: '%',
+    },
+    {
+      id: 2,
+      name: 'g/dm³',
+    }
+  ],
   tipos_plantio: [
     {
       id: 0,
@@ -74,6 +162,10 @@ const INITIAL_STATE = {
     atualmente_hidrogenio_aluminio: '',
     materia_organica: ''
   },
+  mo: {
+    materia_organica: '',
+    unidade: ''
+  },
   fosforo: {
     teor_desejado: '',
     fonte: '',
@@ -94,16 +186,32 @@ const INITIAL_STATE = {
   },
 };
 
-function reducer(state = INITIAL_STATE, action) {
-  
-  if(action.type === 'PREENCHER_PROPRIEDADE'){
-    return {
-      ...state,
-      ...state.propriedade,
-      ...action.value
-    }
-  }
 
+function reducer(state = INITIAL_STATE, action) {
+  if (action.type === 'PREENCHER_PROPRIEDADE') {
+    state.propriedade = { ...state.propriedade, ...action.value }
+    return { ...state }
+  }
+  if (action.type === 'PREENCHER_ANALISE') {
+    state.analise = { ...state.analise, ...action.value }
+    return { ...state }
+  }
+  if (action.type === 'PREENCHER_MO') {
+    state.mo = { ...state.mo, ...action.value }
+    return { ...state }
+  }
+  if (action.type === 'PREENCHER_P') {
+    state.fosforo = { ...state.fosforo, ...action.value }
+    return { ...state }
+  }
+  if (action.type === 'PREENCHER_K') {
+    state.potassio = { ...state.potassio, ...action.value }
+    return { ...state }
+  }
+  if (action.type === 'PREENCHER_CMg') {
+    state.calcio_magnesio = { ...state.calcio_magnesio, ...action.value }
+    return { ...state }
+  }
   return state;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import {connect} from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -20,40 +21,37 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const unidades = [
-  {
-    id: 0,
-    name: 'Carbono',
-  },
-  {
-    id: 1,
-    name: '%',
-  },
-  {
-    id: 2,
-    name: 'g/dm³',
-  },
-]
-
-const MateriaOrganicaStep = () => {
+const MateriaOrganicaStep = ({mo, unidades, dispatch}) => {
 
   const classes = useStyles();
+  
+  function handleInputChange(e) {
+    dispatch({
+      type: 'PREENCHER_MO',
+      value: { [e.target.name]: e.target.value }
+    })
+  }
 
   return (
     <>
       <TextField
+        className={classes.textField}
         id="materia_organica"
         label="M.O."
         margin="normal"
-        className={classes.textField}
+        name="materia_organica"
+        onChange={handleInputChange}
+        value={mo.materia_organica}
       />
       <TextField
+        className={classes.textField}
         id="unidade"
         label="Unidade"
         margin="normal"
-        className={classes.textField}
+        name="unidade"
+        onChange={handleInputChange}
         select
-        value={0}
+        value={mo.unidade}
       >
         {
           unidades.map((unidade, key) => {
@@ -74,4 +72,4 @@ const MateriaOrganicaStep = () => {
   );
 }
 
-export default MateriaOrganicaStep;
+export default connect(state => ({mo: state.mo, unidades: state.unidades}))(MateriaOrganicaStep);

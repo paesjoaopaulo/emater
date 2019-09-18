@@ -29,7 +29,6 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
       type: 'PREENCHER_PROPRIEDADE',
       value: { [e.target.name]: e.target.value }
     })
-    console.log(propriedade)
   }
 
   return (
@@ -41,6 +40,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="nome_do_proprietario"
         onChange={handleInputChange}
+        value={propriedade.nome_do_proprietario}
       />
 
       <TextField
@@ -51,7 +51,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         name="municipio"
         onChange={handleInputChange}
         select
-        value={1}
+        value={propriedade.municipio}
       >
         {
           cidades.map((city, key) => {
@@ -74,6 +74,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="lote"
         onChange={handleInputChange}
+        value={propriedade.lote}
       />
 
       <TextField
@@ -88,6 +89,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         onChange={handleInputChange}
         prefix="R$"
         type="number"
+        value={propriedade.area_total}
       />
 
       <TextField
@@ -97,6 +99,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="talhao"
         onChange={handleInputChange}
+        value={propriedade.talhao}
       />
 
       <TextField
@@ -109,6 +112,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="area_do_talhao"
         onChange={handleInputChange}
+        value={propriedade.area_do_talhao}
       />
 
       <TextField
@@ -118,6 +122,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="matricula_do_lote"
         onChange={handleInputChange}
+        value={propriedade.matricula_do_lote}
       />
 
       <TextField
@@ -128,7 +133,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         name="textura_do_solo"
         onChange={handleInputChange}
         select
-        value={1}
+        value={propriedade.textura_do_solo}
       >
         {
           texturas.map((textura, key) => {
@@ -152,7 +157,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         name="sistema_de_cultivo"
         onChange={handleInputChange}
         select
-        value={1}
+        value={propriedade.sistema_de_cultivo}
       >
         {
           tipos_plantio.map((tipo, key) => {
@@ -175,6 +180,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="nome_do_responsavel_tecnico"
         onChange={handleInputChange}
+        value={propriedade.nome_do_responsavel_tecnico}
       />
 
       <TextField
@@ -187,6 +193,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="profundidade_da_amostra"
         onChange={handleInputChange}
+        value={propriedade.profundidade_da_amostra}
       />
 
       <TextField
@@ -196,6 +203,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="numero_do_resultado_da_analise_do_solo"
         onChange={handleInputChange}
+        value={propriedade.numero_do_resultado_da_analise_do_solo}
       />
     </>
   );
