@@ -28,6 +28,7 @@ const CalcioMagnesioStep = () => {
         id="atualmente_fosforo"
         label="P"
         margin="normal"
+        type="number"
         className={classes.textField}
       />
     </>

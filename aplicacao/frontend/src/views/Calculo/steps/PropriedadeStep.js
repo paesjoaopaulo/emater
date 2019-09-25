@@ -111,6 +111,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         label="Área do Talhão"
         margin="normal"
         name="area_do_talhao"
+        type="number"
         onChange={handleInputChange}
         value={propriedade.area_do_talhao}
       />
@@ -140,7 +141,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
             return (
               <MenuItem
                 key={key}
-                value={textura.id}
+                value={textura.value}
               >
                 {textura.name}
               </MenuItem>
@@ -164,7 +165,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
             return (
               <MenuItem
                 key={key}
-                value={tipo.id}
+                value={tipo.value}
               >
                 {tipo.name}
               </MenuItem>
@@ -192,6 +193,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         label="Profundidade da Amostra"
         margin="normal"
         name="profundidade_da_amostra"
+        type="number"
         onChange={handleInputChange}
         value={propriedade.profundidade_da_amostra}
       />

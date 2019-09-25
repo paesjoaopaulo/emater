@@ -38,6 +38,7 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         }}
         label="Teor desejado"
         margin="normal"
+        type="number"
         name="atualmente_potassio"
         onChange={handleInputChange}
         value={potassio.atualmente_potassio}

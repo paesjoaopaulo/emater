@@ -26,6 +26,7 @@ const ResultadoStep = () => {
       <TextField
         id="atualmente_fosforo"
         label="P"
+        type="number"
         margin="normal"
         className={classes.textField}
       />

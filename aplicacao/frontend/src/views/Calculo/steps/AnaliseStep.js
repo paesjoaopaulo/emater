@@ -103,7 +103,7 @@ const AnaliseStep = ({ analise, dispatch }) => {
         id="atualmente_aluminio"
         name="atualmente_aluminio"
         InputProps={{
-          endAdornment: <InputAdornment position="end">mg/dm³</InputAdornment>,
+          endAdornment: <InputAdornment position="end">cmol/dm³</InputAdornment>,
         }}
         label="Al"
         margin="normal"
@@ -116,7 +116,7 @@ const AnaliseStep = ({ analise, dispatch }) => {
         id="atualmente_hidrogenio_aluminio"
         name="atualmente_hidrogenio_aluminio"
         InputProps={{
-          endAdornment: <InputAdornment position="end">mg/dm³</InputAdornment>,
+          endAdornment: <InputAdornment position="end">cmol/dm³</InputAdornment>,
         }}
         label="H + Al"
         margin="normal"

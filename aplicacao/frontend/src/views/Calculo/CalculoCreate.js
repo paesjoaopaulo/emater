@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { PropriedadeStep, AnaliseStep, FosforoStep, PotassioStep, ResultadoStep, CalcioMagnesioStep } from './steps';
 import MateriaOrganicaStep from './steps/MateriaOrganicaStep';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,59 +40,76 @@ const useStyles = makeStyles(theme => ({
   },
   menu: {
     width: 200,
+  },
+  instructions: {
+    marginTop: 15
   }
 }));
 
 const steps = [
   {
     title: 'Propriedade',
+    description: "Dados da propriedade",
     completed: false,
     component: <PropriedadeStep />
   },
   {
     title: 'Análise do Solo',
+    description: "Análise do solo",
     completed: false,
     component: <AnaliseStep useStyles={useStyles} />
   },
   {
     title: 'Matéria Orgânica',
+    description: "Matéria orgânica presente no solo",
     completed: false,
     component: <MateriaOrganicaStep />
   },
   {
     title: 'Correção do Fósforo',
+    description: "Teores de fósforo presentes no solo",
     completed: false,
     component: <FosforoStep />
   },
   {
     title: 'Correção do Potássio',
+    description: "Teores de potássio contidos no solo",
     completed: false,
     component: <PotassioStep />
   },
   {
     title: 'Correção do Cálcio e Magnésio',
+    description: "Teste de cálcio",
     completed: false,
     component: <CalcioMagnesioStep />
   },
   {
     title: 'Finalizar',
+    description: "Dados obtidos por meio de cálculos",
     completed: false,
     component: <ResultadoStep />
   },
 ];
 
-function CalculoCreate({state}) {
+function CalculoCreate({ state, dispatch }) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
   function handleNext() {
-    console.log(state)
+    apiCall();
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   }
 
   function handleBack() {
-    console.log(state)
+    apiCall();
     setActiveStep(prevActiveStep => prevActiveStep - 1);
+  }
+
+  function apiCall() {
+    dispatch({
+      type: 'API_CALL',
+      value: state
+    })
   }
 
   function handleReset() {
@@ -123,8 +140,14 @@ function CalculoCreate({state}) {
       >
         {steps.map((step, index) => (
           <Step key={index}>
+
             <StepLabel>{step.title}</StepLabel>
+
+
             <StepContent timeout={1000}>
+              <Typography className={classes.instructions}>
+                {step.description}
+              </Typography>
               {step.component}
               <div className={classes.actionsContainer}>
                 <div>
@@ -170,5 +193,5 @@ function CalculoCreate({state}) {
 }
 
 export default connect(
-  state => ({state})
+  state => ({ state })
 )(CalculoCreate);

@@ -40,6 +40,7 @@ const MateriaOrganicaStep = ({mo, unidades, dispatch}) => {
         label="M.O."
         margin="normal"
         name="materia_organica"
+        type="number"
         onChange={handleInputChange}
         value={mo.materia_organica}
       />

@@ -43,6 +43,7 @@ const FosforoStep = ({ fosforo, fontes, dispatch }) => {
         label="Teor desejado"
         margin="normal"
         name="atualmente_fosforo"
+        type="number"
         onChange={handleInputChange}
         value={fosforo.atualmente_fosforo}
       />
