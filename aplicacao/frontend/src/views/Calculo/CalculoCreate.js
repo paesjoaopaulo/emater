@@ -5,16 +5,18 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { PropriedadeStep, AnaliseStep, FosforoStep, PotassioStep, ResultadoStep, CalcioMagnesioStep } from './steps';
 import MateriaOrganicaStep from './steps/MateriaOrganicaStep';
-
 import { connect } from 'react-redux';
+
+
+import MaterialUIForm from 'material-ui-form';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '90%'
+    width: '90%',
+    margin: '20px auto'
   },
   button: {
     marginTop: theme.spacing(1),
@@ -42,78 +44,87 @@ const useStyles = makeStyles(theme => ({
     width: 200,
   },
   instructions: {
-    marginTop: 15
+    marginTop: 10,
+    marginLeft: 32
+  },
+  label: {
+    textTransform: 'uppercase'
+  },
+  hide: {
+    display: 'none'
   }
 }));
 
 const steps = [
   {
+    id: 1,
     title: 'Propriedade',
-    description: "Dados da propriedade",
+    description: 'Neste passo você deverá preencher as informações de identificação da propriedade.',
     completed: false,
-    component: <PropriedadeStep />
+    component: <PropriedadeStep />,
+    group: 'Propriedade'
   },
   {
+    id: 2,
     title: 'Análise do Solo',
-    description: "Análise do solo",
+    description: 'Com base no laudo técnico do solo, preencha os campos abaixo com os teores de cada nutriente presentes atualmente no solo.',
     completed: false,
-    component: <AnaliseStep useStyles={useStyles} />
+    component: <AnaliseStep useStyles={useStyles} />,
+    group: 'Analise'
   },
   {
+    id: 3,
     title: 'Matéria Orgânica',
-    description: "Matéria orgânica presente no solo",
+    description: 'Informe o teor de materia orgânica presente no solo. Fique atento à unidade de medida informada.',
     completed: false,
-    component: <MateriaOrganicaStep />
+    component: <MateriaOrganicaStep />,
+    group: 'MateriaOrganica'
   },
   {
+    id: 4,
     title: 'Correção do Fósforo',
-    description: "Teores de fósforo presentes no solo",
+    description: 'Nesta etapa você deverá informar os dados referentes à correção e equilíbrio do fósforo',
     completed: false,
-    component: <FosforoStep />
+    component: <FosforoStep />,
+    group: 'Fosforo'
   },
   {
+    id: 5,
     title: 'Correção do Potássio',
-    description: "Teores de potássio contidos no solo",
+    description: 'Nesta etapa você deverá informar os dados referentes à correção e equilíbrio do potássio',
     completed: false,
-    component: <PotassioStep />
+    component: <PotassioStep />,
+    group: 'Potassio'
   },
   {
+    id: 6,
     title: 'Correção do Cálcio e Magnésio',
-    description: "Teste de cálcio",
+    description: 'Nesta etapa você deverá informar os dados referentes à correção e equilíbrio de cálcio e magnésio',
     completed: false,
-    component: <CalcioMagnesioStep />
+    component: <CalcioMagnesioStep />,
+    group: 'CalcioMagnesio'
   },
   {
+    id: 7,
     title: 'Finalizar',
-    description: "Dados obtidos por meio de cálculos",
+    description: 'O processo de cálculo foi realizado. Caso todos os campos estejam válidos, o cálculo será salvo na base de dados.',
     completed: false,
-    component: <ResultadoStep />
+    component: <ResultadoStep />,
+    group: 'Resultado'
   },
 ];
 
 function CalculoCreate({ state, dispatch }) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [errorSteps] = React.useState([]);
 
   function handleNext() {
-    apiCall();
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   }
 
   function handleBack() {
-    apiCall();
     setActiveStep(prevActiveStep => prevActiveStep - 1);
-  }
-
-  function apiCall() {
-    dispatch({
-      type: 'API_CALL',
-      value: state
-    })
-  }
-
-  function handleReset() {
-    setActiveStep(0);
   }
 
   function prevStepButton() {
@@ -132,62 +143,66 @@ function CalculoCreate({ state, dispatch }) {
     }
   }
 
+  function submit(values, pristineValues) {
+    // get all values and pristineValues on form submission
+  }
+
+  function updateErrorSteps(field, errorSteps) {
+    console.log(field, errorSteps)
+  }
+
   return (
     <div className={classes.root}>
-      <Stepper
+      <MaterialUIForm
         activeStep={activeStep}
-        orientation="vertical"
+        onFieldValidation={updateErrorSteps}
+        onSubmit={submit}
       >
-        {steps.map((step, index) => (
-          <Step key={index}>
-
-            <StepLabel>{step.title}</StepLabel>
-
-
-            <StepContent timeout={1000}>
-              <Typography className={classes.instructions}>
-                {step.description}
-              </Typography>
-              {step.component}
-              <div className={classes.actionsContainer}>
-                <div>
-                  <Button
-                    className={classes.button}
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                  >
-                    {prevStepButton()}
-                  </Button>
-                  <Button
-                    className={classes.button}
-                    color="primary"
-                    disabled={activeStep === steps.length - 1}
-                    onClick={handleNext}
-                    variant="contained"
-                  >
-                    {nextStepButton()}
-                  </Button>
-                </div>
-              </div>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
-      {activeStep === steps.length && (
-        <Paper
-          className={classes.resetContainer}
-          elevation={0}
-          square
+        <Stepper
+          activeStep={activeStep}
+          orientation="vertical"
         >
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button
-            className={classes.button}
-            onClick={handleReset}
-          >
-            Reset
-          </Button>
-        </Paper>
-      )}
+          {steps.map((step, index) => (
+            <Step key={index}>
+
+              <StepLabel className={classes.label} error={errorSteps.includes(step.id)}>{step.title}</StepLabel>
+
+              <div className={(activeStep !== index) ? classes.hide : ''}>
+                <Typography className={classes.instructions}>
+                  {step.description}
+                </Typography>
+              </div>
+
+              <StepContent timeout={1000}>
+
+                <React.Fragment>{step.component}</React.Fragment>
+
+                <div className={classes.actionsContainer}>
+                  <div>
+                    <Button
+                      className={classes.button}
+                      disabled={activeStep === 0}
+                      onClick={handleBack}
+                    >
+                      {prevStepButton()}
+                    </Button>
+                    <Button
+                      className={classes.button}
+                      color="primary"
+                      disabled={activeStep === steps.length - 1}
+                      onClick={handleNext}
+                      type="submit"
+                      variant="contained"
+                    >
+                      {nextStepButton()}
+                    </Button>
+                  </div>
+                </div>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+      </MaterialUIForm>
     </div>
   );
 }

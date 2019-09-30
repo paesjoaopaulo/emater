@@ -40,6 +40,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="nome_do_proprietario"
         onChange={handleInputChange}
+        required
         value={propriedade.nome_do_proprietario}
       />
 
@@ -50,6 +51,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="municipio"
         onChange={handleInputChange}
+        required
         select
         value={propriedade.municipio}
       >
@@ -88,6 +90,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         name="area_total"
         onChange={handleInputChange}
         prefix="R$"
+        required
         type="number"
         value={propriedade.area_total}
       />
@@ -99,6 +102,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="talhao"
         onChange={handleInputChange}
+        required
         value={propriedade.talhao}
       />
 
@@ -111,8 +115,9 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         label="Área do Talhão"
         margin="normal"
         name="area_do_talhao"
-        type="number"
         onChange={handleInputChange}
+        required
+        type="number"
         value={propriedade.area_do_talhao}
       />
 
@@ -133,6 +138,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="textura_do_solo"
         onChange={handleInputChange}
+        required
         select
         value={propriedade.textura_do_solo}
       >
@@ -157,6 +163,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="sistema_de_cultivo"
         onChange={handleInputChange}
+        required
         select
         value={propriedade.sistema_de_cultivo}
       >
@@ -181,6 +188,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="nome_do_responsavel_tecnico"
         onChange={handleInputChange}
+        required
         value={propriedade.nome_do_responsavel_tecnico}
       />
 
@@ -193,8 +201,9 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         label="Profundidade da Amostra"
         margin="normal"
         name="profundidade_da_amostra"
-        type="number"
         onChange={handleInputChange}
+        required
+        type="number"
         value={propriedade.profundidade_da_amostra}
       />
 
@@ -205,6 +214,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         margin="normal"
         name="numero_do_resultado_da_analise_do_solo"
         onChange={handleInputChange}
+        required
         value={propriedade.numero_do_resultado_da_analise_do_solo}
       />
     </>

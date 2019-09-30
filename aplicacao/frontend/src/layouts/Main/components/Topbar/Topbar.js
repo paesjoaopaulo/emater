@@ -7,6 +7,7 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
+import SearchSharp from '@material-ui/icons/SearchSharp';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,7 +26,7 @@ const Topbar = props => {
 
   const classes = useStyles();
 
-  const [notifications] = useState([]);
+  const [notifications] = useState(['Olá, tenha um bom dia!']);
 
   return (
     <AppBar
@@ -42,11 +43,17 @@ const Topbar = props => {
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
+          <IconButton
+            className={classes.signOutButton}
+            color="inherit"
+          >
+            <SearchSharp />
+          </IconButton>
           <IconButton color="inherit">
             <Badge
               badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
+              color="secondary"
+              variant="standard"
             >
               <NotificationsIcon />
             </Badge>

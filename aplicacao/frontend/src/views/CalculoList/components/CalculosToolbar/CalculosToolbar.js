@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Button } from '@material-ui/core';
+import { NavLink as RouterLink } from 'react-router-dom';
 
 import { SearchInput } from 'components';
 
@@ -28,7 +29,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const UsersToolbar = props => {
+const CustomRouterLink = forwardRef((props, ref) => (
+  <div
+    ref={ref}
+  >
+    <RouterLink {...props} />
+  </div>
+));
+
+const CalculosToolbar = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -40,13 +49,14 @@ const UsersToolbar = props => {
     >
       <div className={classes.row}>
         <span className={classes.spacer} />
-        <Button className={classes.importButton}>Import</Button>
-        <Button className={classes.exportButton}>Export</Button>
+        <Button className={classes.exportButton}>Exportar</Button>
         <Button
           color="primary"
+          component={CustomRouterLink}
+          to="calculos/novo"
           variant="contained"
         >
-          Add user
+          Novo
         </Button>
       </div>
       <div className={classes.row}>
@@ -59,8 +69,8 @@ const UsersToolbar = props => {
   );
 };
 
-UsersToolbar.propTypes = {
+CalculosToolbar.propTypes = {
   className: PropTypes.string
 };
 
-export default UsersToolbar;
+export default CalculosToolbar;

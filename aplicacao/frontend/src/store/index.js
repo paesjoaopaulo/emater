@@ -50,7 +50,7 @@ function reducer(state = INITIAL_STATE, action) {
   if (action.type === 'PREENCHER_CMg') {
     state.calcio_magnesio = { ...state.calcio_magnesio, ...action.value }
   }
-  localStorage.setItem('app_state', state);
+  localStorage.setItem('app_state', JSON.stringify(state));
 
   if (action.type === 'API_CALL') {
     apiCall('http://127.0.0.1:8000/calculo', state, 'POST');

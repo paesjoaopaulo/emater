@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import MoneyIcon from '@material-ui/icons/Money';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 700
   },
   avatar: {
-    backgroundColor: theme.palette.error.main,
+    backgroundColor: theme.palette.success.main,
     height: 56,
     width: 56
   },
@@ -32,15 +32,15 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   differenceIcon: {
-    color: theme.palette.error.dark
+    color: theme.palette.success.dark
   },
   differenceValue: {
-    color: theme.palette.error.dark,
+    color: theme.palette.success.dark,
     marginRight: theme.spacing(1)
   }
 }));
 
-const Budget = props => {
+const Calculos = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -58,42 +58,49 @@ const Budget = props => {
           <Grid item>
             <Typography
               className={classes.title}
-              color="textSecondary"
+              color="inherit"
               gutterBottom
               variant="body2"
             >
-              BUDGET
+              CÁLCULOS REALIZADOS
             </Typography>
-            <Typography variant="h3">$24,000</Typography>
+            <Typography
+              color="inherit"
+              variant="h3"
+            >
+              96
+            </Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <MoneyIcon className={classes.icon} />
+              <AttachMoneyIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>
+
         <div className={classes.difference}>
-          <ArrowDownwardIcon className={classes.differenceIcon} />
+          <ArrowUpwardIcon className={classes.differenceIcon} />
           <Typography
             className={classes.differenceValue}
             variant="body2"
           >
-            12%
+            34%
           </Typography>
           <Typography
             className={classes.caption}
             variant="caption"
           >
-            Since last month
+            Em comparação ao mês anterior
           </Typography>
         </div>
+
       </CardContent>
     </Card>
   );
 };
 
-Budget.propTypes = {
+Calculos.propTypes = {
   className: PropTypes.string
 };
 
-export default Budget;
+export default Calculos;

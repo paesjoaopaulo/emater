@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -22,15 +22,11 @@ const useStyles = makeStyles(theme => ({
 const ResultadoStep = () => {
   const classes = useStyles();
   return (
-    <>
-      <TextField
-        id="atualmente_fosforo"
-        label="P"
-        type="number"
-        margin="normal"
-        className={classes.textField}
-      />
-    </>
+    <div className={classes.root}>
+      <Typography>Registrar cálculo de correção do solo.</Typography>
+      <Typography>Baixar o PDF.</Typography>
+      <Typography>Baixar o Excel.</Typography>
+    </div>
   );
 }
 

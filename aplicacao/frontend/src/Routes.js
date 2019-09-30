@@ -7,6 +7,7 @@ import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 import {
   Dashboard as DashboardView,
   Calculo as CalculoView,
+  CalculoList as CalculoListView,
   ProductList as ProductListView,
   UserList as UserListView,
   Typography as TypographyView,
@@ -15,7 +16,8 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
-  NotFound as NotFoundView
+  NotFound as NotFoundView,
+  MyForm as MyFormView
 } from './views';
 
 const Routes = () => {
@@ -27,16 +29,29 @@ const Routes = () => {
         to="/dashboard"
       />
       <RouteWithLayout
+        component={MyFormView}
+        exact
+        layout={MainLayout}
+        path="/teste"
+      />
+      <RouteWithLayout
         component={DashboardView}
         exact
         layout={MainLayout}
         path="/dashboard"
       />
       <RouteWithLayout
+        component={CalculoListView}
+        exact
+        layout={MainLayout}
+        path="/calculos"
+      />
+      <RouteWithLayout
         component={CalculoView}
         exact
         layout={MainLayout}
-        path="/calculo"
+        path="/calculos/novo"
+        
       />
       <RouteWithLayout
         component={UserListView}

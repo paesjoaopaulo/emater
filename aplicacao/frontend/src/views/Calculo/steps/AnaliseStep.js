@@ -47,6 +47,7 @@ const AnaliseStep = ({ analise, dispatch }) => {
         value={analise.atualmente_fosforo}
       />
       <TextField
+        error={true}
         className={classes.textField}
         id="atualmente_potassio"
         name="atualmente_potassio"
@@ -58,6 +59,7 @@ const AnaliseStep = ({ analise, dispatch }) => {
         type="number"
         onChange={handleInputChange}
         value={analise.atualmente_potassio}
+        FormHelperTextProps={{error: true}}
       />
       <TextField
         className={classes.textField}

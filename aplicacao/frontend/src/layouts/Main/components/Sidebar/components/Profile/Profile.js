@@ -27,9 +27,9 @@ const Profile = props => {
   const classes = useStyles();
 
   const user = {
-    name: 'João Paulo Paes',
+    name: 'Milton Paes',
     avatar: '/images/avatars/avatar_11.png',
-    bio: 'Developer'
+    bio: 'Engenheiro Agrônomo'
   };
 
   return (
