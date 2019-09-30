@@ -148,7 +148,6 @@ function CalculoCreate({ state, dispatch }) {
   }
 
   function updateErrorSteps(field, errorSteps) {
-    console.log(field, errorSteps)
   }
 
   return (

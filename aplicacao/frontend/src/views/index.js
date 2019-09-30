@@ -10,5 +10,3 @@ export { default as Typography } from './Typography';
 export { default as UserList } from './UserList';
 export { default as Calculo } from './Calculo';
 export { default as CalculoList } from './CalculoList';
-
-export { default as MyForm } from './MyForm';

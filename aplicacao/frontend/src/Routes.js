@@ -16,8 +16,7 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
-  NotFound as NotFoundView,
-  MyForm as MyFormView
+  NotFound as NotFoundView
 } from './views';
 
 const Routes = () => {
@@ -27,12 +26,6 @@ const Routes = () => {
         exact
         from="/"
         to="/dashboard"
-      />
-      <RouteWithLayout
-        component={MyFormView}
-        exact
-        layout={MainLayout}
-        path="/teste"
       />
       <RouteWithLayout
         component={DashboardView}

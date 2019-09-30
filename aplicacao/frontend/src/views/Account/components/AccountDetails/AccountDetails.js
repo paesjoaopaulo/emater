@@ -40,16 +40,16 @@ const AccountDetails = props => {
 
   const states = [
     {
-      value: 'alabama',
-      label: 'Alabama'
+      value: 'pr',
+      label: 'Paraná'
     },
     {
-      value: 'new-york',
-      label: 'New York'
+      value: 'sp',
+      label: 'São Paulo'
     },
     {
-      value: 'san-francisco',
-      label: 'San Francisco'
+      value: 'mg',
+      label: 'Minas Gerais'
     }
   ];
 

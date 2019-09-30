@@ -50,6 +50,10 @@ function reducer(state = INITIAL_STATE, action) {
   if (action.type === 'PREENCHER_CMg') {
     state.calcio_magnesio = { ...state.calcio_magnesio, ...action.value }
   }
+  if (action.type === 'CHANGE_TEXTURE') {
+    state.analise = { ...state.analise, ...action.value }
+  }
+
   localStorage.setItem('app_state', JSON.stringify(state));
 
   if (action.type === 'API_CALL') {

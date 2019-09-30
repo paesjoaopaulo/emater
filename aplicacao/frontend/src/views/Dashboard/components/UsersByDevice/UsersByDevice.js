@@ -58,7 +58,7 @@ const UsersByDevice = props => {
         hoverBorderColor: theme.palette.white
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['PR', 'SP', 'MG']
   };
 
   const options = {
@@ -85,19 +85,19 @@ const UsersByDevice = props => {
 
   const devices = [
     {
-      title: 'Desktop',
+      title: 'PR',
       value: '63',
       icon: <LaptopMacIcon />,
       color: theme.palette.primary.main
     },
     {
-      title: 'Tablet',
+      title: 'SP',
       value: '15',
       icon: <TabletMacIcon />,
       color: theme.palette.error.main
     },
     {
-      title: 'Mobile',
+      title: 'MG',
       value: '23',
       icon: <PhoneIphoneIcon />,
       color: theme.palette.warning.main
@@ -115,7 +115,7 @@ const UsersByDevice = props => {
             <RefreshIcon />
           </IconButton>
         }
-        title="Users By Device"
+        title="Produtores por estado"
       />
       <Divider />
       <CardContent>

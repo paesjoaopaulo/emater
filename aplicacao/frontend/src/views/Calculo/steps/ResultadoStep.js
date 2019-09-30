@@ -23,9 +23,14 @@ const ResultadoStep = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      
+      <Typography>Mostrar valores após as correções.</Typography>
+      
       <Typography>Registrar cálculo de correção do solo.</Typography>
-      <Typography>Baixar o PDF.</Typography>
-      <Typography>Baixar o Excel.</Typography>
+      
+      <Typography>Exportar PDF.</Typography>
+      
+      <Typography>Exportar Excel (Própria planilha preenchida).</Typography>
     </div>
   );
 }

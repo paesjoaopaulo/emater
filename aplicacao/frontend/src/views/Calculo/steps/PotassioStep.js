@@ -24,7 +24,7 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
   const classes = useStyles();
   function handleInputChange(e) {
     dispatch({
-      type: 'PREENCHER_MO',
+      type: 'PREENCHER_K',
       value: { [e.target.name]: e.target.value }
     })
   }
@@ -38,9 +38,10 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         }}
         label="Teor desejado"
         margin="normal"
-        type="number"
         name="atualmente_potassio"
         onChange={handleInputChange}
+        required
+        type="number"
         value={potassio.atualmente_potassio}
       />
       <TextField
@@ -50,6 +51,7 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         margin="normal"
         name="fonte_potassio"
         onChange={handleInputChange}
+        required
         select
         value={potassio.fonte_potassio}
       >
@@ -79,6 +81,7 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         margin="normal"
         name="custo_fonte_potassio"
         onChange={handleInputChange}
+        required
         type="number"
         value={potassio.custo_fonte_potassio}
       />

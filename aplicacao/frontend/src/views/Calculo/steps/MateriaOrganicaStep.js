@@ -40,8 +40,9 @@ const MateriaOrganicaStep = ({mo, unidades, dispatch}) => {
         label="M.O."
         margin="normal"
         name="materia_organica"
-        type="number"
         onChange={handleInputChange}
+        required
+        type="number"
         value={mo.materia_organica}
       />
       <TextField
@@ -51,6 +52,7 @@ const MateriaOrganicaStep = ({mo, unidades, dispatch}) => {
         margin="normal"
         name="unidade"
         onChange={handleInputChange}
+        required
         select
         value={mo.unidade}
       >

@@ -26,6 +26,16 @@ const FosforoStep = ({ fosforo, fontes, dispatch }) => {
   const classes = useStyles();
 
   function handleInputChange(e) {
+    if (e.target.name === 'fonte_fosforo') {
+      const fonte = fontes.filter((fonte) => fonte.id === e.target.value)
+      dispatch({
+        type: 'PREENCHER_P',
+        value: {
+          custo_fonte_fosforo: fonte.custo_fonte_fosforo,
+          eficiencia_fonte_fosforo: fonte.eficiencia_fonte_fosforo,
+        }
+      })
+    }
     dispatch({
       type: 'PREENCHER_P',
       value: { [e.target.name]: e.target.value }
@@ -39,12 +49,14 @@ const FosforoStep = ({ fosforo, fontes, dispatch }) => {
         id="atualmente_fosforo"
         InputProps={{
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          inputProps: { min: 0 }
         }}
         label="Teor desejado"
         margin="normal"
         name="atualmente_fosforo"
-        type="number"
         onChange={handleInputChange}
+        required
+        type="number"
         value={fosforo.atualmente_fosforo}
       />
       <TextField
@@ -54,6 +66,7 @@ const FosforoStep = ({ fosforo, fontes, dispatch }) => {
         margin="normal"
         name="fonte_fosforo"
         onChange={handleInputChange}
+        required
         select
         value={fosforo.fonte_fosforo}
       >
@@ -74,15 +87,32 @@ const FosforoStep = ({ fosforo, fontes, dispatch }) => {
       </TextField>
       <TextField
         className={classes.textField}
+        id="eficiencia_fonte_fosforo"
+        InputProps={{
+          endAdornment: <InputAdornment position="end"></InputAdornment>,
+          inputProps: { min: 0 }
+        }}
+        label="Eficiência"
+        margin="normal"
+        name="eficiencia_fonte_fosforo"
+        onChange={handleInputChange}
+        required
+        type="number"
+        value={fosforo.eficiencia_fonte_fosforo}
+      />
+      <TextField
+        className={classes.textField}
         id="custo_fonte_fosforo"
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
           endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
+          inputProps: { min: 0 }
         }}
         label="Custo"
         margin="normal"
         name="custo_fonte_fosforo"
         onChange={handleInputChange}
+        required
         type="number"
         value={fosforo.custo_fonte_fosforo}
       />

@@ -25,10 +25,42 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
   const classes = useStyles();
 
   function handleInputChange(e) {
-    dispatch({
-      type: 'PREENCHER_PROPRIEDADE',
-      value: { [e.target.name]: e.target.value }
-    })
+    if (e.target.name === 'textura_do_solo') {
+      let ideais = null;
+      if (e.target.value === 'ARGILOSO') {
+        ideais = {
+          fosforo: 9,
+          potassio: 0.35,
+          calcio: 6,
+          magnesio: 1.5,
+          enxofre: 9,
+          aluminio: 0,
+          h_al: 0,
+        }
+      } else {
+        ideais = {
+          fosforo: 12,
+          potassio: 0.25,
+          calcio: 4,
+          magnesio: 1,
+          enxofre: 6,
+          aluminio: 0,
+          h_al: 0,
+        }
+      }
+      dispatch(
+        {
+          type: 'CHANGE_TEXTURE',
+          value: { ideais }
+        })
+    }
+    dispatch(
+      {
+        type: 'PREENCHER_PROPRIEDADE',
+        value: { [e.target.name]: e.target.value }
+      }
+    )
+
   }
 
   return (
@@ -84,6 +116,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         id="area_total"
         InputProps={{
           endAdornment: <InputAdornment position="end">m²</InputAdornment>,
+          inputProps: { min: 0 }
         }}
         label="Área Total"
         margin="normal"
@@ -111,6 +144,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         id="area_do_talhao"
         InputProps={{
           endAdornment: <InputAdornment position="end">m²</InputAdornment>,
+          inputProps: { min: 0 }
         }}
         label="Área do Talhão"
         margin="normal"
@@ -197,6 +231,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         id="profundidade_da_amostra"
         InputProps={{
           endAdornment: <InputAdornment position="end">cm</InputAdornment>,
+          inputProps: { min: 0 }
         }}
         label="Profundidade da Amostra"
         margin="normal"

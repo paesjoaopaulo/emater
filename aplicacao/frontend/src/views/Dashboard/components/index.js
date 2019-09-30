@@ -1,6 +1,5 @@
 export { default as Propriedades } from './Propriedades';
 export { default as LatestOrders } from './LatestOrders';
-export { default as LatestProducts } from './LatestProducts';
 export { default as LatestSales } from './LatestSales';
 export { default as Cidades } from './Cidades';
 export { default as Calculos } from './Calculos';
