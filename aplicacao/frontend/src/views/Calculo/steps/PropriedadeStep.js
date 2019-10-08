@@ -5,19 +5,19 @@ import { connect } from 'react-redux';
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
   },
   dense: {
-    marginTop: 19,
+    marginTop: 19
   },
   menu: {
-    width: 200,
-  },
+    width: 200
+  }
 }));
 
 
@@ -35,8 +35,8 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
           magnesio: 1.5,
           enxofre: 9,
           aluminio: 0,
-          h_al: 0,
-        }
+          h_al: 0
+        };
       } else {
         ideais = {
           fosforo: 12,
@@ -45,21 +45,21 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
           magnesio: 1,
           enxofre: 6,
           aluminio: 0,
-          h_al: 0,
-        }
+          h_al: 0
+        };
       }
       dispatch(
         {
           type: 'CHANGE_TEXTURE',
           value: { ideais }
-        })
+        });
     }
     dispatch(
       {
         type: 'PREENCHER_PROPRIEDADE',
         value: { [e.target.name]: e.target.value }
       }
-    )
+    );
 
   }
 
@@ -96,7 +96,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
               >
                 {city.name}
               </MenuItem>
-            )
+            );
           })
         }
       </TextField>
@@ -185,7 +185,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
               >
                 {textura.name}
               </MenuItem>
-            )
+            );
           })
         }
       </TextField>
@@ -210,7 +210,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
               >
                 {tipo.name}
               </MenuItem>
-            )
+            );
           })
         }
       </TextField>
@@ -254,7 +254,7 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
       />
     </>
   );
-}
+};
 
 export default connect(state => (
   {

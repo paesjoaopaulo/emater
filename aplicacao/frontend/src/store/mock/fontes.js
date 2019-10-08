@@ -1,91 +1,298 @@
 const fontes = [
-    {
-        id: 0,
-        custo: 100,
-        name: 'Superfosfato Simples',
-        eficiencia: 70
-    },
-    {
-        id: 1,
-        custo: 101,
-        name: 'Superfosfato Triplo',
-        eficiencia: 70
-    },
-    {
-        id: 2,
-        custo: 102,
-        name: 'MAP',
-        eficiencia: 70
-    },
-    {
-        id: 3,
-        custo: 103,
-        name: 'DAP',
-        eficiencia: 70
-    },
-    {
-        id: 4,
-        custo: 104,
-        name: 'Yoorin',
-        eficiencia: 70
-    },
-    {
-        id: 5,
-        custo: 105,
-        name: 'Fosfato  Arad',
-        eficiencia: 70
-    },
-    {
-        id: 6,
-        custo: 106,
-        name: 'Fosfato  Gafsa',
-        eficiencia: 70
-    },
-    {
-        id: 7,
-        custo: 107,
-        name: 'Fosfato  Daoui',
-        eficiencia: 70
-    },
-    {
-        id: 8,
-        custo: 108,
-        name: 'Fosf.  Patos Minas',
-        eficiencia: 70
-    },
-    {
-        id: 9,
-        custo: 109,
-        name: 'Escória de Thomas',
-        eficiencia: 70
-    },
-    {
-        id: 10,
-        custo: 110,
-        name: 'Ácido Fosfórico',
-        eficiencia: 70
-    },
-    {
-        id: 11,
-        custo: 111,
-        name: 'Multif. Magnesiano',
-        eficiencia: 70
-    },
-    {
-        id: 30,
-        custo: 112,
-        name: 'Cloreto de Potássio'
-    },
-    {
-        id: 31,
-        custo: 113,
-        name: 'Sulfato de Potássio'
-    },
-    {
-        id: 32,
-        custo: 114,
-        name: 'Sulf.Potássio/Mag.'
-    }
+  {
+    'id': '1',
+    'name': 'Superfosfato Simples',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.10',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.28',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '2',
+    'name': 'Superfostato Triplo',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.2',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '3',
+    'name': 'MAP',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.09',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '4',
+    'name': 'DAP',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.16',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '5',
+    'name': 'Yoorin',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.005',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.28',
+    'const_magnesio': '0.15',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '6',
+    'name': 'Fosfato Arad',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.52',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '7',
+    'name': 'Fosfato Gafsa',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.52',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '8',
+    'name': 'Fosfato Daoui',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.45',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '9',
+    'name': 'Fosfato Patos de Minas',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.28',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '10',
+    'name': 'Escoria de Thomas',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.44',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '11',
+    'name': 'Acido Fosforico',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.0',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '12',
+    'name': 'Multifosfato Magnesiano',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.11',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.18',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['1']
+  },
+  {
+    'id': '13',
+    'name': 'Cloreto de Potassio',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['2']
+  },
+  {
+    'id': '14',
+    'name': 'Sulfato de Potassio',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['2']
+  },
+  {
+    'id': '15',
+    'name': 'Sulfato de Potassio/Magnesio',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['2']
+  },
+  {
+    'id': '16',
+    'name': 'Calcario Dolomitico',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  },
+  {
+    'id': '17',
+    'name': 'Calcario Calcitico',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  },
+  {
+    'id': '18',
+    'name': 'Calcario de Concha',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  },
+  {
+    'id': '19',
+    'name': 'Gesso Agricola',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  },
+  {
+    'id': '20',
+    'name': 'Hidroxido de Calcio',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  },
+  {
+    'id': '21',
+    'name': 'Calcario Magnesiano',
+    'def_eficiencia': '0.00',
+    'def_prnt': '0.00',
+    'def_teor_cao': '0.00',
+    'def_custo': '0.00',
+    'const_enxofre': '0.00',
+    'const_nitrogenio': '0.0',
+    'const_calcio': '0.00',
+    'const_magnesio': '0.00',
+    'const_fator': '0.00',
+    'steps': ['3']
+  }
 ];
 
 export default fontes;

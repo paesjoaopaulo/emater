@@ -1,7 +1,5 @@
 import { createStore } from 'redux';
 
-import apiCall from './../calls';
-
 import {
   analise,
   calcio_magnesio,
@@ -27,39 +25,33 @@ const INITIAL_STATE = {
   mo,
   fosforo,
   potassio,
-  calcio_magnesio,
+  calcio_magnesio
 };
 
 
 function reducer(state = INITIAL_STATE, action) {
   if (action.type === 'PREENCHER_PROPRIEDADE') {
-    state.propriedade = { ...state.propriedade, ...action.value }
+    state.propriedade = { ...state.propriedade, ...action.value };
   }
   if (action.type === 'PREENCHER_ANALISE') {
-    state.analise = { ...state.analise, ...action.value }
+    state.analise = { ...state.analise, ...action.value };
   }
   if (action.type === 'PREENCHER_MO') {
-    state.mo = { ...state.mo, ...action.value }
+    state.mo = { ...state.mo, ...action.value };
   }
   if (action.type === 'PREENCHER_P') {
-    state.fosforo = { ...state.fosforo, ...action.value }
+    state.fosforo = { ...state.fosforo, ...action.value };
   }
   if (action.type === 'PREENCHER_K') {
-    state.potassio = { ...state.potassio, ...action.value }
+    state.potassio = { ...state.potassio, ...action.value };
   }
   if (action.type === 'PREENCHER_CMg') {
-    state.calcio_magnesio = { ...state.calcio_magnesio, ...action.value }
+    state.calcio_magnesio = { ...state.calcio_magnesio, ...action.value };
   }
   if (action.type === 'CHANGE_TEXTURE') {
-    state.analise = { ...state.analise, ...action.value }
+    state.analise = { ...state.analise, ...action.value };
   }
 
-  localStorage.setItem('app_state', JSON.stringify(state));
-
-  if (action.type === 'API_CALL') {
-    apiCall('http://127.0.0.1:8000/calculo', state, 'POST');
-  }
-  
   return { ...state };
 }
 

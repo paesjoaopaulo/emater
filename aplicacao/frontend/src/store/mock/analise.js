@@ -7,7 +7,7 @@ const analise = {
   atualmente_enxofre: '',
   atualmente_aluminio: '',
   atualmente_hidrogenio_aluminio: '',
-  materia_organica: ''
-}
+  materia_organica: '',
+};
 
 export default analise;
