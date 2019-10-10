@@ -1,7 +1,7 @@
 const potassio = {
-  teor_desejado: '',
+  teor_desejado: 2.5,
   fonte: '',
-  custo_tonelada: ''
+  custo_fonte_potassio: 100.00
 }
 
 export default potassio;

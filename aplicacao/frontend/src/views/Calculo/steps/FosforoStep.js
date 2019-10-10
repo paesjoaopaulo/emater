@@ -43,9 +43,10 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
         }
       });
     }
+    let value = e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value;
     dispatch({
       type: 'PREENCHER_P',
-      value: { [e.target.name]: e.target.value }
+      value: { [e.target.name]: value }
     });
   }
 
@@ -56,7 +57,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
         id="atualmente_fosforo"
         InputProps={{
           endAdornment: <InputAdornment position="end">mg/dm³</InputAdornment>,
-          inputProps: { min: 0 }
+          inputProps: { min: 0, step: 0.01 }
         }}
         label="Teor desejado"
         margin="normal"
@@ -80,7 +81,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
         {
           fontes
             .filter((fonte) => {
-              return fonte.steps.includes('1');
+              return fonte.steps.includes(1);
             })
             .sort(sortByNameAsc)
             .map((fonte, key) => {
@@ -88,6 +89,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
                 <MenuItem
                   key={key}
                   value={fonte}
+                  selected={fosforo.fonte_fosforo !== undefined && fonte.id === fosforo.fonte_fosforo.id}
                 >
                   {
                     fonte.name
@@ -101,7 +103,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
         className={classes.textField}
         id="eficiencia_fonte_fosforo"
         InputProps={{
-          endAdornment: <InputAdornment position="end"></InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>,
           inputProps: { min: 0 }
         }}
         label="Eficiência"
@@ -118,7 +120,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
           endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
-          inputProps: { min: 0 }
+          inputProps: { min: 0, step: 0.01 }
         }}
         label="Custo"
         margin="normal"
@@ -140,6 +142,7 @@ const FosforoStep = ({ fosforo, analise, fontes, dispatch }) => {
               Custo da aplicação: {calcFosforoCorretivoCustoHA(analise, fosforo)} R$/ha
             </Typography>
 
+            <Typography>Essa correção também fornecerá:</Typography>
             <Typography>
               S: {calcFosforoAdicaoS(analise, fosforo)} kg/ha
             </Typography>

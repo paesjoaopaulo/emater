@@ -1,12 +1,15 @@
 export const calcFosforoCorretivoAplicar = (analise, fosforo) => {
   let numero_corretivo = fosforo.fonte_fosforo.const_fator;
-  let qtd_aplicar = (((fosforo.teor_desejado - analise.atualmente_fosforo) * 2) * 2.29) * 100 / fosforo.eficiencia_fonte_fosforo / 100 * 100 / numero_corretivo;
-  return qtd_aplicar * 100;
+  let fosforo_desejado = fosforo.teor_desejado;
+  let fosforo_atualmente = analise.atualmente_fosforo;
+  let fosforo_eficiencia = fosforo.eficiencia_fonte_fosforo;
+  let valor = (((fosforo_desejado - fosforo_atualmente) * 2.00) * 2.29) * 100.00 / fosforo_eficiencia / 100.00 * 100.00 / numero_corretivo;
+  return valor ? valor.toFixed(2) : 0;
 };
 
 export const calcFosforoCorretivoCustoHA = (analise, fosforo) => {
-  let custo_heactare = calcFosforoCorretivoAplicar(analise, fosforo) * 2.42 * fosforo.custo_fonte_fosforo / 1000 / 2.42;
-  return custo_heactare * 100;
+  let valor = calcFosforoCorretivoAplicar(analise, fosforo) * 2.42 * fosforo.custo_fonte_fosforo / 1000 / 2.42;
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
 export const calcAtualmenteVPercent = (analise) => {
@@ -15,7 +18,8 @@ export const calcAtualmenteVPercent = (analise) => {
   let magnesio = analise.atualmente_magnesio;
   let h_al = analise.atualmente_hidrogenio_aluminio;
   let bases = parseFloat(potassio) + parseFloat(calcio) + parseFloat(magnesio);
-  return (100 * (bases / (bases + parseFloat(h_al)))).toFixed(2);
+  let valor = 100 * (bases / (bases + parseFloat(h_al)));
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
 export const calcAtualmenteCTCcmol = (analise) => {
@@ -24,40 +28,60 @@ export const calcAtualmenteCTCcmol = (analise) => {
   let magnesio = analise.atualmente_magnesio;
   let h_al = analise.atualmente_hidrogenio_aluminio;
   let bases = parseFloat(potassio) + parseFloat(calcio) + parseFloat(magnesio);
-  let ctcmol = parseFloat(bases) + parseFloat(h_al);
-  return ctcmol;
+  let valor = parseFloat(bases) + parseFloat(h_al);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
 export const calcAtualmenteScmol = (analise) => {
   let potassio = analise.atualmente_potassio;
   let calcio = analise.atualmente_calcio;
   let magnesio = analise.atualmente_magnesio;
-  let bases = parseFloat(potassio) + parseFloat(calcio) + parseFloat(magnesio);
-  return bases;
+  let valor = parseFloat(potassio) + parseFloat(calcio) + parseFloat(magnesio);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
 export const calcAtualmenteMO = (mo) => {
-  let retorno = 0;
+  let valor = 0;
   if (mo.unidade === 'PERCENT') {
-    retorno = parseFloat(mo.materia_organica);
+    valor = parseFloat(mo.materia_organica);
   } else if (mo.unidade === 'GDM') {
-    retorno = parseFloat(mo.materia_organica / 10);
+    valor = parseFloat(mo.materia_organica / 10);
   } else if (mo.unidade === 'C') {
-    retorno = parseFloat(mo.materia_organica * 1.72 / 10);
+    valor = parseFloat(mo.materia_organica * 1.72 / 10);
   }
-  return retorno.toFixed(2);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
 
 export const calcFosforoAdicaoS = (analise, fosforo) => {
-  return calcFosforoCorretivoAplicar(analise, fosforo) * fosforo.fonte_fosforo.const_enxofre;
+  let valor = calcFosforoCorretivoAplicar(analise, fosforo) * parseFloat(fosforo.fonte_fosforo.const_enxofre);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 export const calcFosforoAdicaoCa = (analise, fosforo) => {
-  return calcFosforoCorretivoAplicar(analise, fosforo) * fosforo.fonte_fosforo.const_calcio;
+  let valor = calcFosforoCorretivoAplicar(analise, fosforo) * parseFloat(fosforo.fonte_fosforo.const_calcio);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 export const calcFosforoAdicaoN = (analise, fosforo) => {
-  return calcFosforoCorretivoAplicar(analise, fosforo) * fosforo.fonte_fosforo.const_nitrogenio;
+  let valor = calcFosforoCorretivoAplicar(analise, fosforo) * parseFloat(fosforo.fonte_fosforo.const_nitrogenio);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 export const calcFosforoAdicaoMa = (analise, fosforo) => {
-  return calcFosforoCorretivoAplicar(analise, fosforo) * fosforo.fonte_fosforo.const_magnesio;
+  let valor = calcFosforoCorretivoAplicar(analise, fosforo) * parseFloat(fosforo.fonte_fosforo.const_magnesio);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
+
+
+export const calcParticipacaoPotassioAtualmente = (analise) => {
+  let valor = analise.atualmente_potassio / (analise.atualmente_potassio + analise.atualmente_calcio + analise.atualmente_magnesio + analise.atualmente_hidrogenio_aluminio) * 100;
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
+
+export const calcParticipacaoIdealPotassio = (propriedade) => {
+  let valor = propriedade.textura_do_solo === 'ARGILOSO' ? 3 : 3;
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
+
+export const calcParticipacaoPotassioApos = (potassio) => {
+  let valor = potassio.teor_desejado;
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };

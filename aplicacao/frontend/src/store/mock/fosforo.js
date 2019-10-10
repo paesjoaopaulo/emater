@@ -1,8 +1,8 @@
 const fosforo = {
-  teor_desejado: '',
+  teor_desejado: 8.67,
   fonte: '',
-  eficiencia: '',
-  custo_tonelada: ''
+  eficiencia_fonte_fosforo: 70.00,
+  custo_tonelada: 2383.00
 }
 
 export default fosforo;

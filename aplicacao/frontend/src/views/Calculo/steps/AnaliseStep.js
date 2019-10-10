@@ -30,9 +30,10 @@ const AnaliseStep = ({ analise, dispatch }) => {
   const classes = useStyles();
 
   function handleInputChange(e) {
+    let value = e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value;
     dispatch({
       type: 'PREENCHER_ANALISE',
-      value: { [e.target.name]: e.target.value }
+      value: { [e.target.name]: value }
     });
   }
 

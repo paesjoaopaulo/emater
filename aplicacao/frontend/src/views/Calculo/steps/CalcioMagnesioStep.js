@@ -1,23 +1,24 @@
 import React from 'react';
 import { TextField, makeStyles, InputAdornment, MenuItem } from '@material-ui/core';
 import { connect } from 'react-redux';
+import { sortByNameAsc } from '../../../helpers/arrayHandler';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
   },
   dense: {
-    marginTop: 19,
+    marginTop: 19
   },
   menu: {
-    width: 200,
-  },
+    width: 200
+  }
 }));
 
 const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
@@ -27,7 +28,7 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
     dispatch({
       type: 'PREENCHER_K',
       value: { [e.target.name]: e.target.value }
-    })
+    });
   }
 
   return (
@@ -45,25 +46,30 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
         fullWidth={true}
       >
         {
-          fontes.map((fonte, key) => {
-            return (
-              <MenuItem
-                key={key}
-                value={fonte.id}
-              >
-                {
-                  fonte.name
-                }
-              </MenuItem>
-            )
-          })
+          fontes
+            .filter((fonte) => {
+              return fonte.steps.includes(3);
+            })
+            .sort(sortByNameAsc)
+            .map((fonte, key) => {
+              return (
+                <MenuItem
+                  key={key}
+                  value={fonte.id}
+                >
+                  {
+                    fonte.name
+                  }
+                </MenuItem>
+              );
+            })
         }
       </TextField>
       <TextField
         className={classes.textField}
         id="atualmente_calcio_magnesio"
         InputProps={{
-          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>
         }}
         label="Teor desejado"
         margin="normal"
@@ -76,7 +82,7 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
         className={classes.textField}
         id="prnt_calcio_magnesio"
         InputProps={{
-          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>
         }}
         label="PRNT"
         margin="normal"
@@ -89,7 +95,7 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
         className={classes.textField}
         id="cao_calcio_magnesio"
         InputProps={{
-          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>
         }}
         label="Teor de CaO"
         margin="normal"
@@ -103,7 +109,7 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
         id="custo_fonte_calcio_magnesio"
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
-          endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
+          endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>
         }}
         label="Custo"
         margin="normal"
@@ -115,6 +121,6 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, dispatch }) => {
       />
     </>
   );
-}
+};
 
 export default connect(state => ({ calcio_magnesio: state.calcio_magnesio, fontes: state.fontes }))(CalcioMagnesioStep);

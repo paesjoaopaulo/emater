@@ -1,48 +1,57 @@
 import React from 'react';
 import { TextField, MenuItem, InputAdornment, makeStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
+import {
+  calcParticipacaoIdealPotassio,
+  calcParticipacaoPotassioApos,
+  calcParticipacaoPotassioAtualmente
+} from '../../../helpers';
+import Typography from '@material-ui/core/Typography';
+import { sortByNameAsc } from '../../../helpers/arrayHandler';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
   },
   dense: {
-    marginTop: 19,
+    marginTop: 19
   },
   menu: {
-    width: 200,
-  },
+    width: 200
+  }
 }));
 
-const PotassioStep = ({ fontes, potassio, dispatch }) => {
+const PotassioStep = ({ fontes, potassio, propriedade, analise, dispatch }) => {
   const classes = useStyles();
+
   function handleInputChange(e) {
     dispatch({
       type: 'PREENCHER_K',
       value: { [e.target.name]: e.target.value }
-    })
+    });
   }
+
   return (
     <>
       <TextField
         className={classes.textField}
-        id="atualmente_potassio"
+        id="teor_desejado"
         InputProps={{
-          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>
         }}
         label="Teor desejado"
         margin="normal"
-        name="atualmente_potassio"
+        name="teor_desejado"
         onChange={handleInputChange}
         required
         type="number"
-        value={potassio.atualmente_potassio}
+        value={potassio.teor_desejado}
       />
       <TextField
         className={classes.textField}
@@ -56,18 +65,23 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         value={potassio.fonte_potassio}
       >
         {
-          fontes.map((fonte, key) => {
-            return (
-              <MenuItem
-                key={key}
-                value={fonte.id}
-              >
-                {
-                  fonte.name
-                }
-              </MenuItem>
-            )
-          })
+          fontes
+            .filter((fonte) => {
+              return fonte.steps.includes(2);
+            })
+            .sort(sortByNameAsc)
+            .map((fonte, key) => {
+              return (
+                <MenuItem
+                  key={key}
+                  value={fonte.id}
+                >
+                  {
+                    fonte.name
+                  }
+                </MenuItem>
+              );
+            })
         }
       </TextField>
       <TextField
@@ -75,7 +89,7 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         id="custo_fonte_potassio"
         InputProps={{
           startAdornment: <InputAdornment position="start">R$</InputAdornment>,
-          endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>,
+          endAdornment: <InputAdornment position="end">/tonelada</InputAdornment>
         }}
         label="Custo"
         margin="normal"
@@ -85,8 +99,17 @@ const PotassioStep = ({ fontes, potassio, dispatch }) => {
         type="number"
         value={potassio.custo_fonte_potassio}
       />
+
+      <Typography>Participação do Potássio atualmente: {calcParticipacaoPotassioAtualmente(analise)}</Typography>
+      <Typography>Participação ideal do Potássio: {calcParticipacaoIdealPotassio(propriedade)}</Typography>
+      <Typography>Participação do Potássio após as correções: {calcParticipacaoPotassioApos(potassio)}</Typography>
     </>
   );
-}
+};
 
-export default connect(state => ({ potassio: state.potassio, fontes: state.fontes }))(PotassioStep);
+export default connect(state => ({
+  potassio: state.potassio,
+  fontes: state.fontes,
+  analise: state.analise,
+  propriedade: state.propriedade
+}))(PotassioStep);
