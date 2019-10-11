@@ -178,7 +178,7 @@ const fontes = [
     'const_nitrogenio': 0.0,
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
-    'const_fator': 0.58,
+    'const_fator': 58,
     'steps': [2]
   },
   {
@@ -192,7 +192,7 @@ const fontes = [
     'const_nitrogenio': 0.0,
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
-    'const_fator': 0.52,
+    'const_fator': 52,
     'steps': [2]
   },
   {
@@ -206,7 +206,7 @@ const fontes = [
     'const_nitrogenio': 0.0,
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
-    'const_fator': 0.22,
+    'const_fator': 22,
     'steps': [2]
   },
   {

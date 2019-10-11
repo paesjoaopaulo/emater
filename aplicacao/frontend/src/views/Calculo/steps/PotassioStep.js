@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   calcParticipacaoIdealPotassio,
   calcParticipacaoPotassioApos,
-  calcParticipacaoPotassioAtualmente
+  calcParticipacaoPotassioAtualmente, calcQuantidadePotassioAplicar, calcValorHAAplicacaoPotassio
 } from '../../../helpers';
 import Typography from '@material-ui/core/Typography';
 import { sortByNameAsc } from '../../../helpers/arrayHandler';
@@ -74,7 +74,7 @@ const PotassioStep = ({ fontes, potassio, propriedade, analise, dispatch }) => {
               return (
                 <MenuItem
                   key={key}
-                  value={fonte.id}
+                  value={fonte}
                 >
                   {
                     fonte.name
@@ -103,6 +103,9 @@ const PotassioStep = ({ fontes, potassio, propriedade, analise, dispatch }) => {
       <Typography>Participação do Potássio atualmente: {calcParticipacaoPotassioAtualmente(analise)}</Typography>
       <Typography>Participação ideal do Potássio: {calcParticipacaoIdealPotassio(propriedade)}</Typography>
       <Typography>Participação do Potássio após as correções: {calcParticipacaoPotassioApos(potassio)}</Typography>
+
+      <Typography>Quantidade de fonte de corretivo a ser aplicada: {calcQuantidadePotassioAplicar(analise, potassio)}</Typography>
+      <Typography>Custo da aplicação R$ {calcValorHAAplicacaoPotassio(analise, potassio)}/ha</Typography>
     </>
   );
 };

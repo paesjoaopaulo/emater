@@ -73,7 +73,7 @@ export const calcFosforoAdicaoMa = (analise, fosforo) => {
 
 export const calcParticipacaoPotassioAtualmente = (analise) => {
   let valor = analise.atualmente_potassio / (analise.atualmente_potassio + analise.atualmente_calcio + analise.atualmente_magnesio + analise.atualmente_hidrogenio_aluminio) * 100;
-  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
 };
 
 export const calcParticipacaoIdealPotassio = (propriedade) => {
@@ -84,4 +84,21 @@ export const calcParticipacaoIdealPotassio = (propriedade) => {
 export const calcParticipacaoPotassioApos = (potassio) => {
   let valor = potassio.teor_desejado;
   return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
+
+export const calcQuantidadePotassioAplicar = (analise, potassio) => {
+  let fator = potassio && potassio.fonte_potassio ? potassio.fonte_potassio.const_fator : 0;
+  let valor = (((((((analise.atualmente_potassio * potassio.teor_desejado / calcParticipacaoPotassioAtualmente(analise) - analise.atualmente_potassio) * 39.1 * 10) * 2) * 1.2) * 100 / 0.85 / 100) * 100) / fator);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
+
+export const calcValorHAAplicacaoPotassio = (analise, potassio) => {
+  let fator = potassio && potassio.fonte_potassio ? potassio.fonte_potassio.const_fator : 0;
+  if (fator > 0) {
+    let valor = (potassio.custo_fonte_potassio * (((((((analise.atualmente_potassio * potassio.teor_desejado / calcParticipacaoPotassioAtualmente(analise)) - analise.atualmente_potassio) * 39.1 * 10) * 2) * 1.2) * 100 / 85 / 100) * 100 / fator * 2.42) / 1000) / 2.42;
+    valor = valor * 100;
+    return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+  } else {
+    return 0.00.toFixed(2);
+  }
 };
