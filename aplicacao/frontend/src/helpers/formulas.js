@@ -22,6 +22,11 @@ export const calcAtualmenteVPercent = (analise) => {
   return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
 };
 
+export const calcIdealVPercent = (analise, propriedade) => {
+  let valor = propriedade.textura_do_solo === 'ARGILOSO' ? '60 a 70' : '50';
+  return valor;
+};
+
 export const calcAtualmenteCTCcmol = (analise) => {
   let potassio = analise.atualmente_potassio;
   let calcio = analise.atualmente_calcio;
@@ -83,7 +88,8 @@ export const calcParticipacaoIdealPotassio = (propriedade) => {
 
 export const calcParticipacaoPotassioApos = (potassio) => {
   let valor = potassio.teor_desejado;
-  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+  console.log(potassio.teor_desejado);
+  return valor && !isNaN(valor) ? valor : 0;
 };
 
 export const calcQuantidadePotassioAplicar = (analise, potassio) => {
@@ -101,4 +107,66 @@ export const calcValorHAAplicacaoPotassio = (analise, potassio) => {
   } else {
     return 0.00.toFixed(2);
   }
+};
+
+export const calcPotassioForneceraEnxofre = (analise, potassio) => {
+  let fator = potassio && potassio.fonte_potassio ? potassio.fonte_potassio.const_enxofre : 0;
+  if (fator > 0) {
+    let valor = fator * calcQuantidadePotassioAplicar(analise, potassio);
+    return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+  } else {
+    return 0.00.toFixed(2);
+  }
+};
+
+export const calcPotassioForneceraMagnesio = (analise, potassio) => {
+  let fator = potassio && potassio.fonte_potassio ? potassio.fonte_potassio.const_magnesio : 0;
+  if (fator > 0) {
+    let valor = fator * calcQuantidadePotassioAplicar(analise, potassio);
+    return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+  } else {
+    return 0.00.toFixed(2);
+  }
+};
+
+export const calcParticipacaoCalcioAtualmente = (analise) => {
+  let valor = analise.atualmente_calcio / (analise.atualmente_potassio + analise.atualmente_calcio + analise.atualmente_magnesio + analise.atualmente_hidrogenio_aluminio) * 100;
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcParticipacaoIdealCalcio = (analise, propriedade) => {
+  let valor = propriedade.textura_do_solo === 'ARGILOSO' ? '45 a 55' : '35 a 40';
+  return valor;
+};
+
+export const calcParticipacaoCalcioAposCorrecoes = (analise, fosforo, calcio_magnesio) => {
+  let valor = 0.0;
+  if (calcio_magnesio.fonte_calcio_magnesio) {
+    valor = (analise.atualmente_calcio + ((((calcio_magnesio.fonte_calcio_magnesio.const_fator * 0.01783) + ((fosforo.fonte_fosforo.const_calcio / 2.42) * fosforo.fonte_fosforo.def_teor_cao / 1000)) * (((analise.atualmente_calcio * calcio_magnesio.teor_desejado / calcParticipacaoCalcioAtualmente(analise)) - analise.atualmente_calcio - ((fosforo.fonte_fosforo.const_calcio * calcFosforoCorretivoAplicar(analise, fosforo) / 2.42) * (fosforo.fonte_fosforo.def_teor_cao) / 1000)) / (((calcio_magnesio.fonte_calcio_magnesio.const_fator) * 0.01783) + ((fosforo.fonte_fosforo.const_calcio * calcFosforoCorretivoAplicar(analise, fosforo) / 2.42) * (fosforo.fonte_fosforo.def_teor_cao) / 1000)))) + ((fosforo.fonte_fosforo.const_calcio / 2.42) * fosforo.fonte_fosforo.def_teor_cao / 1000))) / calcAtualmenteCTCcmol(analise) * 100;
+  }
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcQuantidadeCalcioAplicar = (analise, fosforo, calcio_magnesio) => {
+  let valor = 0.0;
+  if (calcio_magnesio.fonte_calcio_magnesio) {
+    valor = ((analise.atualmente_calcio * calcio_magnesio.teor_desejado / calcParticipacaoCalcioAtualmente(analise)) - analise.atualmente_calcio - (((calcFosforoCorretivoAplicar(analise, fosforo) * calcio_magnesio.fonte_calcio_magnesio.def_teor_cao) / 2.42) * calcio_magnesio.teor_cao / 1000)) * 100 / calcio_magnesio.prnt
+  }
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+
+export const calcParticipacaoMagnesioAtualmente = (analise) => {
+  let valor = analise.atualmente_magnesio / (analise.atualmente_potassio + analise.atualmente_calcio + analise.atualmente_magnesio + analise.atualmente_hidrogenio_aluminio) * 100;
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcParticipacaoIdealMagnesio = (propriedade) => {
+  let valor = propriedade.textura_do_solo === 'ARGILOSO' ? '10 a 15' : '8 a 12';
+  return valor;
+};
+
+export const calcParticipacaoMagnesioAposCorrecoes = (analise, fosforo, calcio_magnesio) => {
+  let valor = 0.0;
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
 };
