@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Emater/PR",
+  "name": "Aplicação para o cálculo de equilíbrio e correção do solo",
   "icons": [
     {
       "src": "favicon.ico",

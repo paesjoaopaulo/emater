@@ -3,13 +3,12 @@ import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
 
 import {
-  Budget,
-  TotalUsers,
-  TasksProgress,
-  TotalProfit,
+  Propriedades,
+  AreaCorrigida,
+  Cidades,
+  Calculos,
   LatestSales,
   UsersByDevice,
-  LatestProducts,
   LatestOrders
 } from './components';
 
@@ -24,80 +23,26 @@ const Dashboard = () => {
 
   return (
     <div className={classes.root}>
-      <Grid
-        container
-        spacing={4}
-      >
-        <Grid
-          item
-          lg={3}
-          sm={6}
-          xl={3}
-          xs={12}
-        >
-          <Budget />
+      <Grid container spacing={4}>
+        <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <Propriedades />
         </Grid>
-        <Grid
-          item
-          lg={3}
-          sm={6}
-          xl={3}
-          xs={12}
-        >
-          <TotalUsers />
+        <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <AreaCorrigida />
         </Grid>
-        <Grid
-          item
-          lg={3}
-          sm={6}
-          xl={3}
-          xs={12}
-        >
-          <TasksProgress />
+        <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <Cidades />
         </Grid>
-        <Grid
-          item
-          lg={3}
-          sm={6}
-          xl={3}
-          xs={12}
-        >
-          <TotalProfit />
+        <Grid item lg={3} sm={6} xl={3} xs={12}>
+          <Calculos />
         </Grid>
-        <Grid
-          item
-          lg={8}
-          md={12}
-          xl={9}
-          xs={12}
-        >
+        <Grid item lg={8} md={12} xl={9} xs={12}>
           <LatestSales />
         </Grid>
-        <Grid
-          item
-          lg={4}
-          md={6}
-          xl={3}
-          xs={12}
-        >
+        <Grid item lg={4} md={6} xl={3} xs={12}>
           <UsersByDevice />
         </Grid>
-        <Grid
-          item
-          lg={4}
-          md={6}
-          xl={3}
-          xs={12}
-        >
-          <LatestProducts />
-        </Grid>
-        <Grid
-          item
-          lg={8}
-          md={12}
-          xl={9}
-          xs={12}
-        >
+        <Grid item lg={12} md={12} xl={12} xs={12}>
           <LatestOrders />
         </Grid>
       </Grid>

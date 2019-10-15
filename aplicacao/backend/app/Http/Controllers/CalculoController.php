@@ -2,84 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Calculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CalculoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $data = $request->all();
+        $calculo = [];
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('calculo.create');
-    }
+        if ($data['propriedade']['textura_do_solo'] == 'TEXT_MEDIA') {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        dd($request->all());
-    }
+            $calculo['ideal_fosforo'] = '12';
+            $calculo['ideal_potassio'] = '0.25';
+            $calculo['ideal_calcio'] = '4';
+            $calculo['ideal_magnesio'] = '1';
+            $calculo['ideal_enxofre'] = '6';
+            $calculo['ideal_aluminio'] = '0';
+            $calculo['ideal_hidrogenio_aluminio'] = '';
+        } else if ($data['propriedade']['textura_do_solo'] == 'ARGILOSO') {
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Calculo  $calculo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Calculo $calculo)
-    {
-        //
-    }
+            $calculo['ideal_fosforo'] = '9';
+            $calculo['ideal_potassio'] = '0.35';
+            $calculo['ideal_calcio'] = '6';
+            $calculo['ideal_magnesio'] = '1.5';
+            $calculo['ideal_enxofre'] = '9';
+            $calculo['ideal_aluminio'] = '0';
+            $calculo['ideal_hidrogenio_aluminio'] = '';
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Calculo  $calculo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Calculo $calculo)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Calculo  $calculo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Calculo $calculo)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Calculo  $calculo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Calculo $calculo)
-    {
-        //
+        return [
+            $calculo
+        ];
     }
 }

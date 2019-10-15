@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
   root: {}
 }));
 
-const Password = props => {
+const Senha = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -40,14 +40,14 @@ const Password = props => {
     >
       <form>
         <CardHeader
-          subheader="Update password"
-          title="Password"
+          subheader="Atualizar senha"
+          title="Senha"
         />
         <Divider />
         <CardContent>
           <TextField
             fullWidth
-            label="Password"
+            label="Senha"
             name="password"
             onChange={handleChange}
             type="password"
@@ -56,7 +56,7 @@ const Password = props => {
           />
           <TextField
             fullWidth
-            label="Confirm password"
+            label="Confirmar senha"
             name="confirm"
             onChange={handleChange}
             style={{ marginTop: '1rem' }}
@@ -71,7 +71,7 @@ const Password = props => {
             color="primary"
             variant="outlined"
           >
-            Update
+            Atualizar
           </Button>
         </CardActions>
       </form>
@@ -79,8 +79,8 @@ const Password = props => {
   );
 };
 
-Password.propTypes = {
+Senha.propTypes = {
   className: PropTypes.string
 };
 
-export default Password;
+export default Senha;

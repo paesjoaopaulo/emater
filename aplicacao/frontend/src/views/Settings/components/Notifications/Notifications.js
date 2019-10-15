@@ -35,8 +35,8 @@ const Notifications = props => {
     >
       <form>
         <CardHeader
-          subheader="Manage the notifications"
-          title="Notifications"
+          subheader="Gerencie suas notificações"
+          title="Notificações"
         />
         <Divider />
         <CardContent>
@@ -56,7 +56,7 @@ const Notifications = props => {
                 gutterBottom
                 variant="h6"
               >
-                Notifications
+                Notificações
               </Typography>
               <FormControlLabel
                 control={
@@ -78,7 +78,7 @@ const Notifications = props => {
               />
               <FormControlLabel
                 control={<Checkbox color="primary" />}
-                label="Text Messages"
+                label="Mensagens de Texto"
               />
               <FormControlLabel
                 control={
@@ -87,7 +87,7 @@ const Notifications = props => {
                     defaultChecked //
                   />
                 }
-                label="Phone calls"
+                label="Ligações Telefônicas"
               />
             </Grid>
             <Grid
@@ -101,7 +101,7 @@ const Notifications = props => {
                 gutterBottom
                 variant="h6"
               >
-                Messages
+                Mensagens
               </Typography>
               <FormControlLabel
                 control={
@@ -123,7 +123,7 @@ const Notifications = props => {
                     defaultChecked //
                   />
                 }
-                label="Phone calls"
+                label="Ligações Telefônicas"
               />
             </Grid>
           </Grid>
@@ -134,7 +134,7 @@ const Notifications = props => {
             color="primary"
             variant="outlined"
           >
-            Save
+            Salvar
           </Button>
         </CardActions>
       </form>

@@ -6,6 +6,9 @@ import { useMediaQuery } from '@material-ui/core';
 
 import { Sidebar, Topbar, Footer } from './components';
 
+import { Provider } from 'react-redux';
+import store from '../../store';
+
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 56,
@@ -50,16 +53,18 @@ const Main = props => {
         [classes.shiftContent]: isDesktop
       })}
     >
-      <Topbar onSidebarOpen={handleSidebarOpen} />
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={shouldOpenSidebar}
-        variant={isDesktop ? 'persistent' : 'temporary'}
-      />
-      <main className={classes.content}>
-        {children}
-        <Footer />
-      </main>
+      <Provider store={store}>
+        <Topbar onSidebarOpen={handleSidebarOpen} />
+        <Sidebar
+          onClose={handleSidebarClose}
+          open={shouldOpenSidebar}
+          variant={isDesktop ? 'persistent' : 'temporary'}
+        />
+        <main className={classes.content}>
+          {children}
+          <Footer />
+        </main>
+      </Provider>
     </div>
   );
 };

@@ -14,4 +14,4 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/calculo', 'CalculoController');
+Route::post('/calculo', 'CalculoController@index');

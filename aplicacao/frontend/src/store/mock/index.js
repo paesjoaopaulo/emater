@@ -1,0 +1,11 @@
+export { default as analise } from './analise';
+export { default as calcio_magnesio } from './calcio_magnesio';
+export { default as cidades } from './cidades';
+export { default as fontes } from './fontes';
+export { default as fosforo } from './fosforo';
+export { default as mo } from './mo';
+export { default as potassio } from './potassio';
+export { default as propriedade } from './propriedade';
+export { default as texturas } from './texturas';
+export { default as tipos_plantio } from './tipos_plantio';
+export { default as unidades } from './unidades';
