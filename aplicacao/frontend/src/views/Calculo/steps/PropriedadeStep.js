@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField, MenuItem, InputAdornment, makeStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
+import { sortByNameAsc } from '../../../helpers/arrayHandler';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -88,16 +89,18 @@ const PropriedadeStep = ({ cidades, tipos_plantio, texturas, propriedade, dispat
         value={propriedade.municipio}
       >
         {
-          cidades.map((city, key) => {
-            return (
-              <MenuItem
-                key={key}
-                value={city.id}
-              >
-                {city.name}
-              </MenuItem>
-            );
-          })
+          cidades
+            .sort(sortByNameAsc)
+            .map((city, key) => {
+              return (
+                <MenuItem
+                  key={key}
+                  value={city}
+                >
+                  {city}
+                </MenuItem>
+              );
+            })
         }
       </TextField>
 

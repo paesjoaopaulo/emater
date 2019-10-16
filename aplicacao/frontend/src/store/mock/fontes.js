@@ -11,6 +11,7 @@ const fontes = [
     'const_calcio': 0.28,
     'const_magnesio': 0.00,
     'const_fator': 0.18,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -25,6 +26,7 @@ const fontes = [
     'const_calcio': 0.2,
     'const_magnesio': 0.00,
     'const_fator': 0.41,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -39,6 +41,7 @@ const fontes = [
     'const_calcio': 0.09,
     'const_magnesio': 0.00,
     'const_fator': 0.48,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -53,6 +56,7 @@ const fontes = [
     'const_calcio': 0.16,
     'const_magnesio': 0.00,
     'const_fator': 0.45,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -67,6 +71,7 @@ const fontes = [
     'const_calcio': 0.28,
     'const_magnesio': 0.15,
     'const_fator': 0.18,
+    'percentual_mgo': 15,
     'steps': [1]
   },
   {
@@ -81,6 +86,7 @@ const fontes = [
     'const_calcio': 0.52,
     'const_magnesio': 0.00,
     'const_fator': 0.33,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -95,6 +101,7 @@ const fontes = [
     'const_calcio': 0.52,
     'const_magnesio': 0.00,
     'const_fator': 0.29,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -109,6 +116,7 @@ const fontes = [
     'const_calcio': 0.45,
     'const_magnesio': 0.00,
     'const_fator': 0.32,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -123,6 +131,7 @@ const fontes = [
     'const_calcio': 0.28,
     'const_magnesio': 0.00,
     'const_fator': 0.24,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -137,6 +146,7 @@ const fontes = [
     'const_calcio': 0.44,
     'const_magnesio': 0.00,
     'const_fator': 0.18,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -151,6 +161,7 @@ const fontes = [
     'const_calcio': 0.0,
     'const_magnesio': 0.00,
     'const_fator': 0.52,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
@@ -165,12 +176,13 @@ const fontes = [
     'const_calcio': 0.18,
     'const_magnesio': 0.00,
     'const_fator': 0.18,
+    'percentual_mgo': 0,
     'steps': [1]
   },
   {
     'id': '13',
     'name': 'Cloreto de Potassio',
-    'def_eficiencia': 0.00,
+    'def_eficiencia': 85,
     'def_prnt': 0.00,
     'def_teor_cao': 0.00,
     'def_custo': 0.00,
@@ -179,12 +191,13 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 58,
+    'percentual_mgo': 0,
     'steps': [2]
   },
   {
     'id': '14',
     'name': 'Sulfato de Potassio',
-    'def_eficiencia': 0.00,
+    'def_eficiencia': 85,
     'def_prnt': 0.00,
     'def_teor_cao': 0.00,
     'def_custo': 0.00,
@@ -193,12 +206,13 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 52,
+    'percentual_mgo': 0,
     'steps': [2]
   },
   {
     'id': '15',
     'name': 'Sulfato de Potassio/Magnesio',
-    'def_eficiencia': 0.00,
+    'def_eficiencia': 85,
     'def_prnt': 0.00,
     'def_teor_cao': 0.00,
     'def_custo': 0.00,
@@ -207,6 +221,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.18,
     'const_fator': 22,
+    'percentual_mgo': 18,
     'steps': [2]
   },
   {
@@ -221,6 +236,7 @@ const fontes = [
     'const_calcio': 0.28,
     'const_magnesio': 0.00,
     'const_fator': 30.4,
+    'percentual_mgo': 18,
     'steps': [3]
   },
   {
@@ -235,6 +251,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 56,
+    'percentual_mgo': 5,
     'steps': [3]
   },
   {
@@ -249,6 +266,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 54,
+    'percentual_mgo': 0,
     'steps': [3]
   },
   {
@@ -263,6 +281,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 29,
+    'percentual_mgo': 0,
     'steps': [3]
   },
   {
@@ -277,6 +296,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 75.7,
+    'percentual_mgo': 0,
     'steps': [3]
   },
   {
@@ -291,6 +311,7 @@ const fontes = [
     'const_calcio': 0.00,
     'const_magnesio': 0.00,
     'const_fator': 35,
+    'percentual_mgo': 10,
     'steps': [3]
   }
 ];

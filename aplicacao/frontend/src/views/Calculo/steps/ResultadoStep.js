@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
-import { calcIdealVPercent } from '../../../helpers';
+import { calcIdealVPercent, calcVPercentAposCorrecoes } from '../../../helpers';
 import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ResultadoStep = ({propriedade, dispatch}) => {
+const ResultadoStep = ({ propriedade, analise, fosforo, potassio, calcio_magnesio, dispatch }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -36,10 +36,18 @@ const ResultadoStep = ({propriedade, dispatch}) => {
 
 
       <Typography>V% ideal {calcIdealVPercent(propriedade)}</Typography>
+      <Typography>
+        V% após correções {calcVPercentAposCorrecoes(analise, fosforo, potassio, calcio_magnesio)}
+      </Typography>
+
     </div>
   );
 };
 
 export default connect(state => ({
-  propriedade: state.propriedade
+  propriedade: state.propriedade,
+  analise: state.analise,
+  fosforo: state.fosforo,
+  potassio: state.potassio,
+  calcio_magnesio: state.calcio_magnesio
 }))(ResultadoStep);

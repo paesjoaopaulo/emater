@@ -3,12 +3,14 @@ import { TextField, makeStyles, InputAdornment, MenuItem } from '@material-ui/co
 import { connect } from 'react-redux';
 import { sortByNameAsc } from '../../../helpers/arrayHandler';
 import {
+  calcCalcioEnxofreSuficiente,
+  calcCalcioForneceraEnxofre,
   calcParticipacaoCalcioAposCorrecoes,
   calcParticipacaoCalcioAtualmente,
   calcParticipacaoIdealCalcio,
   calcParticipacaoIdealMagnesio, calcParticipacaoMagnesioAposCorrecoes,
   calcParticipacaoMagnesioAtualmente,
-  calcQuantidadeCalcioAplicar
+  calcQuantidadeCalcioAplicar, calcValorHAAplicacaoCalcio
 } from '../../../helpers';
 import Typography from '@material-ui/core/Typography';
 
@@ -30,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const CalcioMagnesioStep = ({ fontes, calcio_magnesio, propriedade, analise, fosforo, dispatch }) => {
+const CalcioMagnesioStep = ({ fontes, calcio_magnesio, propriedade, analise, fosforo, potassio, dispatch }) => {
   const classes = useStyles();
 
   function handleInputChange(e) {
@@ -133,10 +135,13 @@ const CalcioMagnesioStep = ({ fontes, calcio_magnesio, propriedade, analise, fos
       <Typography>Participação ideal do cálcio {calcParticipacaoIdealCalcio(analise, propriedade)}</Typography>
       <Typography>Participação do cálcio após as correções {calcParticipacaoCalcioAposCorrecoes(analise, fosforo, calcio_magnesio)}</Typography>
       <Typography>Quantidade de corretivo a ser aplicada {calcQuantidadeCalcioAplicar(analise, fosforo, calcio_magnesio)}</Typography>
+      <Typography>Essa aplicação fornecerá também {calcCalcioForneceraEnxofre(analise, fosforo, calcio_magnesio)}kg/ha</Typography>
+      <Typography>Quantidade de Enxofre Suficiente {calcCalcioEnxofreSuficiente(analise, fosforo, calcio_magnesio)}kg/ha</Typography>
+      <Typography>Custo da aplicação R${calcValorHAAplicacaoCalcio(analise, fosforo, calcio_magnesio)}/ha</Typography>
 
       <Typography>Participação do magnésio atualmente {calcParticipacaoMagnesioAtualmente(analise)}</Typography>
       <Typography>Participação ideal de magnésio {calcParticipacaoIdealMagnesio(propriedade)}</Typography>
-      <Typography>Participação de magnésio após as correções {calcParticipacaoMagnesioAposCorrecoes(propriedade)}</Typography>
+      <Typography>Participação de magnésio após as correções {calcParticipacaoMagnesioAposCorrecoes(analise, fosforo, potassio, calcio_magnesio)}</Typography>
 
     </>
   );
@@ -147,5 +152,6 @@ export default connect(state => ({
   fontes: state.fontes,
   analise: state.analise,
   fosforo: state.fosforo,
+  potassio: state.potassio,
   propriedade: state.propriedade
 }))(CalcioMagnesioStep);

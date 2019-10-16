@@ -4,7 +4,7 @@ export const calcFosforoCorretivoAplicar = (analise, fosforo) => {
   let fosforo_atualmente = analise.atualmente_fosforo;
   let fosforo_eficiencia = fosforo.eficiencia_fonte_fosforo;
   let valor = (((fosforo_desejado - fosforo_atualmente) * 2.00) * 2.29) * 100.00 / fosforo_eficiencia / 100.00 * 100.00 / numero_corretivo;
-  return valor ? valor.toFixed(2) : 0;
+  return valor ? valor.toFixed(4) : 0;
 };
 
 export const calcFosforoCorretivoCustoHA = (analise, fosforo) => {
@@ -88,7 +88,6 @@ export const calcParticipacaoIdealPotassio = (propriedade) => {
 
 export const calcParticipacaoPotassioApos = (potassio) => {
   let valor = potassio.teor_desejado;
-  console.log(potassio.teor_desejado);
   return valor && !isNaN(valor) ? valor : 0;
 };
 
@@ -150,11 +149,40 @@ export const calcParticipacaoCalcioAposCorrecoes = (analise, fosforo, calcio_mag
 export const calcQuantidadeCalcioAplicar = (analise, fosforo, calcio_magnesio) => {
   let valor = 0.0;
   if (calcio_magnesio.fonte_calcio_magnesio) {
-    valor = ((analise.atualmente_calcio * calcio_magnesio.teor_desejado / calcParticipacaoCalcioAtualmente(analise)) - analise.atualmente_calcio - (((calcFosforoCorretivoAplicar(analise, fosforo) * calcio_magnesio.fonte_calcio_magnesio.def_teor_cao) / 2.42) * calcio_magnesio.teor_cao / 1000)) * 100 / calcio_magnesio.prnt
+    let I105 = (((calcFosforoCorretivoAplicar(analise, fosforo) * 2.42) * fosforo.fonte_fosforo.const_calcio) / 2.42) * fosforo.fonte_fosforo.def_teor_cao / 1000;
+    let F96 = (analise.atualmente_calcio * calcio_magnesio.teor_desejado / calcParticipacaoCalcioAtualmente(analise)) - analise.atualmente_calcio - I105;
+    let G109 = (calcio_magnesio.teor_cao * 0.01783);
+    valor = (F96 / (G109 + I105)) * 100 / calcio_magnesio.prnt;
   }
   return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
 };
 
+export const calcCalcioForneceraEnxofre = (analise, fosforo, calcio_magnesio) => {
+  let fonte = calcio_magnesio.fonte_calcio_magnesio;
+  let valor;
+  if (fonte && fonte.id !== '19') {
+    valor = 0;
+  } else {
+    valor = calcQuantidadeCalcioAplicar(analise, fosforo, calcio_magnesio) * 150;
+  }
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcCalcioEnxofreSuficiente = (analise, fosforo, calcio_magnesio) => {
+  let fonte = calcio_magnesio.fonte_calcio_magnesio;
+  let valor;
+  if (fonte && fonte.id !== '19') {
+    valor = 0;
+  } else {
+    valor = 80;
+  }
+  return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcValorHAAplicacaoCalcio = (analise, fosforo, calcio_magnesio) => {
+  let valor = calcio_magnesio.custo_fonte_calcio_magnesio * calcQuantidadeCalcioAplicar(analise, fosforo, calcio_magnesio);
+  return valor && !isNaN(valor) ? valor.toFixed(2) : 0;
+};
 
 export const calcParticipacaoMagnesioAtualmente = (analise) => {
   let valor = analise.atualmente_magnesio / (analise.atualmente_potassio + analise.atualmente_calcio + analise.atualmente_magnesio + analise.atualmente_hidrogenio_aluminio) * 100;
@@ -166,7 +194,18 @@ export const calcParticipacaoIdealMagnesio = (propriedade) => {
   return valor;
 };
 
-export const calcParticipacaoMagnesioAposCorrecoes = (analise, fosforo, calcio_magnesio) => {
+export const calcParticipacaoMagnesioAposCorrecoes = (analise, fosforo, potassio, calcio_magnesio) => {
   let valor = 0.0;
+  if (calcio_magnesio.fonte_calcio_magnesio) {
+    let I105 = (((calcFosforoCorretivoAplicar(analise, fosforo) * 2.42) * fosforo.fonte_fosforo.const_calcio) / 2.42) * fosforo.fonte_fosforo.def_teor_cao / 1000;
+    let F96 = (analise.atualmente_calcio * calcio_magnesio.teor_desejado / calcParticipacaoCalcioAtualmente(analise)) - analise.atualmente_calcio - I105;
+    let G109 = (calcio_magnesio.teor_cao * 0.01783);
+    valor = (analise.atualmente_magnesio + (calcio_magnesio.fonte_calcio_magnesio.percentual_mgo * 0.0248 * (F96 / G109)) + ((18 * 0.0248 * (((((((analise.atualmente_potassio * potassio.teor_desejado / calcParticipacaoPotassioAtualmente(analise)) - analise.atualmente_potassio) * 39.1 * 10) * 2) * 1.2) * 100 / (potassio.fonte_potassio.def_eficiencia) / 100) * 100 / potassio.fonte_potassio.const_fator) / 1000) * 0.6) + (0.0248 * potassio.fonte_potassio.percentual_mgo * 0.6)) / calcAtualmenteCTCcmol(analise) * 100;
+  }
+
   return valor && !isNaN(valor) ? valor.toFixed(4) : 0;
+};
+
+export const calcVPercentAposCorrecoes = (analise, fosforo, potassio, calcio_magnesio) => {
+  return calcParticipacaoPotassioApos(potassio) + calcParticipacaoMagnesioAposCorrecoes(analise, fosforo, potassio, calcio_magnesio) + calcParticipacaoCalcioAposCorrecoes(analise, fosforo, calcio_magnesio);
 };
